@@ -116,3 +116,133 @@ ter:
               placeholder="••••••••"
               required
             >
+            <fieldset>
+
+              <legend>Datos del trabajador</legend>
+
+              <label for="reg-oficio">
+                Oficio
+              </label>
+
+              <input
+                type="text"
+                id="reg-oficio"
+                placeholder="Ej: Electricista matriculado, Plomera..."
+              >
+
+              <label for="reg-categoria">
+                Categoría
+              </label>
+
+              <select id="reg-categoria">
+
+                <option value="Electricidad">
+                  Electricidad
+                </option>
+
+                <option value="Plomería">
+                  Plomería
+                </option>
+
+                <option value="Pintura">
+                  Pintura
+                </option>
+
+                <option value="Albañilería">
+                  Albañilería
+                </option>
+
+                <option value="Aire acondicionado">
+                  Aire acondicionado
+                </option>
+
+                <option value="Carpintería">
+                  Carpintería
+                </option>
+
+                <option value="Cerrajería">
+                  Cerrajería
+                </option>
+
+                <option value="Jardinería">
+                  Jardinería
+                </option>
+
+              </select>
+
+              <label for="reg-zona">
+                Zona donde trabajás
+              </label>
+
+              <input
+                type="text"
+                id="reg-zona"
+                placeholder="Ej: Tucumán Capital, Yerba Buena..."
+              >
+
+              <label for="reg-precio">
+                Precio por hora ($)
+              </label>
+
+              <input
+                type="number"
+                id="reg-precio"
+                min="0"
+                step="50"
+                placeholder="Ej: 4500"
+              >
+
+              <label for="reg-descripcion">
+                Descripción breve
+              </label>
+
+              <textarea
+                id="reg-descripcion"
+                placeholder="Contale a tus futuros clientes tu experiencia..."
+              ></textarea>
+
+            </fieldset>
+
+
+            <button
+              type="submit"
+              class="btn btn-primario btn-bloque"
+            >
+              Crear cuenta
+            </button>
+
+          </fieldset>
+
+        </form>
+
+
+        <p class="link-cambio">
+          ¿No tenés cuenta?
+          <button>
+            Registrate
+          </button>
+        </p>
+
+      </article>
+
+
+      <small>
+        Demo: cliente@demo.com / carlos@demo.com / monica@demo.com —
+        contraseña: 1234
+      </small>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>
+      ©️ 2026 OficioYa
+    </p>
+
+  </footer>
+
+</body>
+</html>
