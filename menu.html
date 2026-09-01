@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OficiosYa — Inicio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <p class="marca"><span class="punto"></span> OficiosYa</p>
+  <nav id="topbar-usuario">
+    <ul>
+      <li><a href="/pages/perfil.html">Mi perfil</a></li>
+      <li><a href="/index.html">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ VISTA CLIENTE ============ -->
+<section id="vista-cliente" class="vista-full">
+
+  <section class="home-hero-full">
+    <article class="hero hero-contenido">
+      <p class="ubicacion-chip">↖ Tucumán · Disponible ahora</p>
+      <h1>Hola, <span id="nombre-cliente">Juana</span>.<br>¿Qué <span class="resaltado">oficio</span> necesitás hoy?</h1>
+      <p class="bajada">Encontrá plomeros, electricistas, pintores y más. Compará, elegí y contactá al instante.</p>
+
+      <form class="buscador-hero" action="/pages/oficios.html" method="get">
+        <input type="text" id="texto-busqueda" name="buscar" placeholder="¿Qué servicio necesitás?">
+        <button type="submit">🔍 Buscar</button>
+      </form>
+    </article>
+
+    <span class="home-hero-image" aria-hidden="true"></span>
+  </section>
+
+  <section class="home-content-grid">
+
+    <aside class="banner-promo">
+      <p class="texto">
+        <strong>🔧 Primera consulta sin cargo</strong>
+        <span>Contactá a cualquier profesional hoy y obtené una evaluación gratis.</span>
+      </p>
+      <a href="/pages/oficios.html" class="btn btn-primario btn-chico">Aprovechar</a>
+    </aside>
+
+    <section class="seccion home-categorias">
+      <header class="fila-titulo">
+        <h2>Categorías</h2>
+        <a href="/pages/oficios.html">Ver todas →</a>
+      </header>
+      <ul class="grid-categorias" id="grid-categorias-menu">
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Electricidad">
+            <span class="icono-cat">⚡</span>
+            <span class="label-cat">Electricidad</span>
+          </a>
+        </li>
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Plomer%C3%ADa">
+            <span class="icono-cat">🔧</span>
+            <span class="label-cat">Plomería</span>
+          </a>
+        </li>
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Pintura">
+            <span class="icono-cat">🎨</span>
+            <span class="label-cat">Pintura</span>
+          </a>
+        </li>
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Alba%C3%B1iler%C3%ADa">
+            <span class="icono-cat">🧱</span>
+            <span class="label-cat">Albañilería</span>
+          </a>
+        </li>
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Aire+acond.">
+            <span class="icono-cat">❄️</span>
+            <span class="label-cat">Aire acond.</span>
+          </a>
+        </li>
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Carpinter%C3%ADa">
+            <span class="icono-cat">🪚</span>
+            <span class="label-cat">Carpintería</span>
+          </a>
+        </li>
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Cerrajer%C3%ADa">
+            <span class="icono-cat">🔑</span>
+            <span class="label-cat">Cerrajería</span>
+          </a>
+        </li>
+        <li class="chip-categoria">
+          <a href="/pages/oficios.html?categoria=Jardiner%C3%ADa">
+            <span class="icono-cat">🌿</span>
+            <span class="label-cat">Jardinería</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="seccion home-destacados">
+      <header class="fila-titulo">
+        <h2>Cerca de vos</h2>
+        <a href="/pages/oficios.html">Ver más →</a>
+      </header>
+      <ul id="destacados-cliente">
+        <li class="tarjeta-profesional">
+          <a href="/pages/perfil-trabajador.html?id=1">
+            <span class="fila-cabecera">
+              <span class="avatar-profesional">
+                CM
+                <span class="punto-estado disponible"></span>
+              </span>
+              <span class="info-principal">
+                <span class="nombre-prof">Carlos Medina</span>
+                <span class="oficio-prof">Electricista</span>
+                <span class="fila-meta">
+                  <span class="rating">★ 4.8</span>
+                  <span>(23)</span>
+                  <span>· 2.1 km</span>
+                </span>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="tarjeta-profesional">
+          <a href="/pages/perfil-trabajador.html?id=2">
+            <span class="fila-cabecera">
+              <span class="avatar-profesional">
+                MP
+                <span class="punto-estado disponible"></span>
+              </span>
+              <span class="info-principal">
+                <span class="nombre-prof">Mónica Paz</span>
+                <span class="oficio-prof">Plomera</span>
+                <span class="fila-meta">
+                  <span class="rating">★ 4.6</span>
+                  <span>(15)</span>
+                  <span>· 3.4 km</span>
+                </span>
+              </span>
+            </span>
+          </a>
+        </li>
+        <li class="tarjeta-profesional">
+          <a href="/pages/perfil-trabajador.html?id=3">
+            <span class="fila-cabecera">
+              <span class="avatar-profesional">
+                RS
+                <span class="punto-estado ocupado"></span>
+              </span>
+              <span class="info-principal">
+                <span class="nombre-prof">Ricardo Sosa</span>
+                <span class="oficio-prof">Pintor</span>
+                <span class="fila-meta">
+                  <span class="rating">★ 4.9</span>
+                  <span>(31)</span>
+                  <span>· 1.8 km</span>
+                </span>
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </section>
+</section>
+
+<!-- ============ VISTA TRABAJADOR ============ -->
+<section id="vista-trabajador">
+  <article class="hero">
+    <p class="ubicacion-chip">📥 Panel de trabajador</p>
+    <h1>Hola, <span id="nombre-trabajador">Ricardo Sosa</span></h1>
+    <p class="bajada">Así está la actividad de tus servicios hoy.</p>
+  </article>
+
+  <section class="seccion">
+    <article class="panel" id="panel-resumen-trabajador">
+      <ul class="flex-entre">
+        <li>
+          <p id="resumen-calificacion" class="dato-grande">★ 4.9</p>
+          <p class="dato-label">Calificación promedio</p>
+        </li>
+        <li>
+          <p id="resumen-pendientes" class="dato-grande">3</p>
+          <p class="dato-label">Pedidos pendientes</p>
+        </li>
+      </ul>
+    </article>
+
+    <ul class="grid-accesos">
+      <li class="acceso-card">
+        <a href="/pages/historial-trabajador.html">
+          <span class="icono">📥</span>
+          <h3>Pedidos recibidos</h3>
+          <p>Mirá las solicitudes de clientes y actualizá el estado de cada trabajo.</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+</section>
+
+<nav id="bottom-nav" class="bottom-nav">
+  <ul>
+    <li><a href="/pages/menu.html">🏠 Inicio</a></li>
+    <li><a href="/pages/oficios.html">🔍 Buscar</a></li>
+    <li><a href="/pages/historial.html">🧾 Pedidos</a></li>
+    <li><a href="/pages/perfil.html">👤 Perfil</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
