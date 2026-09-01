@@ -1099,6 +1099,7 @@ h3 {
   transform: translateX(-50%);
 
   padding: 8px;
+
 }
 
 
@@ -1654,4 +1655,4 @@ h3 {
   .home-content-grid .paso-funciona p {
     font-size: 0.82rem;
   }
-}
+ }
