@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OficiosYa — Solicitar servicio</title>
+    <link rel="stylesheet" href="/css/styles.css?v=5">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="marca">
+            <span class="punto">•</span> OficiosYa
+        </div>
+        <nav id="topbar-usuario"></nav>
+    </header>
+
+    <main class="contenedor-angosto">
+
+        <a href="/perfiltrabajador.html" 
+        style="font-size:0.85rem; color:var( --texto-suave);">
+            ← Volver al perfil
+        </a>
+
+        <section class="encabezado-pagina mt-24">
+            <span class="eyebrow"> Nueva Solicitud </span>
+            <h1>Pedir servicio</h1>
+            <p>Completá los datos para enviar tu pedido.</p>
+        </section>
+
+        <form class="panel" action="/api/pedidos" method="POST">
+           <p id="mensaje-area"></p>
+           <label for="direccion">
+            Dirección donde se realizará el trabajo
+           </label>
+
+             <input 
+                type="text"
+                id="direccion"
+                name="direccion"
+                placeholder="Ej: Av. Siempre Viva 742, Capital Federal"
+                required
+            >
+
+            <label for="fecha">
+                Fecha y hora deseada
+            </label>
+
+            <input 
+                type="datetime-local"
+                id="fecha"
+                name="fechaSolicitada"
+                required
+            >
+            <label for="descripcion">
+                Describí el problema o trabajo a realizar
+            </label>
+
+            <textarea 
+                id="descripcion"
+                name="descripcion"
+                placeholder="Ej: Se rompió una canilla en la cocina y pierde agua constantemente."
+                required
+            ></textarea>
+
+            <button type="submit" class="btn btn-primario btn-bloque">
+                Enviar pedido
+            </button>
+
+        </form>
+        </main>
+
+        <nav id="bottom-nav" class="bottom-nav"></nav>
+</body>
+</html>

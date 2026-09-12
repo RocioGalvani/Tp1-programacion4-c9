@@ -1,11 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi proyecto</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OficioYa es una plataforma que conecta personas con profesionales de distintos oficios y servicios en Tucumán.">
+<meta name="author" content="Equipo OficioYa">
+<meta name="keywords" content="oficios, servicios, profesionales, trabajadores, reparaciones, Tucumán, OficioYa">
+<title>OficioYa — Ingresá o creá tu cuenta</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="sin-bottom-nav landing-page">
 
+<header class="landing-header">
+  <section class="landing-header-inner">
+    <img src="img/portada oficios.jpeg" alt="Logo de OficioYa" class="logo-landing">
+    <nav class="landing-header-acciones">
+      <ul>
+        <li><a href="#registro" class="btn-header-fantasma" id="link-profesional">Soy profesional</a></li>
+        <li><a href="#login" class="btn-header-solido" id="link-ingresar">Ingresar</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<main class="landing-shell">
+
+  <section class="landing-copy">
+    <p class="ubicacion-chip">Tucuman - Servicios cerca tuyo</p>
+    <h1>Soluciona arreglos de casa sin dar mil vueltas.</h1>
+    <p>Encontrá profesionales para electricidad, plomeria, pintura, carpinteria y mas. Mirá precios, disponibilidad y pedí el servicio desde la app.</p>
+    <ul class="landing-stats">
+      <li><span><strong>Rápido</strong> y fácil</span></li>
+      <li><span><strong>Seguro</strong> y confiable</span></li>
+      <li><span><strong>Cerca</strong> tuyo</span></li>
+    </ul>
+  </section>
+
+  <section class="contenedor-angosto landing-form-panel">
+
+    <article class="panel" id="panel-cuenta">
+
+      <p class="tabs-rol" role="tablist">
+        <button type="button" id="tab-login" class="tab-btn activo" role="tab">Ingresar</button>
+        <button type="button" id="tab-registro" class="tab-btn" role="tab">Crear cuenta</button>
+      </p>
+
+      <p id="mensaje-area" aria-live="polite"></p>
+
+      <!-- ---------- LOGIN ---------- -->
+      <section class="panel-login" id="login">
+        <section class="form-container">
+          <h2 class="title">Ingresar</h2>
+
+          <form id="form-login" class="form" novalidate>
+            <p class="input-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" placeholder="tu@email.com" required>
+            </p>
+            <p class="input-group campo-password">
+              <label for="login-password">Contraseña</label>
+              <input type="password" id="login-password" placeholder="••••••••" required>
+              <button type="button" class="toggle-password" data-target="login-password" aria-label="Mostrar contraseña">👁</button>
+            </p>
+
+            <p class="forgot"><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+            <button type="submit" class="sign">Ingresar</button>
+          </form>
+
+          <footer class="signup">¿No tenés cuenta? <a href="#" id="link-a-registro">Registrate</a></footer>
+        </section>
+      </section>
+
+      <!-- ---------- REGISTRO ---------- -->
+      <section class="panel-login" id="registro" style="display:none;">
+  <section class="form-container">
+    <h2 class="title">Crear cuenta</h2>
+
+    <form id="form-registro" class="form" novalidate>
+
+      <p class="tabs-rol tabs-rol-oscuro" role="tablist">
+        <button type="button" id="rol-cliente" class="tab-btn activo" role="tab">Soy Cliente</button>
+        <button type="button" id="rol-trabajador" class="tab-btn" role="tab">Soy Trabajador</button>
+      </p>
+
+      <p class="input-group">
+        <label for="reg-nombre">Nombre completo</label>
+        <input type="text" id="reg-nombre" placeholder="Ej: Juana Torres" required>
+      </p>
+      <p class="input-group">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" placeholder="tu@email.com" required>
+      </p>
+      <p class="input-group campo-password">
+        <label for="reg-password">Contraseña</label>
+        <input type="password" id="reg-password" placeholder="••••••••" required minlength="4">
+        <button type="button" class="toggle-password" data-target="reg-password" aria-label="Mostrar contraseña">👁</button>
+      </p>
+
+      <fieldset id="campos-trabajador" style="display:none;">
+        <legend>Datos de profesional</legend>
+        <p class="input-group">
+          <label for="reg-oficio">Oficio</label>
+          <input type="text" id="reg-oficio" placeholder="Ej: Electricista matriculado, Plomera...">
+        </p>
+        <p class="input-group">
+          <label for="reg-categoria">Categoría</label>
+          <select id="reg-categoria">
+            <option value="Electricidad">Electricidad</option>
+            <option value="Plomería">Plomería</option>
+            <option value="Pintura">Pintura</option>
+            <option value="Albañilería">Albañilería</option>
+            <option value="Aire acond.">Aire acondicionado</option>
+            <option value="Carpintería">Carpintería</option>
+            <option value="Cerrajería">Cerrajería</option>
+            <option value="Jardinería">Jardinería</option>
+          </select>
+        </p>
+        <p class="input-group">
+          <label for="reg-zona">Zona donde trabajás</label>
+          <input type="text" id="reg-zona" placeholder="Ej: Tucumán Capital, Yerba Buena...">
+        </p>
+        <p class="input-group">
+          <label for="reg-precio">Precio por hora ($)</label>
+          <input type="number" id="reg-precio" min="0" step="50" placeholder="Ej: 4500">
+        </p>
+        <p class="input-group">
+          <label for="reg-descripcion">Descripción breve</label>
+          <textarea id="reg-descripcion" maxlength="200" placeholder="Contale a tus futuros clientes tu experiencia..."></textarea>
+          <span class="contador-caracteres" id="contador-desc">0 / 200</span>
+        </p>
+      </fieldset>
+
+      <button type="submit" class="sign">Crear cuenta</button>
+    </form>
+
+    <footer class="signup" id="texto-cambio">
+      ¿Ya tenés cuenta? <button type="button" id="link-a-login">Ingresá</button>
+    </footer>
+  </section>
+</section>
+
+    </article>
+
+
+  </section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

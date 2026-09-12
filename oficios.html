@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="OficiosYa es una plataforma que conecta personas con profesionales de distintos oficios y servicios.">
+    <meta name="author" content="Equipo OficiosYa">
+    <meta name="keywords" content="oficios, servicios, profesionales, trabajadores, reparaciones, OficiosYa">
+
+    <title>OficiosYa — Explorar</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <p class="marca">
+            <span class="punto"></span>
+            OficiosYa
+        </p>
+
+        <nav id="topbar-usuario">
+            <a href="index.html">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h1>Explorar profesionales</h1>
+
+            <p class="bajada">
+                Elegí una categoría o buscá directamente lo que necesitás.
+            </p>
+
+            <form class="buscador-hero" action="menu.html" method="get">
+                <label for="texto-busqueda">Buscar servicio</label>
+                <input
+                    type="text"
+                    id="texto-busqueda"
+                    name="buscar"
+                    placeholder="¿Qué servicio necesitás?"
+                >
+
+                <button type="submit">🔍 Buscar</button>
+            </form>
+        </section>
+
+        <section class="seccion">
+
+            <h2>Categorías</h2>
+
+            <section class="grid-categorias">
+
+                <a class="chip-categoria activo" href="menu.html">
+                    <span class="icono-cat">🔎</span>
+                    <span class="label-cat">Todos</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Electricidad">
+                    <span class="icono-cat">⚡</span>
+                    <span class="label-cat">Electricidad</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Plomería">
+                    <span class="icono-cat">🔧</span>
+                    <span class="label-cat">Plomería</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Pintura">
+                    <span class="icono-cat">🎨</span>
+                    <span class="label-cat">Pintura</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Albañilería">
+                    <span class="icono-cat">🧱</span>
+                    <span class="label-cat">Albañilería</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Aire%20acond.">
+                    <span class="icono-cat">❄️</span>
+                    <span class="label-cat">Aire acondicionado</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Carpintería">
+                    <span class="icono-cat">🪚</span>
+                    <span class="label-cat">Carpintería</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Cerrajería">
+                    <span class="icono-cat">🔑</span>
+                    <span class="label-cat">Cerrajería</span>
+                </a>
+
+                <a class="chip-categoria" href="menu.html?categoria=Jardinería">
+                    <span class="icono-cat">🌿</span>
+                    <span class="label-cat">Jardinería</span>
+                </a>
+
+            </section>
+
+        </section>
+
+        <section class="seccion">
+
+            <header class="fila-titulo">
+                <h2>Electricistas disponibles</h2>
+                <a href="menu.html?categoria=Electricidad">Ver más →</a>
+            </header>
+
+            <article class="tarjeta-profesional">
+
+                <header class="fila-cabecera">
+
+                    <p class="avatar-profesional">
+                        JP
+                        <span class="punto-estado disponible"></span>
+                    </p>
+
+                    <section class="info-principal">
+
+                        <h3 class="nombre-prof">Juan Pérez</h3>
+
+                        <p class="oficio-prof">Electricista</p>
+
+                        <p class="fila-meta">
+                            <span class="rating">★ 4.8</span>
+                            <span>(24)</span>
+                            <span>· 📍 2.5 km</span>
+                            <span>· ⏱ ~15 min</span>
+                        </p>
+
+                        <p class="tags-especialidad">
+                            <span class="tag-especialidad">Instalaciones</span>
+                            <span class="tag-especialidad">Reparaciones</span>
+                        </p>
+
+                    </section>
+
+                </header>
+
+                <footer class="fila-precio">
+
+                    <p class="precio-hora">
+                        $4.500 <span>/ hora</span>
+                    </p>
+
+                    <a class="btn btn-primario btn-chico"
+                       href="perfil-trabajador.html">
+                        Contratar
+                    </a>
+
+                </footer>
+
+            </article>
+
+        </section>
+
+        <section class="seccion">
+
+            <header class="fila-titulo">
+                <h2>Plomeros disponibles</h2>
+                <a href="menu.html?categoria=Plomería">Ver más →</a>
+            </header>
+
+            <article class="tarjeta-profesional">
+
+                <header class="fila-cabecera">
+
+                    <p class="avatar-profesional">
+                        MT
+                        <span class="punto-estado disponible"></span>
+                    </p>
+
+                    <section class="info-principal">
+
+                        <h3 class="nombre-prof">María Torres</h3>
+
+                        <p class="oficio-prof">Plomera</p>
+
+                        <p class="fila-meta">
+                            <span class="rating">★ 4.9</span>
+                            <span>(31)</span>
+                            <span>· 📍 3.2 km</span>
+                            <span>· ⏱ ~20 min</span>
+                        </p>
+
+                        <p class="tags-especialidad">
+                            <span class="tag-especialidad">Pérdidas</span>
+                            <span class="tag-especialidad">Instalaciones</span>
+                        </p>
+
+                    </section>
+
+                </header>
+
+                <footer class="fila-precio">
+
+                    <p class="precio-hora">
+                        $5.000 <span>/ hora</span>
+                    </p>
+
+                    <a class="btn btn-primario btn-chico"
+                       href="perfil-trabajador.html">
+                        Contratar
+                    </a>
+
+                </footer>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <nav id="bottom-nav" class="bottom-nav">
+        <a href="menu.html">Explorar</a>
+        <a href="index.html">Salir</a>
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OficiosYa — Pedidos recibidos</title>
+  <link rel="stylesheet" href="/css/styles.css?v=5">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="marca">
+      <span class="punto"></span> OficiosYa
+    </div>
+    <nav></nav>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="encabezado-pagina">
+      <a href="/menu.html"
+         style="font-size:0.85rem; color:var(--texto-suave);">
+        ← Volver al menú
+      </a>
+
+      <h1>Pedidos recibidos</h1>
+      <p>
+        Gestioná las solicitudes de tus clientes y actualizá el estado
+        de cada trabajo.
+      </p>
+    </section>
+
+    <section id="lista-pedidos">
+
+      <article class="tarjeta-pedido">
+        <header class="fila-top">
+          <h3>Cliente: Juan Pérez</h3>
+          <span class="estado estado-pendiente">Pendiente</span>
+        </header>
+
+        <p class="meta">Dirección del cliente · 27/08/2026</p>
+
+        <p class="desc-pedido">
+          Solicitud de reparación y mantenimiento.
+        </p>
+
+        <button class="btn btn-secundario btn-chico">
+          Marcar como "Aceptado"
+        </button>
+
+        <button class="btn btn-fantasma btn-chico">
+          Cancelar
+        </button>
+      </article>
+
+      <p style="color:var(--texto-suave);">
+        Los pedidos recibidos aparecerán en esta sección.
+      </p>
+
+    </section>
+
+  </main>
+
+  <nav id="bottom-nav" class="bottom-nav"></nav>
+
+</body>
+</html>
