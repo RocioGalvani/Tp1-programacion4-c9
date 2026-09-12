@@ -189,10 +189,8 @@ h3 {
 
 
 .landing-header {
-  background: rgba(255, 255, 255, 0.78);
-  border-bottom: 1px solid rgba(221, 229, 238, 0.8);
-
-  backdrop-filter: blur(16px);
+  background: transparent;
+  border-bottom: none;
 }
 
 .landing-header-inner {
@@ -203,8 +201,7 @@ h3 {
 
   max-width: 1100px;
   margin: 0 auto;
- padding: 10px 24px;
-  min-height: 64px;
+ padding: 5px 24px;
 }
 
 .marca-landing {
@@ -225,8 +222,8 @@ h3 {
 
 .btn-header-fantasma,
 .btn-header-solido {
-  min-height: 40px;
-  padding: 9px 16px;
+  min-height: 32px;
+  padding: 6px 14px;
 
   border-radius: 999px;
 
@@ -1149,7 +1146,7 @@ h3 {
       rgba(15, 34, 51, 0.48) 48%,
       rgba(15, 34, 51, 0.08)
     ),
-    url('/images/hero-services.png') center right / cover no-repeat;
+    url('/img/portada\ oficios.jpeg') center right / cover no-repeat;
 }
 
 .landing-page .landing-header {
@@ -1889,4 +1886,14 @@ h3 {
   color: rgba(17, 24, 39, 1);
   background: rgba(167, 139, 250, 1);
   box-shadow: none;
+}
+
+.logo-panel {
+  margin: 0 0 18px;
+  text-align: center;
+}
+
+.logo-panel img {
+  height: 80px;
+  width: auto;
 }
