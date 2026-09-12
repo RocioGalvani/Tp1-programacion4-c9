@@ -3,22 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OficiosYa es una plataforma que conecta personas con profesionales de distintos oficios y servicios.">
-<meta name="author" content="Equipo OficiosYa">
-<meta name="keywords" content="oficios, servicios, profesionales, trabajadores, reparaciones, OficiosYa">
+<meta name="description" content="OficioYa es una plataforma que conecta personas con profesionales de distintos oficios y servicios en Tucumán.">
+<meta name="author" content="Equipo OficioYa">
+<meta name="keywords" content="oficios, servicios, profesionales, trabajadores, reparaciones, Tucumán, OficioYa">
 <title>OficioYa — Ingresá o creá tu cuenta</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="sin-bottom-nav landing-page">
 
-<!-- ============ Header estilo landing ============ -->
 <header class="landing-header">
   <section class="landing-header-inner">
     <p class="marca-landing">Oficio<span class="resaltado-marca">Ya</span></p>
     <nav class="landing-header-acciones">
       <ul>
-        <li><a href="#registro" class="btn-header-fantasma">Soy profesional</a></li>
-        <li><a href="#login" class="btn-header-solido">Ingresar</a></li>
+        <li><a href="#registro" class="btn-header-fantasma" id="link-profesional">Soy profesional</a></li>
+        <li><a href="#login" class="btn-header-solido" id="link-ingresar">Ingresar</a></li>
       </ul>
     </nav>
   </section>
@@ -31,132 +30,117 @@
     <h1>Soluciona arreglos de casa sin dar mil vueltas.</h1>
     <p>Encontrá profesionales para electricidad, plomeria, pintura, carpinteria y mas. Mirá precios, disponibilidad y pedí el servicio desde la app.</p>
     <ul class="landing-stats">
-      <li><strong>8</strong> categorias</li>
-      <li><strong>24 hs</strong> pedidos</li>
-      <li><strong>Demo</strong> lista</li>
+      <li><span><strong>Rápido</strong> y fácil</span></li>
+      <li><span><strong>Seguro</strong> y confiable</span></li>
+      <li><span><strong>Cerca</strong> tuyo</span></li>
     </ul>
   </section>
 
   <section class="contenedor-angosto landing-form-panel">
-   <input type="radio" name="tab-cuenta" id="tab-login" class="tab-radio" checked>
-  <input type="radio" name="tab-cuenta" id="tab-registro" class="tab-radio">
 
-  <p class="tabs-rol">
-    <label for="tab-login" class="tab-btn">Ingresar</label>
-    <label for="tab-registro" class="tab-btn">Crear cuenta</label>
-  </p>
+    <article class="panel" id="panel-cuenta">
 
-    <!-- ---------- LOGIN ---------- -->
+      <p class="tabs-rol" role="tablist">
+        <button type="button" id="tab-login" class="tab-btn activo" role="tab">Ingresar</button>
+        <button type="button" id="tab-registro" class="tab-btn" role="tab">Crear cuenta</button>
+      </p>
 
- <article class="panel panel-login" id="login">
+      <p id="mensaje-area" aria-live="polite"></p>
+
+      <!-- ---------- LOGIN ---------- -->
+      <section class="panel-login" id="login">
+        <section class="form-container">
+          <h2 class="title">Ingresar</h2>
+
+          <form id="form-login" class="form" novalidate>
+            <p class="input-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" placeholder="tu@email.com" required>
+            </p>
+            <p class="input-group campo-password">
+              <label for="login-password">Contraseña</label>
+              <input type="password" id="login-password" placeholder="••••••••" required>
+              <button type="button" class="toggle-password" data-target="login-password" aria-label="Mostrar contraseña">👁</button>
+            </p>
+
+            <p class="forgot"><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+            <button type="submit" class="sign">Ingresar</button>
+          </form>
+
+          <footer class="signup">¿No tenés cuenta? <a href="#" id="link-a-registro">Registrate</a></footer>
+        </section>
+      </section>
+
+      <!-- ---------- REGISTRO ---------- -->
+      <section class="panel-login" id="registro" style="display:none;">
   <section class="form-container">
-    <h2 class="title">Ingresar</h2>
+    <h2 class="title">Crear cuenta</h2>
 
-    <form action="/login" method="post" class="form">
+    <form id="form-registro" class="form" novalidate>
+
+      <p class="tabs-rol tabs-rol-oscuro" role="tablist">
+        <button type="button" id="rol-cliente" class="tab-btn activo" role="tab">Soy Cliente</button>
+        <button type="button" id="rol-trabajador" class="tab-btn" role="tab">Soy Trabajador</button>
+      </p>
+
       <p class="input-group">
-        <label for="login-email">Email</label>
-        <input type="email" id="login-email" name="email" placeholder="tu@email.com" required>
+        <label for="reg-nombre">Nombre completo</label>
+        <input type="text" id="reg-nombre" placeholder="Ej: Juana Torres" required>
       </p>
       <p class="input-group">
-        <label for="login-password">Contraseña</label>
-        <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" placeholder="tu@email.com" required>
+      </p>
+      <p class="input-group campo-password">
+        <label for="reg-password">Contraseña</label>
+        <input type="password" id="reg-password" placeholder="••••••••" required minlength="4">
+        <button type="button" class="toggle-password" data-target="reg-password" aria-label="Mostrar contraseña">👁</button>
       </p>
 
-      <p class="forgot">
-        <a href="#">¿Olvidaste tu contraseña?</a>
-      </p>
+      <fieldset id="campos-trabajador" style="display:none;">
+        <legend>Datos de profesional</legend>
+        <p class="input-group">
+          <label for="reg-oficio">Oficio</label>
+          <input type="text" id="reg-oficio" placeholder="Ej: Electricista matriculado, Plomera...">
+        </p>
+        <p class="input-group">
+          <label for="reg-categoria">Categoría</label>
+          <select id="reg-categoria">
+            <option value="Electricidad">Electricidad</option>
+            <option value="Plomería">Plomería</option>
+            <option value="Pintura">Pintura</option>
+            <option value="Albañilería">Albañilería</option>
+            <option value="Aire acond.">Aire acondicionado</option>
+            <option value="Carpintería">Carpintería</option>
+            <option value="Cerrajería">Cerrajería</option>
+            <option value="Jardinería">Jardinería</option>
+          </select>
+        </p>
+        <p class="input-group">
+          <label for="reg-zona">Zona donde trabajás</label>
+          <input type="text" id="reg-zona" placeholder="Ej: Tucumán Capital, Yerba Buena...">
+        </p>
+        <p class="input-group">
+          <label for="reg-precio">Precio por hora ($)</label>
+          <input type="number" id="reg-precio" min="0" step="50" placeholder="Ej: 4500">
+        </p>
+        <p class="input-group">
+          <label for="reg-descripcion">Descripción breve</label>
+          <textarea id="reg-descripcion" maxlength="200" placeholder="Contale a tus futuros clientes tu experiencia..."></textarea>
+          <span class="contador-caracteres" id="contador-desc">0 / 200</span>
+        </p>
+      </fieldset>
 
-      <button type="submit" class="sign">Ingresar</button>
+      <button type="submit" class="sign">Crear cuenta</button>
     </form>
 
-    <p class="social-message">
-      <span class="line"></span>
-      <span class="message">O ingresá con</span>
-      <span class="line"></span>
-    </p>
-
-    <p class="social-icons">
-      <button aria-label="Log in with Google" class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.908 8.908 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625z"></path></svg>
-      </button>
-    </p>
-
-    <footer class="signup">¿No tenés cuenta? <a href="#registro">Registrate</a></footer>
+    <footer class="signup" id="texto-cambio">
+      ¿Ya tenés cuenta? <button type="button" id="link-a-login">Ingresá</button>
+    </footer>
   </section>
-</article>
+</section>
 
-    <!-- ---------- REGISTRO ---------- -->
-    <article class="panel" id="registro">
-      <h2>Crear cuenta</h2>
-
-      <form action="/registro" method="post">
-
-        <fieldset>
-          <legend>Tipo de cuenta</legend>
-          <p class="campo">
-            <label for="reg-rol-cliente">
-              <input type="radio" id="reg-rol-cliente" name="rol" value="cliente" checked>
-              Soy Cliente
-            </label>
-          </p>
-          <p class="campo">
-            <label for="reg-rol-trabajador">
-              <input type="radio" id="reg-rol-trabajador" name="rol" value="trabajador">
-              Soy Trabajador
-            </label>
-          </p>
-        </fieldset>
-
-        <p class="campo">
-          <label for="reg-nombre">Nombre completo</label>
-          <input type="text" id="reg-nombre" name="nombre" placeholder="Ej: Juana Torres" required>
-        </p>
-        <p class="campo">
-          <label for="reg-email">Email</label>
-          <input type="email" id="reg-email" name="email" placeholder="tu@email.com" required>
-        </p>
-        <p class="campo">
-          <label for="reg-password">Contraseña</label>
-          <input type="password" id="reg-password" name="password" placeholder="••••••••" required>
-        </p>
-
-        <fieldset>
-          <legend>Datos de profesional (si aplica)</legend>
-          <p class="campo">
-            <label for="reg-oficio">Oficio</label>
-            <input type="text" id="reg-oficio" name="oficio" placeholder="Ej: Electricista matriculado, Plomera...">
-          </p>
-          <p class="campo">
-            <label for="reg-categoria">Categoría</label>
-            <select id="reg-categoria" name="categoria">
-              <option value="Electricidad">Electricidad</option>
-              <option value="Plomería">Plomería</option>
-              <option value="Pintura">Pintura</option>
-              <option value="Albañilería">Albañilería</option>
-              <option value="Aire acond.">Aire acondicionado</option>
-              <option value="Carpintería">Carpintería</option>
-              <option value="Cerrajería">Cerrajería</option>
-              <option value="Jardinería">Jardinería</option>
-            </select>
-          </p>
-          <p class="campo">
-            <label for="reg-zona">Zona donde trabajás</label>
-            <input type="text" id="reg-zona" name="zona" placeholder="Ej: Tucumán Capital, Yerba Buena...">
-          </p>
-          <p class="campo">
-            <label for="reg-precio">Precio por hora ($)</label>
-            <input type="number" id="reg-precio" name="precioPorHora" min="0" step="50" placeholder="Ej: 4500">
-          </p>
-          <p class="campo">
-            <label for="reg-descripcion">Descripción breve</label>
-            <textarea id="reg-descripcion" name="descripcion" placeholder="Contale a tus futuros clientes tu experiencia..."></textarea>
-          </p>
-        </fieldset>
-
-        <button type="submit" class="btn btn-primario btn-bloque">Crear cuenta</button>
-      </form>
-
-      <p class="link-cambio">¿Ya tenés cuenta? <a href="#login">Ingresá</a></p>
     </article>
 
 
@@ -164,6 +148,6 @@
 
 </main>
 
+<script src="script.js"></script>
 </body>
-
 </html>

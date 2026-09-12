@@ -203,12 +203,13 @@ h3 {
 
   max-width: 1100px;
   margin: 0 auto;
-  padding: 18px 24px;
+ padding: 10px 24px;
+  min-height: 64px;
 }
 
 .marca-landing {
   color: var(--azul-tinta);
-  font-size: 1.55rem;
+  font-size: 2.4rem;
   font-weight: 800;
 }
 
@@ -1161,7 +1162,7 @@ h3 {
     minmax(0, 1.05fr)
     minmax(390px, 0.65fr);
 
-  align-items: center;
+  align-items: start;
   gap: clamp(28px, 5vw, 70px);
 
   width: min(100%, 1240px);
@@ -1218,8 +1219,11 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
 
-  margin-top: 28px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
 }
+
 
 .landing-stats span {
   display: inline-flex;
@@ -1245,7 +1249,8 @@ h3 {
 }
 
 .landing-form-panel {
-  width: 100%;
+  width: fit-content;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -1527,10 +1532,6 @@ h3 {
     line-height: 1.55;
   }
 
-  .landing-stats {
-    gap: 8px;
-    margin-top: 18px;
-  }
 
   .landing-stats span {
     width: 100%;
@@ -1656,19 +1657,25 @@ h3 {
     font-size: 0.82rem;
   }
  }
+
+
 .panel-login {
   padding: 0;
   background: transparent;
   border: none;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
   border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .form-container {
   margin: 0;
 }
 
-/* Uiverse.io by Yaya12085 */
+
 .form-container {
   width: 320px;
   border-radius: 0.75rem;
@@ -1676,12 +1683,12 @@ h3 {
   padding: 2rem;
   color: rgba(243, 244, 246, 1);
 }
-
 .title {
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+  color: rgba(243, 244, 246, 1);
 }
 
 .form {
@@ -1727,6 +1734,23 @@ h3 {
   color: rgba(243, 244, 246, 1);
   text-decoration: none;
   font-size: 14px;
+  font-weight: 700;
+}
+
+
+.signup button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: rgba(243, 244, 246, 1);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.signup button:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(167, 139, 250, 1);
 }
 
 .forgot a:hover, .signup a:hover {
@@ -1800,19 +1824,7 @@ h3 {
   list-style: none;
 }
 
-.tab-radio { display: none; }
 
-#login, #registro { display: none; }
-
-#tab-login:checked ~ #login,
-#tab-registro:checked ~ #registro { display: block; }
-
-#tab-login:checked ~ .tabs-rol label[for="tab-login"],
-#tab-registro:checked ~ .tabs-rol label[for="tab-registro"] {
-  color: #fff;
-  background: var(--azul);
-  box-shadow: 0 8px 18px rgba(23, 50, 77, 0.2);
-}
 
 .tab-btn {
   flex: 1;
@@ -1825,4 +1837,56 @@ h3 {
   font-weight: 800;
   cursor: pointer;
   transition: 160ms ease;
+}
+
+/* --- Registro con estilo oscuro --- */
+#registro fieldset {
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid rgba(55, 65, 81, 1);
+  border-radius: 0.5rem;
+}
+
+#registro legend {
+  padding: 0 6px;
+  color: rgba(156, 163, 175, 1);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+#registro select,
+#registro textarea {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(55, 65, 81, 1);
+  outline: 0;
+  background-color: rgba(17, 24, 39, 1);
+  padding: 0.75rem 1rem;
+  color: rgba(243, 244, 246, 1);
+}
+
+#registro select:focus,
+#registro textarea:focus {
+  border-color: rgba(167, 139, 250);
+}
+
+#registro textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+
+.tabs-rol-oscuro {
+  background: rgba(31, 41, 55, 1);
+  border: 1px solid rgba(55, 65, 81, 1);
+}
+
+.tabs-rol-oscuro .tab-btn {
+  color: rgba(156, 163, 175, 1);
+}
+
+.tabs-rol-oscuro .tab-btn.activo {
+  color: rgba(17, 24, 39, 1);
+  background: rgba(167, 139, 250, 1);
+  box-shadow: none;
 }
