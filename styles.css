@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 :root {
-  --azul: #17324d;
-  --azul-claro: #28577a;
-  --azul-tinta: #0f2233;
-  --terracota: #ff6b3d;
-  --terracota-oscuro: #dd4f25;
-  --fondo: #f5f7fb;
-  --fondo-calido: #fff7f1;
+  --azul: #2c4a63;
+  --azul-claro: #3d6a8c;
+  --azul-tinta: #1c3245;
+  --terracota: #f5b942;
+  --terracota-oscuro: #d4a017;
+  --fondo: #fdece0;
+  --fondo-calido: #fbe8a6;
   --papel: #ffffff;
   --texto: #18212f;
   --texto-suave: #667085;
   --verde: #16875d;
   --rojo: #d94646;
-  --borde: #dde5ee;
-  --borde-fuerte: #c7d2df;
+  --borde: #f4d9c2;
+  --borde-fuerte: #eec9a3;
 
   --sombra: 0 10px 30px rgba(20, 45, 75, 0.08);
   --sombra-fuerte: 0 18px 50px rgba(20, 45, 75, 0.16);
@@ -33,12 +33,9 @@ body {
   margin: 0;
   min-height: 100vh;
   padding-bottom: 112px;
-  background-image: url('./img/fondollave.png');
-
+  background-color: var(--fondo);
   font-family: 'Merriweather', system-ui, sans-serif;
   color: var(--texto);
-
-
 }
 
 body.sin-bottom-nav {
@@ -97,7 +94,7 @@ h3 {
   padding: 14px clamp(16px, 4vw, 34px);
 
   color: #fff;
-  background: rgba(15, 34, 51, 0.92);
+  background: rgba(44, 74, 99, 0.92);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 14px 36px rgba(15, 34, 51, 0.18);
 
@@ -109,11 +106,11 @@ h3 {
   align-items: center;
   gap: 10px;
 
-  font-size: 1.18rem;
+  font-size: 2rem;
   font-weight: 800;
   white-space: nowrap;
 }
-
+/*
 .marca .punto {
   width: 13px;
   height: 13px;
@@ -121,9 +118,9 @@ h3 {
   border-radius: 999px;
   background: linear-gradient(135deg, var(--terracota), #ffd166);
 
-  box-shadow: 0 0 0 5px rgba(255, 107, 61, 0.18);
+  box-shadow: 0 0 0 5px rgba(245, 185, 66, 0.18);
 }
-
+*/
 .topbar nav {
   display: flex;
   align-items: center;
@@ -262,7 +259,7 @@ h3 {
   padding: 6px 10px;
 
   color: var(--terracota-oscuro);
-  background: rgba(255, 107, 61, 0.11);
+  background: rgba(245, 185, 66, 0.16);
 
   border-radius: 999px;
 
@@ -370,7 +367,7 @@ h3 {
     #ff8a57
   );
 
-  box-shadow: 0 10px 22px rgba(255, 107, 61, 0.26);
+  box-shadow: 0 10px 22px rgba(245, 185, 66, 0.26);
 }
 
 .btn-primario:hover {
@@ -380,7 +377,7 @@ h3 {
     var(--terracota)
   );
 
-  box-shadow: 0 14px 30px rgba(255, 107, 61, 0.34);
+  box-shadow: 0 14px 30px rgba(245, 185, 66, 0.34);
   transform: translateY(-1px);
 }
 
@@ -459,7 +456,6 @@ h3 {
   box-shadow: 0 8px 18px rgba(23, 50, 77, 0.2);
 }
 
-/*--------*/
 .hero {
   width: min(100%, 720px);
   margin: 0 auto;
@@ -475,9 +471,9 @@ h3 {
   padding: 7px 12px;
 
   color: var(--terracota-oscuro);
-  background: rgba(255, 107, 61, 0.12);
+  background: rgba(245, 185, 66, 0.16);
 
-  border: 1px solid rgba(255, 107, 61, 0.18);
+  border: 1px solid rgba(245, 185, 66, 0.24);
   border-radius: 999px;
 
   font-size: 0.75rem;
@@ -569,7 +565,7 @@ h3 {
     var(--fondo-calido)
   );
 
-  border: 1px solid rgba(255, 107, 61, 0.25);
+  border: 1px solid rgba(245, 185, 66, 0.35);
   border-radius: var(--radio);
 
   box-shadow: var(--sombra);
@@ -635,7 +631,7 @@ h3 {
 .chip-categoria:hover,
 .chip-categoria.activo {
   background: #fff7f1;
-  border-color: rgba(255, 107, 61, 0.58);
+  border-color: rgba(245, 185, 66, 0.58);
   transform: translateY(-2px);
 }
 
@@ -667,7 +663,7 @@ h3 {
 .chip-categoria.activo .label-cat {
   color: var(--terracota-oscuro);
 }
-/*--------*/
+
 .tarjeta-profesional,
 .tarjeta-pedido,
 .ficha-oficio,
@@ -692,8 +688,6 @@ h3 {
   cursor: pointer;
 }
 
-/* Complementos visuales: la grilla, los cards, los botones y las nav-pills
-   se resuelven con Bootstrap; estas reglas sólo mantienen la identidad OficiosYa. */
 .category-card {
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
@@ -703,11 +697,10 @@ h3 {
   box-shadow: var(--sombra-fuerte) ;
 }
 
-/* Categorías y buscador: color suave sin perder contraste ni legibilidad. */
 .category-card {
   color: var(--azul-tinta) ;
-  background-color: rgba(40, 87, 122, 0.14) ;
-  border: 1px solid rgba(40, 87, 122, 0.28) ;
+  background-color: rgba(44, 74, 99, 0.14) ;
+  border: 1px solid rgba(44, 74, 99, 0.28) ;
 }
 
 .category-card .label-cat {
@@ -717,8 +710,8 @@ h3 {
 .category-card:hover,
 .category-card:focus-visible {
   color: var(--azul-tinta) ;
-  background-color: rgba(40, 87, 122, 0.23) ;
-  border-color: rgba(40, 87, 122, 0.55) ;
+  background-color: rgba(44, 74, 99, 0.23) ;
+  border-color: rgba(44, 74, 99, 0.55) ;
 }
 
 .search-transparent {
@@ -728,7 +721,7 @@ h3 {
 .search-transparent .form-control {
   color: var(--azul-tinta) ;
   background-color: transparent ;
-  border-color: rgba(40, 87, 122, 0.45) ;
+  border-color: rgba(44, 74, 99, 0.45) ;
   box-shadow: none ;
 }
 
@@ -739,18 +732,16 @@ h3 {
 
 .search-transparent .form-control:focus {
   border-color: var(--azul-claro) ;
-  box-shadow: 0 0 0 0.25rem rgba(40, 87, 122, 0.18) ;
+  box-shadow: 0 0 0 0.25rem rgba(44, 74, 99, 0.18) ;
 }
 
-/* Tarjetas "Cerca de vos": borde azul oscuro bien marcado y relleno claro
-   que combina con el borde sin tapar el texto ni los datos. */
 .tarjeta-profesional.bg-primary-subtle,
 .tarjeta-profesional.bg-info-subtle {
-  background-color: rgba(23, 50, 77, 0.06) ;
+  background-color: rgba(28, 50, 69, 0.06) ;
   background-image: linear-gradient(
     180deg,
-    rgba(23, 50, 77, 0.09),
-    rgba(23, 50, 77, 0.03)
+    rgba(28, 50, 69, 0.09),
+    rgba(28, 50, 69, 0.03)
   ) ;
   border: 2px solid var(--azul-tinta) ;
   box-shadow: 0 8px 22px rgba(15, 34, 51, 0.1);
@@ -758,7 +749,7 @@ h3 {
 
 .tarjeta-profesional.bg-primary-subtle:hover,
 .tarjeta-profesional.bg-info-subtle:hover {
-  background-color: rgba(23, 50, 77, 0.1) ;
+  background-color: rgba(28, 50, 69, 0.1) ;
   border-color: var(--azul-tinta) ;
   box-shadow: var(--sombra-fuerte);
   transform: translateY(-2px);
@@ -768,15 +759,15 @@ h3 {
   background: rgba(255, 255, 255, 0.571);
 }
 .hombre-logo {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
 }
 .tarjeta-profesional:hover,
 .ficha-oficio:hover,
 .acceso-card:hover {
-  border-color: rgba(255, 107, 61, 0.55);
+  border-color: rgba(245, 185, 66, 0.55);
   box-shadow: var(--sombra-fuerte);
   transform: translateY(-2px);
 }
@@ -984,7 +975,7 @@ h3 {
   margin-bottom: 14px;
 
   color: var(--terracota-oscuro);
-  background: rgba(255, 107, 61, 0.12);
+  background: rgba(245, 185, 66, 0.16);
 
   border-radius: 16px;
 
@@ -1029,7 +1020,6 @@ h3 {
   line-height: 1.55;
 }
 
-/*--------*/
 .estado {
   display: inline-flex;
   align-items: center;
@@ -1047,13 +1037,13 @@ h3 {
 
 .estado-pendiente {
   color: var(--terracota-oscuro);
-  background: rgba(255, 107, 61, 0.13);
+  background: rgba(245, 185, 66, 0.18);
 }
 
 .estado-aceptado,
 .estado-en-curso {
   color: var(--azul-claro);
-  background: rgba(40, 87, 122, 0.12);
+  background: rgba(44, 74, 99, 0.12);
 }
 
 .estado-finalizado {
@@ -1076,7 +1066,7 @@ h3 {
 }
 
 .paso-funciona .num-paso {
-  color: rgba(255, 107, 61, 0.38);
+  color: rgba(245, 185, 66, 0.5);
   font-size: 1.55rem;
   font-weight: 800;
 }
@@ -1208,7 +1198,7 @@ h3 {
 
 .bottom-nav a.activo {
   color: var(--terracota-oscuro);
-  background: rgba(255, 107, 61, 0.11);
+  background: rgba(245, 185, 66, 0.16);
 }
 
 .bottom-nav a:hover {
@@ -1216,15 +1206,13 @@ h3 {
   background: #eef5fb;
 }
 
-/* Deja aire real debajo del último bloque de contenido para que nada
-   quede tapado por la barra flotante de navegación inferior. */
 main:last-of-type,
 #vista-cliente,
 #vista-trabajador {
   margin-bottom: 96px;
 }
 
-/*--------*/
+
 .landing-page {
   min-height: 100vh;
 
@@ -1233,9 +1221,9 @@ main:last-of-type,
   background:
     linear-gradient(
       90deg,
-      rgba(15, 34, 51, 0.88),
-      rgba(15, 34, 51, 0.48) 48%,
-      rgba(15, 34, 51, 0.08)
+      rgba(28, 50, 69, 0.88),
+      rgba(28, 50, 69, 0.48) 48%,
+      rgba(28, 50, 69, 0.08)
     ),
     url('/img/portada\ oficios.jpeg') center right / cover no-repeat;
 }
@@ -1274,9 +1262,9 @@ main:last-of-type,
   background: 
     linear-gradient(
       90deg, 
-      rgba(15, 34, 51, 0.9) 0%, 
-      rgba(15, 34, 51, 0.75) 50%, 
-      rgba(15, 34, 51, 0.5) 100%
+      rgba(28, 50, 69, 0.9) 0%, 
+      rgba(28, 50, 69, 0.75) 50%, 
+      rgba(28, 50, 69, 0.5) 100%
     ),
     url('img/portada\ oficios.jpeg') center / cover no-repeat ;
 }
@@ -1389,8 +1377,8 @@ main:last-of-type,
     linear-gradient(
       120deg,
       rgba(255, 250, 246, 0.98),
-      rgba(245, 247, 251, 0.92) 48%,
-      rgba(245, 247, 251, 0.55)
+      rgba(253, 236, 224, 0.92) 48%,
+      rgba(253, 236, 224, 0.55)
     ),
     var(--fondo);
 }
@@ -1428,9 +1416,9 @@ main:last-of-type,
   background:
     linear-gradient(
       90deg,
-      rgba(245, 247, 251, 0.92) 0,
-      rgba(245, 247, 251, 0.1) 22%,
-      rgba(15, 34, 51, 0.04)
+      rgba(253, 236, 224, 0.92) 0,
+      rgba(253, 236, 224, 0.1) 22%,
+      rgba(28, 50, 69, 0.04)
     ),
     url('/images/hero-services.png') center right / cover no-repeat;
 }
@@ -1513,8 +1501,8 @@ main:last-of-type,
     background:
       linear-gradient(
         180deg,
-        rgba(15, 34, 51, 0.55),
-        rgba(15, 34, 51, 0.86)
+        rgba(28, 50, 69, 0.55),
+        rgba(28, 50, 69, 0.86)
       ),
       url('/images/hero-services.png') center top / cover no-repeat;
   }
@@ -1827,7 +1815,7 @@ main:last-of-type,
 }
 
 .form-container .input-group input:focus {
-  border-color: rgba(167, 139, 250);
+  border-color: var(--azul);
 }
 
 .forgot {
@@ -1859,20 +1847,20 @@ main:last-of-type,
 
 .signup button:hover {
   text-decoration: underline;
-  text-decoration-color: rgba(167, 139, 250, 1);
+  text-decoration-color: var(--azul);
 }
 
 .forgot a:hover, .signup a:hover {
-  text-decoration: underline rgba(167, 139, 250, 1);
+  text-decoration: underline var(--azul);
 }
 
 .sign {
   display: block;
   width: 100%;
-  background-color: rgba(167, 139, 250, 1);
+  background-color: var(--azul);
   padding: 0.75rem;
   text-align: center;
-  color: rgba(17, 24, 39, 1);
+  color: #ffffff;
   border: none;
   border-radius: 0.375rem;
   font-weight: 600;
@@ -1975,7 +1963,7 @@ main:last-of-type,
 
 #registro select:focus,
 #registro textarea:focus {
-  border-color: rgba(167, 139, 250);
+  border-color: var(--azul);
 }
 
 #registro textarea {
@@ -1994,8 +1982,8 @@ main:last-of-type,
 }
 
 .tabs-rol-oscuro .tab-btn.activo {
-  color: rgba(17, 24, 39, 1);
-  background: rgba(167, 139, 250, 1);
+  color: #ffffff;
+  background: var(--azul);
   box-shadow: none;
 }
 
@@ -2042,7 +2030,7 @@ main:last-of-type,
 .form-container input:focus {
   background-color: #ffffff ;
   border-color: var(--terracota) ;
-  box-shadow: 0 0 0 4px rgba(255, 107, 61, 0.15) ;
+  box-shadow: 0 0 0 4px rgba(245, 185, 66, 0.2) ;
 }
 
 .form-container .sign,
@@ -2053,13 +2041,13 @@ main:last-of-type,
   padding: 12px;
   font-weight: 800;
   border: none;
-  box-shadow: 0 10px 20px rgba(255, 107, 61, 0.25) ;
+  box-shadow: 0 10px 20px rgba(245, 185, 66, 0.25) ;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .form-container .sign:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(255, 107, 61, 0.35) ;
+  box-shadow: 0 12px 24px rgba(245, 185, 66, 0.35) ;
 }
 
 
