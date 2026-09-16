@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 :root {
   --azul: #17324d;
   --azul-claro: #28577a;
@@ -33,28 +32,13 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  padding-bottom: 88px;
+  padding-bottom: 112px;
+  background-image: url('./img/fondollave.png');
 
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Merriweather', system-ui, sans-serif;
   color: var(--texto);
 
-  background:
-    radial-gradient(
-      circle at 12% -10%,
-      rgba(255, 107, 61, 0.16),
-      transparent 32rem
-    ),
-    radial-gradient(
-      circle at 88% 4%,
-      rgba(23, 50, 77, 0.12),
-      transparent 30rem
-    ),
-    linear-gradient(
-      180deg,
-      #fffaf6 0,
-      var(--fondo) 320px,
-      #f8fafc 100%
-    );
+
 }
 
 body.sin-bottom-nav {
@@ -109,7 +93,7 @@ h3 {
   justify-content: space-between;
   gap: 16px;
 
-  min-height: 68px;
+  min-height: 80px;
   padding: 14px clamp(16px, 4vw, 34px);
 
   color: #fff;
@@ -658,7 +642,14 @@ h3 {
 .chip-categoria .icono-cat {
   font-size: 1.45rem;
 }
-
+ .icono-img {
+  width: 40px;
+  height: 40px;
+}
+ .boton-img {
+  width: 32px;
+  height: 32px;
+}
 .chip-categoria .label-cat {
   color: var(--texto);
   font-size: 0.72rem;
@@ -692,10 +683,90 @@ h3 {
 }
 
 .tarjeta-profesional {
-  padding: 16px;
   cursor: pointer;
 }
 
+/* Complementos visuales: la grilla, los cards, los botones y las nav-pills
+   se resuelven con Bootstrap; estas reglas sólo mantienen la identidad OficiosYa. */
+.category-card {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-fuerte) !important;
+}
+
+/* Categorías y buscador: color suave sin perder contraste ni legibilidad. */
+.category-card {
+  color: var(--azul-tinta) !important;
+  background-color: rgba(40, 87, 122, 0.14) !important;
+  border: 1px solid rgba(40, 87, 122, 0.28) !important;
+}
+
+.category-card .label-cat {
+  color: var(--azul-tinta) !important;
+}
+
+.category-card:hover,
+.category-card:focus-visible {
+  color: var(--azul-tinta) !important;
+  background-color: rgba(40, 87, 122, 0.23) !important;
+  border-color: rgba(40, 87, 122, 0.55) !important;
+}
+
+.search-transparent {
+  background: transparent !important;
+}
+
+.search-transparent .form-control {
+  color: var(--azul-tinta) !important;
+  background-color: transparent !important;
+  border-color: rgba(40, 87, 122, 0.45) !important;
+  box-shadow: none !important;
+}
+
+.search-transparent .form-control::placeholder {
+  color: #526a7e;
+  opacity: 1;
+}
+
+.search-transparent .form-control:focus {
+  border-color: var(--azul-claro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(40, 87, 122, 0.18) !important;
+}
+
+/* Tarjetas "Cerca de vos": borde azul oscuro bien marcado y relleno claro
+   que combina con el borde sin tapar el texto ni los datos. */
+.tarjeta-profesional.bg-primary-subtle,
+.tarjeta-profesional.bg-info-subtle {
+  background-color: rgba(23, 50, 77, 0.06) !important;
+  background-image: linear-gradient(
+    180deg,
+    rgba(23, 50, 77, 0.09),
+    rgba(23, 50, 77, 0.03)
+  ) !important;
+  border: 2px solid var(--azul-tinta) !important;
+  box-shadow: 0 8px 22px rgba(15, 34, 51, 0.1);
+}
+
+.tarjeta-profesional.bg-primary-subtle:hover,
+.tarjeta-profesional.bg-info-subtle:hover {
+  background-color: rgba(23, 50, 77, 0.1) !important;
+  border-color: var(--azul-tinta) !important;
+  box-shadow: var(--sombra-fuerte);
+  transform: translateY(-2px);
+}
+
+.transparencia {
+  background: rgba(255, 255, 255, 0.571);
+}
+.hombre-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .tarjeta-profesional:hover,
 .ficha-oficio:hover,
 .acceso-card:hover {
@@ -1087,7 +1158,7 @@ h3 {
   position: fixed;
   left: 50%;
   bottom: 14px;
-  z-index: 30;
+  z-index: 1030;
 
   display: flex;
   align-items: center;
@@ -1099,6 +1170,11 @@ h3 {
 
   padding: 8px;
 
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  box-shadow: var(--sombra-fuerte);
+  backdrop-filter: blur(14px);
 }
 
 
@@ -1132,6 +1208,14 @@ h3 {
 .bottom-nav a:hover {
   color: var(--azul);
   background: #eef5fb;
+}
+
+/* Deja aire real debajo del último bloque de contenido para que nada
+   quede tapado por la barra flotante de navegación inferior. */
+main:last-of-type,
+#vista-cliente,
+#vista-trabajador {
+  margin-bottom: 96px;
 }
 
 /*--------*/
@@ -1479,7 +1563,7 @@ h3 {
 @media (max-width: 700px) {
 
   body {
-    padding-bottom: 92px;
+    padding-bottom: 116px;
   }
 
   .topbar {
@@ -1714,19 +1798,19 @@ h3 {
   margin-top: 1.5rem;
 }
 
-.input-group {
+.form-container .input-group {
   margin-top: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.input-group label {
+.form-container .input-group label {
   display: block;
   color: rgba(156, 163, 175, 1);
   margin-bottom: 4px;
 }
 
-.input-group input {
+.form-container .input-group input {
   width: 100%;
   border-radius: 0.375rem;
   border: 1px solid rgba(55, 65, 81, 1);
@@ -1736,7 +1820,7 @@ h3 {
   color: rgba(243, 244, 246, 1);
 }
 
-.input-group input:focus {
+.form-container .input-group input:focus {
   border-color: rgba(167, 139, 250);
 }
 
