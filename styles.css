@@ -650,6 +650,12 @@ h3 {
   width: 32px;
   height: 32px;
 }
+
+ .icono-home {
+  width: 32px;
+  height: 32px;
+}
+
 .chip-categoria .label-cat {
   color: var(--texto);
   font-size: 0.72rem;
@@ -694,36 +700,36 @@ h3 {
 
 .category-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--sombra-fuerte) !important;
+  box-shadow: var(--sombra-fuerte) ;
 }
 
 /* Categorías y buscador: color suave sin perder contraste ni legibilidad. */
 .category-card {
-  color: var(--azul-tinta) !important;
-  background-color: rgba(40, 87, 122, 0.14) !important;
-  border: 1px solid rgba(40, 87, 122, 0.28) !important;
+  color: var(--azul-tinta) ;
+  background-color: rgba(40, 87, 122, 0.14) ;
+  border: 1px solid rgba(40, 87, 122, 0.28) ;
 }
 
 .category-card .label-cat {
-  color: var(--azul-tinta) !important;
+  color: var(--azul-tinta) ;
 }
 
 .category-card:hover,
 .category-card:focus-visible {
-  color: var(--azul-tinta) !important;
-  background-color: rgba(40, 87, 122, 0.23) !important;
-  border-color: rgba(40, 87, 122, 0.55) !important;
+  color: var(--azul-tinta) ;
+  background-color: rgba(40, 87, 122, 0.23) ;
+  border-color: rgba(40, 87, 122, 0.55) ;
 }
 
 .search-transparent {
-  background: transparent !important;
+  background: transparent ;
 }
 
 .search-transparent .form-control {
-  color: var(--azul-tinta) !important;
-  background-color: transparent !important;
-  border-color: rgba(40, 87, 122, 0.45) !important;
-  box-shadow: none !important;
+  color: var(--azul-tinta) ;
+  background-color: transparent ;
+  border-color: rgba(40, 87, 122, 0.45) ;
+  box-shadow: none ;
 }
 
 .search-transparent .form-control::placeholder {
@@ -732,28 +738,28 @@ h3 {
 }
 
 .search-transparent .form-control:focus {
-  border-color: var(--azul-claro) !important;
-  box-shadow: 0 0 0 0.25rem rgba(40, 87, 122, 0.18) !important;
+  border-color: var(--azul-claro) ;
+  box-shadow: 0 0 0 0.25rem rgba(40, 87, 122, 0.18) ;
 }
 
 /* Tarjetas "Cerca de vos": borde azul oscuro bien marcado y relleno claro
    que combina con el borde sin tapar el texto ni los datos. */
 .tarjeta-profesional.bg-primary-subtle,
 .tarjeta-profesional.bg-info-subtle {
-  background-color: rgba(23, 50, 77, 0.06) !important;
+  background-color: rgba(23, 50, 77, 0.06) ;
   background-image: linear-gradient(
     180deg,
     rgba(23, 50, 77, 0.09),
     rgba(23, 50, 77, 0.03)
-  ) !important;
-  border: 2px solid var(--azul-tinta) !important;
+  ) ;
+  border: 2px solid var(--azul-tinta) ;
   box-shadow: 0 8px 22px rgba(15, 34, 51, 0.1);
 }
 
 .tarjeta-profesional.bg-primary-subtle:hover,
 .tarjeta-profesional.bg-info-subtle:hover {
-  background-color: rgba(23, 50, 77, 0.1) !important;
-  border-color: var(--azul-tinta) !important;
+  background-color: rgba(23, 50, 77, 0.1) ;
+  border-color: var(--azul-tinta) ;
   box-shadow: var(--sombra-fuerte);
   transform: translateY(-2px);
 }
@@ -1246,7 +1252,7 @@ main:last-of-type,
 }
 
 .landing-shell .row {
-  align-items: flex-start !important;
+  align-items: flex-start ;
 }
 
 .landing-form-panel {
@@ -1259,7 +1265,7 @@ main:last-of-type,
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-  padding: 24px !important;
+  padding: 24px ;
 }
 
 /* Fondo con degradado para lectura perfecta */
@@ -1272,7 +1278,7 @@ main:last-of-type,
       rgba(15, 34, 51, 0.75) 50%, 
       rgba(15, 34, 51, 0.5) 100%
     ),
-    url('img/portada\ oficios.jpeg') center / cover no-repeat !important;
+    url('img/portada\ oficios.jpeg') center / cover no-repeat ;
 }
 
 .landing-copy {
@@ -2004,56 +2010,56 @@ main:last-of-type,
 }
 
 .form-container {
-  width: 100% !important;
-  background: transparent !important;
-  padding: 0 !important;
-  box-shadow: none !important;
+  width: 100% ;
+  background: transparent ;
+  padding: 0 ;
+  box-shadow: none ;
 }
 
 .landing-form-panel .panel {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border-radius: 24px !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: 0 20px 40px rgba(15, 34, 51, 0.25) !important;
-  backdrop-filter: blur(12px) !important;
-  padding: 28px !important;
+  background: rgba(255, 255, 255, 0.95) ;
+  border-radius: 24px ;
+  border: 1px solid rgba(255, 255, 255, 0.4) ;
+  box-shadow: 0 20px 40px rgba(15, 34, 51, 0.25) ;
+  backdrop-filter: blur(12px) ;
+  padding: 28px ;
 }
 
 .form-container .title,
 .form-container label {
-  color: var(--azul-tinta) !important;
+  color: var(--azul-tinta);
   font-weight: 700;
 }
 
 .form-container input {
-  background-color: #f8fafc !important;
-  color: var(--texto) !important;
-  border: 1px solid var(--borde-fuerte) !important;
-  border-radius: 12px !important;
-  padding: 12px 14px !important;
+  background-color: #f8fafc ;
+  color: var(--texto) ;
+  border: 1px solid var(--borde-fuerte) ;
+  border-radius: 12px ;
+  padding: 12px 14px ;
 }
 
 .form-container input:focus {
-  background-color: #ffffff !important;
-  border-color: var(--terracota) !important;
-  box-shadow: 0 0 0 4px rgba(255, 107, 61, 0.15) !important;
+  background-color: #ffffff ;
+  border-color: var(--terracota) ;
+  box-shadow: 0 0 0 4px rgba(255, 107, 61, 0.15) ;
 }
 
 .form-container .sign,
 .btn-auth {
-  background: linear-gradient(135deg, var(--terracota), #ff8a57) !important;
-  color: #ffffff !important;
-  border-radius: 12px !important;
-  padding: 12px !important;
-  font-weight: 800 !important;
-  border: none !important;
-  box-shadow: 0 10px 20px rgba(255, 107, 61, 0.25) !important;
+  background: linear-gradient(135deg, var(--terracota), #ff8a57) ;
+  color: #ffffff ;
+  border-radius: 12px ;
+  padding: 12px;
+  font-weight: 800;
+  border: none;
+  box-shadow: 0 10px 20px rgba(255, 107, 61, 0.25) ;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .form-container .sign:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(255, 107, 61, 0.35) !important;
+  box-shadow: 0 12px 24px rgba(255, 107, 61, 0.35) ;
 }
 
 
@@ -2069,8 +2075,8 @@ main:last-of-type,
 }
 
 .buscador-hero input {
-  border: none !important;
-  outline: none !important;
+  border: none ;
+  outline: none ;
   padding: 10px 16px;
   flex: 1;
 }
