@@ -15,7 +15,7 @@
 
 <header class="topbar">
   <div class="marca">
-    <span class="punto"></span> Oficios<span class="text-warning">Ya</span>
+   <span><img src="./img/hombrelogo.png" class ="hombre-logo" alt=""></span> Oficios<span class="text-warning">Ya</span>
   </div>
   <nav id="topbar-usuario">
     <a href="perfil.html">Mi perfil</a>
@@ -30,10 +30,10 @@
       <h1 class="display-6 fw-bold text-dark mb-2">Explorar profesionales</h1>
       <p class="text-secondary">Elegí una categoría o buscá directamente lo que necesitás.</p>
 
-      <form class="buscador-hero mt-4" style="max-width: 580px;" onsubmit="return false;">
+      <form class="input-group search-transparent mt-4" style="max-width: 580px;" onsubmit="return false;">
         <label for="texto-busqueda" class="visually-hidden">Buscar servicio</label>
-        <input type="text" id="texto-busqueda" placeholder="¿Qué servicio necesitás? (Ej: Plomero, Carlos...)">
-        <button type="button" id="btn-buscar">Buscar</button>
+        <input type="text" id="texto-busqueda" class="form-control form-control-lg" placeholder="¿Qué servicio necesitás? (Ej: Plomero, Carlos...)">
+        <button type="button" id="btn-buscar" class="btn btn-primary px-4">Buscar</button>
       </form>
     </div>
   </section>
@@ -43,50 +43,59 @@
     <div class="mb-4">
       <h2 class="h5 fw-bold mb-3">Categorías</h2>
 
-      <ul class="d-flex flex-wrap gap-2 list-unstyled mb-0" id="grid-categorias">
+      <ul class="nav nav-pills gap-2 list-unstyled mb-0" id="grid-categorias">
         <li>
-          <button type="button" class="chip-categoria activo" data-categoria="todos">
-            🔎 Todos
+          <button type="button" class="nav-link chip-categoria activo" data-categoria="todos">
+            <img src="./img/magnifying-glass.png" class="boton-img" alt="Todos">
+            Buscar
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Electricidad">
-            ⚡ Electricidad
+          <button type="button" class="nav-link chip-categoria" data-categoria="Electricidad">
+            <img src="./img/innovation.png" class="boton-img" alt="Electricidad">
+            Electricidad
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Plomería">
-            🔧 Plomería
+          <button type="button" class="nav-link chip-categoria" data-categoria="Plomería">
+            <img src="./img/plumbing.png" class="boton-img" alt="Plomería">
+            Plomería
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Pintura">
-            🎨 Pintura
+          <button type="button" class="nav-link chip-categoria" data-categoria="Pintura">
+            <img src="./img/house-painting.png" class="boton-img" alt="Pintura">
+            Pintura
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Albañilería">
-            🧱 Albañilería
+          <button type="button" class="nav-link chip-categoria" data-categoria="Albañilería">
+            <img src="./img/building.png" class="boton-img" alt="Albañilería">
+            Albañilería
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Aire acond.">
-            ❄️ Aire acond.
+          <button type="button" class="nav-link chip-categoria" data-categoria="Aire acond.">
+            <img src="./img/chiller.png" class="boton-img" alt="Aire aco">
+            Climatizacion y Refrigeración
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Carpintería">
-            🪚 Carpintería
+          <button type="button" class="nav-link chip-categoria" data-categoria="Carpintería">
+            <img src="./img/crossed-hammers.png" class="boton-img" alt="Carpintería">
+            Carpintería
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Cerrajería">
-            🔑 Cerrajería
+          <button type="button" class="nav-link chip-categoria" data-categoria="Cerrajería">
+            <img src="./img/key.png" class="boton-img" alt="Cerrajería">    
+            Cerrajería
           </button>
         </li>
         <li>
-          <button type="button" class="chip-categoria" data-categoria="Jardinería">
-            🌿 Jardinería
+          <button type="button" class="nav-link chip-categoria" data-categoria="Jardinería">
+            <img src="./img/gardening.png" class="boton-img" alt="Jardinería">
+            Jardinería
           </button>
         </li>
       </ul>
@@ -97,8 +106,8 @@
     <ul class="row g-3 list-unstyled" id="lista-profesionales">
 
       <li class="col-12 col-md-6" data-categoria="Electricidad" data-nombre="carlos medina electricista">
-        <article class="tarjeta-profesional h-100 p-3 bg-white rounded-3 border">
-          <div class="fila-cabecera">
+        <article class="card tarjeta-profesional h-100 border-0 shadow-sm bg-primary-subtle">
+          <div class="card-body fila-cabecera">
             <div class="avatar-profesional">
               CM
               <span class="punto-estado disponible"></span>
@@ -107,10 +116,10 @@
               <h3 class="nombre-prof h6 mb-0 fw-bold">Carlos Medina</h3>
               <p class="oficio-prof text-secondary small mb-1">Electricista Matriculado</p>
               <div class="fila-meta small mb-1">
-                <span class="rating">★ 4.8</span>
+                <span class="rating"><img src="img/star.png" alt="Estrella" class="icono-img"> 4.8</span>
                 <span>(23)</span>
-                <span>· 📍 2.1 km</span>
-                <span>· ⏱ ~15 min</span>
+                <span>· <img src="img/location.png" class="icono-img" alt="Ubicación">  2.1 km</span>
+                <span>· <img src="img/clock.png" class="icono-img" alt="Icono de reloj"> ~15 min</span>
               </div>
               <div class="tags-especialidad d-flex gap-1 flex-wrap">
                 <span class="tag-especialidad">Instalaciones</span>
@@ -119,16 +128,16 @@
             </div>
           </div>
 
-          <footer class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+          <footer class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
             <p class="precio-hora mb-0 text-dark fw-bold">$4.500 <span class="text-muted fw-normal small">/ hora</span></p>
-            <a class="btn btn-primario btn-chico" href="perfil-trabajador.html?id=1">Contratar</a>
+            <a class="btn btn-primary btn-sm" href="perfiltrabajador.html?id=1">Contratar</a>
           </footer>
         </article>
       </li>
 
       <li class="col-12 col-md-6" data-categoria="Plomería" data-nombre="mónica paz plomera">
-        <article class="tarjeta-profesional h-100 p-3 bg-white rounded-3 border">
-          <div class="fila-cabecera">
+        <article class="card tarjeta-profesional h-100 border-0 shadow-sm bg-info-subtle">
+          <div class="card-body fila-cabecera">
             <div class="avatar-profesional">
               MP
               <span class="punto-estado disponible"></span>
@@ -137,10 +146,10 @@
               <h3 class="nombre-prof h6 mb-0 fw-bold">Mónica Paz</h3>
               <p class="oficio-prof text-secondary small mb-1">Plomera Specialist</p>
               <div class="fila-meta small mb-1">
-                <span class="rating">★ 4.9</span>
+                <span class="rating"><img src="img/star.png" alt="Estrella" class="icono-img"> 4.9</span>
                 <span>(31)</span>
-                <span>· 📍 3.2 km</span>
-                <span>· ⏱ ~20 min</span>
+                  <span>· <img src="img/location.png" class="icono-img" alt="Ubicación">  2.1 km</span>
+                <span>· <img src="img/clock.png" class="icono-img" alt="Icono de reloj"> ~15 min</span>
               </div>
               <div class="tags-especialidad d-flex gap-1 flex-wrap">
                 <span class="tag-especialidad">Pérdidas</span>
@@ -149,9 +158,9 @@
             </div>
           </div>
 
-          <footer class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+          <footer class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
             <p class="precio-hora mb-0 text-dark fw-bold">$5.000 <span class="text-muted fw-normal small">/ hora</span></p>
-            <a class="btn btn-primario btn-chico" href="perfil-trabajador.html?id=2">Contratar</a>
+            <a class="btn btn-primary btn-sm" href="perfiltrabajador.html?id=2">Contratar</a>
           </footer>
         </article>
       </li>
@@ -168,19 +177,19 @@
 
 <nav class="bottom-nav">
   <a href="menu.html">
-    <span class="icono-nav">🏠</span>
+    <span class="icono-nav"><img src="img/house.png" class="icono-home"></span>
     <span>Inicio</span>
   </a>
   <a href="oficios.html" class="activo">
-    <span class="icono-nav">🔍</span>
+    <span class="icono-nav"><img src="img/magnifying-glass.png" class="icono-home"></span>
     <span>Buscar</span>
   </a>
   <a href="historial.html">
-    <span class="icono-nav">🧾</span>
+    <span class="icono-nav"><img src="img/completed-task.png" class="icono-home"></span>
     <span>Pedidos</span>
   </a>
   <a href="perfil.html">
-    <span class="icono-nav">👤</span>
+    <span class="icono-nav"><img src="img/user.png" class="icono-home"> </span>
     <span>Perfil</span>
   </a>
 </nav>
