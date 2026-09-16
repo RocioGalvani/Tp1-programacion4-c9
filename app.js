@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initOficios();
   } else if (rutaActual.includes('perfil.html')) {
     initPerfil();
-  } else if (rutaActual.includes('perfil-trabajador.html')) {
+  } else if (rutaActual.includes('perfiltrabajador.html')) {
     initPerfilTrabajador();
-  } else if (rutaActual.includes('historial-trabajador.html')) {
+  } else if (rutaActual.includes('historialtrabajador.html')) {
     initHistorialTrabajador();
   } else if (rutaActual.includes('historial.html')) {
     initHistorial();
@@ -252,7 +252,7 @@ function initMenu() {
       bottomNav.innerHTML = `
         <ul class="d-flex w-100 justify-content-around list-unstyled mb-0">
           <li><a href="menu.html" class="nav-link fw-bold text-primary">🏠 Inicio</a></li>
-          <li><a href="historial-trabajador.html" class="nav-link">🧾 Pedidos</a></li>
+          <li><a href="historialtrabajador.html" class="nav-link">🧾 Pedidos</a></li>
           <li><a href="perfil.html" class="nav-link">👤 Perfil</a></li>
         </ul>
       `;
@@ -466,7 +466,7 @@ function initPerfilTrabajador() {
   const btnContratar = document.getElementById("btn-contratar");
   if (btnContratar) {
     btnContratar.addEventListener("click", () => {
-      window.location.href = `solicitar-servicio.html?profesional=${encodeURIComponent(prof.nombre)}`;
+      window.location.href = `crearpedido.html?profesional=${encodeURIComponent(prof.nombre)}`;
     });
   }
 }

@@ -15,7 +15,7 @@
 
 <header class="topbar">
   <div class="marca">
-    <span class="punto"></span> Oficios<span class="text-warning">Ya</span>
+   <span><img src="./img/hombrelogo.png" class ="hombre-logo" alt=""></span> Oficios<span class="text-warning">Ya</span>
   </div>
   <nav id="topbar-usuario">
     <a href="perfil.html">Mi perfil</a>
@@ -25,30 +25,28 @@
 
 <section id="vista-cliente">
 
-  <section class="bg-light py-5 border-bottom">
+  <section class="transparencia py-5 border-bottom">
     <div class="container" style="max-width: 900px;">
       <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">📍 Tucumán · Disponible ahora</span>
       <h1 class="display-5 fw-bold text-dark mb-2">Hola, <span id="nombre-cliente" class="text-primary">Juana</span>.</h1>
       <h2 class="h3 fw-semibold text-secondary mb-3">¿Qué oficio necesitás hoy?</h2>
       <p class="text-muted">Encontrá plomeros, electricistas, pintores y más. Compará, elegí y contactá al instante.</p>
 
-      <form class="buscador-hero mt-4" action="oficios.html" method="get" style="max-width: 580px;">
-        <input type="text" id="texto-busqueda" name="buscar" placeholder="¿Qué servicio necesitás? (Ej: electricista)">
-        <button type="submit">Buscar</button>
+      <form class="input-group search-transparent mt-4" action="oficios.html" method="get" style="max-width: 580px;">
+        <input type="text" id="texto-busqueda" name="buscar" class="form-control form-control-lg" placeholder="¿Qué servicio necesitás? (Ej: electricista)" aria-label="Servicio a buscar">
+        <button type="submit" class="btn btn-primary px-4">Buscar</button>
       </form>
     </div>
   </section>
 
   <main class="container my-5" style="max-width: 900px;">
 
-    <article class="banner-promo mb-5 p-0 bg-transparent border-0 shadow-none">
-      <div class="caja p-4 rounded-4 border border-warning bg-white shadow-sm">
-        <div class="texto">
-          <strong>🔧 Primera consulta sin cargo</strong>
-          <span>Contactá a cualquier profesional hoy y obtené una evaluación gratis de tu arreglo.</span>
-        </div>
-        <a href="oficios.html" class="btn btn-primario btn-chico mt-2 mt-md-0">Aprovechar</a>
+    <article class="alert alert-warning d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-5 shadow-sm" role="note">
+      <div>
+        <strong class="d-block">🔧 Primera consulta sin cargo</strong>
+        <span>Contactá a cualquier profesional hoy y obtené una evaluación gratis de tu arreglo.</span>
       </div>
+      <a href="oficios.html" class="btn btn-dark flex-shrink-0">Aprovechar</a>
     </article>
 
     <section class="mb-5">
@@ -57,28 +55,28 @@
         <a href="oficios.html" class="text-decoration-none fw-bold small">Ver todas →</a>
       </div>
 
-      <ul class="grid-categorias list-unstyled mb-0" id="grid-categorias-menu">
-        <li>
-          <a href="oficios.html?categoria=Electricidad" class="chip-categoria text-decoration-none d-block h-100">
-            <span class="icono-cat">⚡</span>
+      <ul class="row row-cols-2 row-cols-md-4 g-3 list-unstyled mb-0" id="grid-categorias-menu">
+        <li class="col">
+          <a href="oficios.html?categoria=Electricidad" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-warning-subtle category-card">
+            <span class="icono-cat"> <img src="./img/innovation.png" class="icono-img" alt=""></span>
             <span class="label-cat mt-2">Electricidad</span>
           </a>
         </li>
-        <li>
-          <a href="oficios.html?categoria=Plomer%C3%ADa" class="chip-categoria text-decoration-none d-block h-100">
-            <span class="icono-cat">🔧</span>
+        <li class="col">
+          <a href="oficios.html?categoria=Plomer%C3%ADa" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-info-subtle category-card">
+            <span class="icono-cat"> <img src="./img/plumbing.png" class="icono-img" alt=""></span>
             <span class="label-cat mt-2">Plomería</span>
           </a>
         </li>
-        <li>
-          <a href="oficios.html?categoria=Pintura" class="chip-categoria text-decoration-none d-block h-100">
-            <span class="icono-cat">🎨</span>
+        <li class="col">
+          <a href="oficios.html?categoria=Pintura" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-danger-subtle category-card">
+            <span class="icono-cat"> <img src="./img/house-painting.png" class="icono-img" alt=""></span>
             <span class="label-cat mt-2">Pintura</span>
           </a>
         </li>
-        <li>
-          <a href="oficios.html?categoria=Alba%C3%B1iler%C3%ADa" class="chip-categoria text-decoration-none d-block h-100">
-            <span class="icono-cat">🧱</span>
+        <li class="col">
+          <a href="oficios.html?categoria=Alba%C3%B1iler%C3%ADa" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-secondary-subtle category-card">
+            <span class="icono-cat"> <img src="./img/building.png" class="icono-img" alt=""></span>
             <span class="label-cat mt-2">Albañilería</span>
           </a>
         </li>
@@ -93,8 +91,8 @@
 
       <ul class="row g-3 list-unstyled mb-0" id="destacados-cliente">
         <li class="col-12 col-md-6">
-          <a href="perfiltrabajador.html?id=1" class="tarjeta-profesional text-decoration-none d-block h-100">
-            <div class="fila-cabecera">
+          <a href="perfiltrabajador.html?id=1" class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-primary-subtle">
+            <div class="card-body fila-cabecera">
               <div class="avatar-profesional">
                 CM
                 <span class="punto-estado disponible"></span>
@@ -113,8 +111,8 @@
         </li>
 
         <li class="col-12 col-md-6">
-          <a href="perfiltrabajador.html?id=2" class="tarjeta-profesional text-decoration-none d-block h-100">
-            <div class="fila-cabecera">
+          <a href="perfiltrabajador.html?id=2" class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-info-subtle">
+            <div class="card-body fila-cabecera">
               <div class="avatar-profesional">
                 MP
                 <span class="punto-estado disponible"></span>
@@ -155,7 +153,7 @@
     </div>
 
     <div class="list-unstyled mt-3">
-      <a href="historial-trabajador.html" class="tarjeta-pedido text-decoration-none d-block p-3 bg-light rounded-3 border">
+      <a href="historialtrabajador.html" class="card tarjeta-pedido text-decoration-none d-block p-3 bg-light border-0 shadow-sm">
         <span class="fs-3">📥</span>
         <h3 class="h6 fw-bold text-dark mt-1 mb-1">Pedidos recibidos</h3>
         <p class="text-secondary small mb-0">Mirá las solicitudes de nuevos clientes y actualizá el estado de los trabajos.</p>
