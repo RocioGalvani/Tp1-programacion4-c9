@@ -2084,7 +2084,7 @@ main:last-of-type,
 
 /* --- PANEL LATERAL DE AYUDA --- */
 
-.panel-ayuda {
+/*.panel-ayuda {
   position: fixed;
   top: 0;
   right: 0;
@@ -2191,4 +2191,4 @@ main:last-of-type,
     padding: 25px 20px;
   }
 
-}
+}/*

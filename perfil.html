@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Consultá y administrá los datos de tu cuenta en OficiosYa.">
   <title>Mi Perfil — OficiosYa</title>
-  
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
@@ -14,104 +14,105 @@
 
 <body>
 
-<header class="topbar">
-  <div class="marca d-flex align-items-center gap-2">
-    <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 60px; width: auto;">
-    <span>Ofi<span class="text-warning">GO</span></span>
-  </div>
-  <nav>
-    <a href="menu.html">Inicio</a>
-    <a href="perfil.html" class="fw-bold">Mi Perfil</a>
+  <header class="topbar">
+    <div class="marca d-flex align-items-center gap-2">
+      <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 60px; width: auto;">
+      <span>Ofi<span class="text-warning">GO</span></span>
+    </div>
+    <nav>
+      <a href="menu.html">Inicio</a>
+      <a href="perfil.html" class="fw-bold">Mi Perfil</a>
+    </nav>
+  </header>
+
+  <main class="container" style="max-width: 620px;">
+
+    <section class="encabezado-pagina mt-4">
+      <span class="eyebrow">Cuenta</span>
+      <h1>Mi Perfil</h1>
+      <p>Información general y detalles de tu cuenta.</p>
+    </section>
+
+    <section class="my-3">
+      <article class="panel card p-4 shadow-sm">
+
+
+        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+          <span class="text-secondary small fw-bold">Nombre</span>
+          <span class="fw-bold text-dark" id="perfil-nombre">—</span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+          <span class="text-secondary small fw-bold">Email</span>
+          <span class="fw-bold text-dark" id="perfil-email">—</span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+          <span class="text-secondary small fw-bold">Rol</span>
+          <span class="badge bg-secondary" id="perfil-rol">—</span>
+        </div>
+
+        <div id="datos-trabajador" style="display:none;" class="mt-3">
+          <h3 class="h6 text-uppercase text-secondary fw-bold mb-3">Detalles del Perfil Profesional</h3>
+
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+            <span class="text-secondary small fw-bold">Oficio</span>
+            <span class="fw-bold text-dark" id="perfil-oficio">—</span>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+            <span class="text-secondary small fw-bold">Categoría</span>
+            <span class="fw-bold text-dark" id="perfil-categoria">—</span>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+            <span class="text-secondary small fw-bold">Zona</span>
+            <span class="fw-bold text-dark" id="perfil-zona">—</span>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+            <span class="text-secondary small fw-bold">Precio por hora</span>
+            <span class="fw-bold text-success">$<span id="perfil-precio">—</span></span>
+          </div>
+
+          <div class="py-2">
+            <span class="text-secondary small fw-bold d-block mb-1">Descripción del servicio</span>
+            <p class="small text-muted mb-0" id="perfil-descripcion">—</p>
+          </div>
+        </div>
+
+        <div id="mensaje-area" aria-live="polite" class="mt-3"></div>
+
+        <button type="button" class="btn btn-primario w-100 mt-4" id="btn-cerrar-sesion">
+          Cerrar sesión
+        </button>
+
+      </article>
+    </section>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="menu.html">
+      <span class="icono-nav"><img src="img/house.png" class="icono-home" alt=""></span>
+      <span>Inicio</span>
+    </a>
+    <a href="oficios.html">
+      <span class="icono-nav"><img src="img/magnifying-glass.png" class="icono-home" alt=""></span>
+      <span>Buscar</span>
+    </a>
+    <a href="historial.html">
+      <span class="icono-nav"><img src="img/completed-task.png" class="icono-home" alt=""></span>
+      <span>Pedidos</span>
+    </a>
+    <a href="perfil.html" class="activo">
+      <span class="icono-nav"><img src="img/user.png" class="icono-home" alt=""></span>
+      <span>Perfil</span>
+    </a>
   </nav>
-</header>
 
-<main class="container" style="max-width: 620px;">
-
-  <section class="encabezado-pagina mt-4">
-    <span class="eyebrow">Cuenta</span>
-    <h1>Mi Perfil</h1>
-    <p>Información general y detalles de tu cuenta.</p>
-  </section>
-
-  <section class="my-3">
-    <article class="panel card p-4 shadow-sm">
-
-
-      <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-        <span class="text-secondary small fw-bold">Nombre</span>
-        <span class="fw-bold text-dark" id="perfil-nombre">—</span>
-      </div>
-
-      <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-        <span class="text-secondary small fw-bold">Email</span>
-        <span class="fw-bold text-dark" id="perfil-email">—</span>
-      </div>
-
-      <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-        <span class="text-secondary small fw-bold">Rol</span>
-        <span class="badge bg-secondary" id="perfil-rol">—</span>
-      </div>
-
-      <div id="datos-trabajador" style="display:none;" class="mt-3">
-        <h3 class="h6 text-uppercase text-secondary fw-bold mb-3">Detalles del Perfil Profesional</h3>
-
-        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-          <span class="text-secondary small fw-bold">Oficio</span>
-          <span class="fw-bold text-dark" id="perfil-oficio">—</span>
-        </div>
-
-        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-          <span class="text-secondary small fw-bold">Categoría</span>
-          <span class="fw-bold text-dark" id="perfil-categoria">—</span>
-        </div>
-
-        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-          <span class="text-secondary small fw-bold">Zona</span>
-          <span class="fw-bold text-dark" id="perfil-zona">—</span>
-        </div>
-
-        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-          <span class="text-secondary small fw-bold">Precio por hora</span>
-          <span class="fw-bold text-success">$<span id="perfil-precio">—</span></span>
-        </div>
-
-        <div class="py-2">
-          <span class="text-secondary small fw-bold d-block mb-1">Descripción del servicio</span>
-          <p class="small text-muted mb-0" id="perfil-descripcion">—</p>
-        </div>
-      </div>
-
-      <div id="mensaje-area" aria-live="polite" class="mt-3"></div>
-
-      <button type="button" class="btn btn-primario w-100 mt-4" id="btn-cerrar-sesion">
-        Cerrar sesión
-      </button>
-
-    </article>
-  </section>
-
-</main>
-
-<nav class="bottom-nav">
-  <a href="menu.html">
-    <span class="icono-nav"><img src="img/house.png" class="icono-home" alt=""></span>
-    <span>Inicio</span>
-  </a>
-  <a href="oficios.html">
-    <span class="icono-nav"><img src="img/magnifying-glass.png" class="icono-home" alt=""></span>
-    <span>Buscar</span>
-  </a>
-  <a href="historial.html">
-    <span class="icono-nav"><img src="img/completed-task.png" class="icono-home" alt=""></span>
-    <span>Pedidos</span>
-  </a>
-  <a href="perfil.html" class="activo">
-    <span class="icono-nav"><img src="img/user.png" class="icono-home" alt=""></span>
-    <span>Perfil</span>
-  </a>
-</nav>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>

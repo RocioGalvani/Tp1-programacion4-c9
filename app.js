@@ -129,7 +129,7 @@ function initLanding() {
 
   const linkIngresar = document.getElementById("link-ingresar");
 
-  if (linkIngresar) {
+   if (linkIngresar) {
     linkIngresar.addEventListener("click", (e) => {
       e.preventDefault();
       mostrarTab("login");
@@ -237,13 +237,13 @@ function initLanding() {
     return JSON.parse(
       localStorage.getItem("oficioya-usuarios")
     ) || [
-      {
-        nombre: "Cliente Demo",
-        email: "cliente@demo.com",
-        password: "1234",
-        rol: "cliente"
-      }
-    ];
+        {
+          nombre: "Cliente Demo",
+          email: "cliente@demo.com",
+          password: "1234",
+          rol: "cliente"
+        }
+      ];
   }
 
   function guardarUsuarios(usuarios) {
@@ -394,15 +394,15 @@ function initMenu() {
     return;
   }
 
-const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
+  const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
 
-if (btnCerrarSesion) {
-  btnCerrarSesion.onclick = function (e) {
-    e.preventDefault();
-    localStorage.removeItem("oficioya-sesion");
-    window.location.href = "index.html";
-  };
-}
+  if (btnCerrarSesion) {
+    btnCerrarSesion.onclick = function (e) {
+      e.preventDefault();
+      localStorage.removeItem("oficioya-sesion");
+      window.location.href = "index.html";
+    };
+  }
 
   const vistaCliente =
     document.getElementById("vista-cliente");
@@ -434,19 +434,19 @@ if (btnCerrarSesion) {
         <ul class="d-flex w-100 justify-content-around list-unstyled mb-0">
           <li>
             <a href="menu.html" class="nav-link fw-bold text-primary">
-              🏠 Inicio
+              <img src="img/house.png" alt="Inicio" class="icono-home"> Inicio
             </a>
           </li>
 
           <li>
             <a href="historialtrabajador.html" class="nav-link">
-              🧾 Pedidos
+              <img src="img/completed-task.png" alt="Pedidos" class="icono-home"> Pedidos
             </a>
           </li>
 
           <li>
             <a href="perfil.html" class="nav-link">
-              👤 Perfil
+              <img src="img/user.png" alt="Perfil" class="icono-home"> Perfil
             </a>
           </li>
         </ul>
@@ -793,10 +793,9 @@ function initPerfilTrabajador() {
 
   if (elemEstadoPunto) {
     elemEstadoPunto.className =
-      `punto-estado ${
-        prof.disponible
-          ? "disponible"
-          : "ocupado"
+      `punto-estado ${prof.disponible
+        ? "disponible"
+        : "ocupado"
       }`;
   }
 
@@ -966,7 +965,7 @@ function initHistorialTrabajador() {
           </div>
 
           <p class="meta text-muted small mb-2">
-            📅 ${p.fecha} — 📍 ${p.direccion}
+            📅 ${p.fecha} — <img src="img/location.png" alt="Ubicación" class="icono-home"> ${p.direccion}
           </p>
 
           <p class="desc-pedido text-secondary small mb-3">
@@ -975,9 +974,8 @@ function initHistorialTrabajador() {
 
           <div class="d-flex gap-2 mt-auto pt-2 border-top">
 
-            ${
-              p.estadoSlug === "pendiente"
-                ? `
+            ${p.estadoSlug === "pendiente"
+          ? `
                   <button
                     class="btn btn-primario btn-chico w-100 btn-aceptar"
                     data-id="${p.id}">
@@ -990,20 +988,20 @@ function initHistorialTrabajador() {
                     Rechazar
                   </button>
                 `
-                : p.estadoSlug === "aceptado"
-                ? `
+          : p.estadoSlug === "aceptado"
+            ? `
                   <button
                     class="btn btn-primario btn-chico w-100 btn-finalizar"
                     data-id="${p.id}">
                     Marcar Finalizado
                   </button>
                 `
-                : `
+            : `
                   <span class="small text-muted text-center w-100">
                     Sin acciones pendientes
                   </span>
                 `
-            }
+        }
 
           </div>
 
@@ -1198,9 +1196,8 @@ function initHistorial() {
 
           <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
 
-            ${
-              p.estadoSlug === "finalizado"
-                ? `
+            ${p.estadoSlug === "finalizado"
+          ? `
                   <span class="small text-muted fw-bold">
                     Calificación:
                   </span>
@@ -1210,31 +1207,30 @@ function initHistorial() {
                     data-id="${p.id}">
 
                     ${[1, 2, 3, 4, 5]
-                      .map(
-                        (num) => `
+            .map(
+              (num) => `
                           <span
-                            class="estrella ${
-                              num <=
-                              (p.calificacion || 0)
-                                ? "text-warning"
-                                : "text-muted"
-                            }"
+                            class="estrella ${num <=
+                  (p.calificacion || 0)
+                  ? "text-warning"
+                  : "text-muted"
+                }"
                             data-val="${num}"
                             style="cursor:pointer; font-size:1.2rem;">
                             ★
                           </span>
                         `
-                      )
-                      .join("")}
+            )
+            .join("")}
 
                   </div>
                 `
-                : `
+          : `
                   <span class="small text-muted">
                     Trabajo en proceso...
                   </span>
                 `
-            }
+        }
 
           </div>
 
