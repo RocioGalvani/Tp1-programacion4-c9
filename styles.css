@@ -1216,7 +1216,7 @@ main:last-of-type,
       rgba(28, 50, 69, 0.48) 48%,
       rgba(28, 50, 69, 0.08)
     ),
-    url('/img/portada\ oficios.jpeg') center right / cover no-repeat;
+    url('/img/portada-oficio.jpeg') center right / cover no-repeat;
 }
 
 /*.landing-page .landing-header {
