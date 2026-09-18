@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OficiosYa: encontrá y filtrá profesionales de distintos oficios y servicios en Tucumán.">
-  <title>OficiosYa — Explorar</title>
+  <meta name="description" content="OfiGO: encontrá y filtrá profesionales de distintos oficios y servicios en Tucumán.">
+  <title>OfiGO — Explorar</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -14,8 +14,9 @@
 <body>
 
 <header class="topbar">
-  <div class="marca">
-   <span><img src="./img/hombrelogo.png" class ="hombre-logo" alt=""></span> Oficios<span class="text-warning">Ya</span>
+  <div class="marca d-flex align-items-center gap-2">
+    <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 80px; width: auto;">
+    <span>Ofi<span class="text-warning">GO</span></span>
   </div>
   <nav id="topbar-usuario">
     <a href="perfil.html">Mi perfil</a>
@@ -25,153 +26,165 @@
 
 <main>
 
-  <section class="bg-light py-5 border-bottom">
-    <div class="container" style="max-width: 900px;">
-      <h1 class="display-6 fw-bold text-dark mb-2">Explorar profesionales</h1>
-      <p class="text-secondary">Elegí una categoría o buscá directamente lo que necesitás.</p>
+<section class="text-center mb-4">
+    <h1 class="display-6 fw-bold">Explorar profesionales</h1>
+    <p class="text-muted">Elegí una categoría o buscá directamente lo que necesitás.</p>
 
-      <form class="input-group search-transparent mt-4" style="max-width: 580px;" onsubmit="return false;">
-        <label for="texto-busqueda" class="visually-hidden">Buscar servicio</label>
-        <input type="text" id="texto-busqueda" class="form-control form-control-lg" placeholder="¿Qué servicio necesitás? (Ej: Plomero, Carlos...)">
-        <button type="button" id="btn-buscar" class="btn btn-primary px-4">Buscar</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="container my-5" style="max-width: 900px;">
-
-    <div class="mb-4">
-      <h2 class="h5 fw-bold mb-3">Categorías</h2>
-
-      <ul class="nav nav-pills gap-2 list-unstyled mb-0" id="grid-categorias">
-        <li>
-          <button type="button" class="nav-link chip-categoria activo" data-categoria="todos">
-            <img src="./img/magnifying-glass.png" class="boton-img" alt="Todos">
-            Buscar
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Electricidad">
-            <img src="./img/innovation.png" class="boton-img" alt="Electricidad">
-            Electricidad
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Plomería">
-            <img src="./img/plumbing.png" class="boton-img" alt="Plomería">
-            Plomería
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Pintura">
-            <img src="./img/house-painting.png" class="boton-img" alt="Pintura">
-            Pintura
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Albañilería">
-            <img src="./img/building.png" class="boton-img" alt="Albañilería">
-            Albañilería
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Aire acond.">
-            <img src="./img/chiller.png" class="boton-img" alt="Aire aco">
-            Climatizacion y Refrigeración
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Carpintería">
-            <img src="./img/crossed-hammers.png" class="boton-img" alt="Carpintería">
-            Carpintería
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Cerrajería">
-            <img src="./img/key.png" class="boton-img" alt="Cerrajería">    
-            Cerrajería
-          </button>
-        </li>
-        <li>
-          <button type="button" class="nav-link chip-categoria" data-categoria="Jardinería">
-            <img src="./img/gardening.png" class="boton-img" alt="Jardinería">
-            Jardinería
-          </button>
-        </li>
-      </ul>
+    <div class="d-flex justify-content-center gap-2 max-w-lg mx-auto" style="max-width: 500px;">
+        <input type="text" id="input-busqueda" class="form-control form-control-lg rounded-pill" placeholder="¿Qué servicio necesitás? (Ej: Plomero, Carlos...)">
     </div>
 
-    <h2 class="h5 fw-bold mb-3">Profesionales disponibles</h2>
+    <p class="text-center text-muted mt-3 d-none" id="sin-resultados">
+        🔍 No encontramos profesionales que coincidan con tu búsqueda.
+    </p>
+</section>
 
-    <ul class="row g-3 list-unstyled" id="lista-profesionales">
+ <section class="container my-5" style="max-width: 900px;">
 
-      <li class="col-12 col-md-6" data-categoria="Electricidad" data-nombre="carlos medina electricista">
-        <article class="card tarjeta-profesional h-100 border-0 shadow-sm bg-primary-subtle">
-          <div class="card-body fila-cabecera">
-            <div class="avatar-profesional">
-              CM
-              <span class="punto-estado disponible"></span>
-            </div>
-            <div class="info-principal">
-              <h3 class="nombre-prof h6 mb-0 fw-bold">Carlos Medina</h3>
-              <p class="oficio-prof text-secondary small mb-1">Electricista Matriculado</p>
-              <div class="fila-meta small mb-1">
-                <span class="rating"><img src="img/star.png" alt="Estrella" class="icono-img"> 4.8</span>
-                <span>(23)</span>
-                <span>· <img src="img/location.png" class="icono-img" alt="Ubicación">  2.1 km</span>
-                <span>· <img src="img/clock.png" class="icono-img" alt="Icono de reloj"> ~15 min</span>
-              </div>
-              <div class="tags-especialidad d-flex gap-1 flex-wrap">
-                <span class="tag-especialidad">Instalaciones</span>
-                <span class="tag-especialidad">Tableros</span>
-              </div>
-            </div>
-          </div>
+    <section class="mb-5">
+        <h2 class="h5 fw-bold mb-3">Categorías</h2>
 
-          <footer class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
-            <p class="precio-hora mb-0 text-dark fw-bold">$4.500 <span class="text-muted fw-normal small">/ hora</span></p>
-            <a class="btn btn-primary btn-sm" href="perfiltrabajador.html?id=1">Contratar</a>
-          </footer>
-        </article>
-      </li>
+        <section class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-2" id="grid-categorias">
+            
+          <article class="col">
+                <button type="button" class="nav-link chip-categoria activo w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="todos">
+                    <i class="bi bi-grid-fill fs-3 text-primary"></i>
+                    <span class="fw-semibold small">Todas</span>
+                </button>
+            </article>
 
-      <li class="col-12 col-md-6" data-categoria="Plomería" data-nombre="mónica paz plomera">
-        <article class="card tarjeta-profesional h-100 border-0 shadow-sm bg-info-subtle">
-          <div class="card-body fila-cabecera">
-            <div class="avatar-profesional">
-              MP
-              <span class="punto-estado disponible"></span>
-            </div>
-            <div class="info-principal">
-              <h3 class="nombre-prof h6 mb-0 fw-bold">Mónica Paz</h3>
-              <p class="oficio-prof text-secondary small mb-1">Plomera Specialist</p>
-              <div class="fila-meta small mb-1">
-                <span class="rating"><img src="img/star.png" alt="Estrella" class="icono-img"> 4.9</span>
-                <span>(31)</span>
-                  <span>· <img src="img/location.png" class="icono-img" alt="Ubicación">  2.1 km</span>
-                <span>· <img src="img/clock.png" class="icono-img" alt="Icono de reloj"> ~15 min</span>
-              </div>
-              <div class="tags-especialidad d-flex gap-1 flex-wrap">
-                <span class="tag-especialidad">Pérdidas</span>
-                <span class="tag-especialidad">Destapes</span>
-              </div>
-            </div>
-          </div>
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Electricidad">
+                    <img src="img/innovation.png" class="boton-img" alt="Electricidad">
+                    <span class="fw-semibold small">Electricidad</span>
+                </button>
+            </article>
 
-          <footer class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
-            <p class="precio-hora mb-0 text-dark fw-bold">$5.000 <span class="text-muted fw-normal small">/ hora</span></p>
-            <a class="btn btn-primary btn-sm" href="perfiltrabajador.html?id=2">Contratar</a>
-          </footer>
-        </article>
-      </li>
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Plomería">
+                    <img src="img/plumbing.png" class="boton-img" alt="Plomería">
+                    <span class="fw-semibold small">Plomería</span>
+                </button>
+            </article>
 
-    </ul>
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Pintura">
+                    <img src="img/house-painting.png" class="boton-img" alt="Pintura">
+                    <span class="fw-semibold small">Pintura</span>
+                </button>
+            </article>
 
-    <p class="text-center text-secondary py-5" id="sin-resultados" style="display:none;">
-      🔍 No encontramos profesionales que coincidan con tu búsqueda.
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Albañilería">
+                    <img src="img/building.png" class="boton-img" alt="Albañilería">
+                    <span class="fw-semibold small">Albañilería</span>
+                </button>
+            </article>
+
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Climatizacion y Refrigeración">
+                    <img src="img/chiller.png" class="boton-img" alt="Aire aco">
+                    <span class="fw-semibold small text-center">Climatización y Refrigeración</span>
+                </button>
+            </article>
+
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Carpintería">
+                    <img src="img/crossed-hammers.png" class="boton-img" alt="Carpintería">
+                    <span class="fw-semibold small">Carpintería</span>
+                </button>
+            </article>
+
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Cerrajería">
+                    <img src="img/key.png" class="boton-img" alt="Cerrajería">
+                    <span class="fw-semibold small">Cerrajería</span>
+                </button>
+            </article>
+
+            <article class="col">
+                <button type="button" class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2" data-categoria="Jardinería">
+                    <img src="img/gardening.png" class="boton-img" alt="Jardinería">
+                    <span class="fw-semibold small">Jardinería</span>
+                </button>
+            </article>
+
+        </section>
+    </section>
+
+    <section class="mb-4">
+        <h2 class="h5 fw-bold mb-3">Profesionales disponibles</h2>
+
+        <section class="row g-3" id="lista-profesionales">
+
+            <article class="col-12 col-md-6" data-categoria="Electricidad" data-nombre="carlos medina electricista">
+                <section class="card tarjeta-profesional h-100 border-0 shadow-sm bg-primary-subtle rounded-4">
+                    <header class="card-body fila-cabecera d-flex gap-3">
+                        <section class="avatar-profesional position-relative">
+                            CM
+                            <span class="punto-estado disponible"></span>
+                        </section>
+                        <section class="info-principal">
+                            <h3 class="nombre-prof h6 mb-0 fw-bold">Carlos Medina</h3>
+                            <p class="oficio-prof text-secondary small mb-1">Electricista Matriculado</p>
+                            <p class="fila-meta small mb-1">
+                                <span class="rating"><img src="img/star.png" alt="Estrella" class="icono-img"> 4.8</span>
+                                <span>(23)</span>
+                                <span>· <img src="img/location.png" class="icono-img" alt="Ubicación"> 2.1 km</span>
+                                <span>· <img src="img/clock.png" class="icono-img" alt="Icono de reloj"> ~15 min</span>
+                            </p>
+                            <footer class="tags-especialidad d-flex gap-1 flex-wrap">
+                                <span class="tag-especialidad badge bg-white text-dark border fw-normal">Instalaciones</span>
+                                <span class="tag-especialidad badge bg-white text-dark border fw-normal">Tableros</span>
+                            </footer>
+                        </section>
+                    </header>
+
+                    <footer class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
+                        <p class="precio-hora mb-0 text-dark fw-bold">$4.500 <span class="text-muted fw-normal small">/ hora</span></p>
+                        <a class="btn btn-primary btn-sm rounded-pill px-3" href="perfiltrabajador.html?id=1">Contratar</a>
+                    </footer>
+                </section>
+            </article>
+
+            <article class="col-12 col-md-6" data-categoria="Plomería" data-nombre="mónica paz plomera">
+                <section class="card tarjeta-profesional h-100 border-0 shadow-sm bg-info-subtle rounded-4">
+                    <header class="card-body fila-cabecera d-flex gap-3">
+                        <section class="avatar-profesional position-relative">
+                            MP
+                            <span class="punto-estado disponible"></span>
+                        </section>
+                        <section class="info-principal">
+                            <h3 class="nombre-prof h6 mb-0 fw-bold">Mónica Paz</h3>
+                            <p class="oficio-prof text-secondary small mb-1">Plomera Specialist</p>
+                            <p class="fila-meta small mb-1">
+                                <span class="rating"><img src="img/star.png" alt="Estrella" class="icono-img"> 4.9</span>
+                                <span>(31)</span>
+                                <span>· <img src="img/location.png" class="icono-img" alt="Ubicación"> 2.1 km</span>
+                                <span>· <img src="img/clock.png" class="icono-img" alt="Icono de reloj"> ~15 min</span>
+                            </p>
+                            <footer class="tags-especialidad d-flex gap-1 flex-wrap">
+                                <span class="tag-especialidad badge bg-white text-dark border fw-normal">Pérdidas</span>
+                                <span class="tag-especialidad badge bg-white text-dark border fw-normal">Destapes</span>
+                            </footer>
+                        </section>
+                    </header>
+
+                    <footer class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
+                        <p class="precio-hora mb-0 text-dark fw-bold">$5.000 <span class="text-muted fw-normal small">/ hora</span></p>
+                        <a class="btn btn-primary btn-sm rounded-pill px-3" href="perfiltrabajador.html?id=2">Contratar</a>
+                    </footer>
+                </section>
+            </article>
+
+        </section>
+    </section>
+
+  <p class="text-center text-secondary py-5" id="sin-resultados" style="display:none;">
+        🔍 No encontramos profesionales que coincidan con tu búsqueda.
     </p>
 
-  </section>
+</section>
 
 </main>
 

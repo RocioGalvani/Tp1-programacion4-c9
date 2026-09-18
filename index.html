@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OficiosYa conecta personas con profesionales de distintos oficios y servicios en Tucumán.">
-  <meta name="author" content="Equipo OficiosYa">
-  <meta name="keywords" content="oficios, servicios, profesionales, trabajadores, reparaciones, Tucumán, OficiosYa">
-  <title>OficiosYa — Ingresá o creá tu cuenta</title>
+  <meta name="description" content="OfiGO conecta personas con profesionales de distintos oficios y servicios en Tucumán.">
+  <meta name="author" content="Equipo OfiGO">
+  <meta name="keywords" content="OfiGO, servicios, profesionales, trabajadores, reparaciones, Tucumán, OfiGO">
+  <title>OfiGO — Ingresá o creá tu cuenta</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -15,175 +15,155 @@
 
 <body class="sin-bottom-nav landing-page">
 
-<header class="topbar landing-header">
-  <div class="landing-header-inner w-100 d-flex justify-content-between align-items-center">
-    <a href="#" class="marca-landing text-decoration-none text-white fw-bold fs-3">
-      Oficios<span class="resaltado-marca">Ya</span>
-    </a>
-    <nav class="d-flex gap-2">
-      <a href="#registro" class="btn btn-sm btn-outline-light rounded-pill px-3 fw-bold" id="link-profesional">Soy profesional</a>
-      <a href="#login" class="btn btn-sm btn-warning rounded-pill px-3 fw-bold text-dark" id="link-ingresar">Ingresar</a>
-    </nav>
-  </div>
+
+
+<header class="topbar landing-header shadow-sm" style="background-color: #2c4a63 !important;">
+  <nav class="landing-header-inner w-100 d-flex justify-content-between align-items-center px-4 py-2">
+    
+    <a href="#" class="marca-landing text-decoration-none d-flex align-items-center gap-2 fw-bold fs-3 text-white p-0 bg-transparent shadow-none border-0">
+  <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 80px; width: auto;">
+  <span>Ofi<span style="color: #f5be47;">GO</span></span>
+</a>
+
+    <section class="d-flex gap-2">
+      <a href="#registro" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-profesional" style="border: 1px solid rgba(255, 255, 255, 0.4); background: rgba(255,255,255,0.1);">Soy profesional</a>
+      <a href="#login" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-ingresar" style="background-color: #4a80e8;">Ingresar</a>
+    </section>
+
+  </nav>
 </header>
 
-<main class="landing-shell">
-  <div class="container-fluid p-0">
-    <div class="row align-items-start g-4">
+<main class="landing-shell container-fluid min-vh-100 d-flex align-items-center justify-content-center p-3" style="background: linear-gradient(180deg, #fff3e9 0%, #f8b187 100%) !important;">
+  <section class="row justify-content-center w-100 m-0">
 
-      <section class="col-12 col-lg-7 text-white pe-lg-4">
-        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">
-          <img src="img/location.png" class="icono-img" alt="Ubicación"> Tucumán — Servicios cerca tuyo
-        </span>
+    <aside class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 p-0">
+      <article class="card border-0 shadow-lg p-4 rounded-4 w-100" id="panel-cuenta" style="background-color: #ffffff !important; box-shadow: 0 15px 35px rgba(76, 107, 139, 0.15) !important;">
         
-        <h1 class="display-4 fw-extrabold text-white lh-1 mb-3">
-          Solucioná arreglos de casa sin dar mil vueltas.
-        </h1>
-        
-        <p class="fs-5 text-white-50 mb-4" style="max-width: 540px;">
-          Encontrá profesionales para electricidad, plomería, pintura, carpintería y más. Mirá precios, disponibilidad y pedí el servicio desde la app.
-        </p>
+        <header class="logo-panel text-center mb-3">
+          <h2 class="h4 fw-bold mb-0" style="color: #4c6b8b;">Ofi<span style="color: #f5be47;">GO</span></h2>
+        </header>
 
-        <div class="d-flex flex-wrap gap-2">
-          <span class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25 px-3 py-2 rounded-pill">⚡ Rápido y fácil</span>
-          <span class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25 px-3 py-2 rounded-pill">🛡️ Seguro y confiable</span>
-          <span class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25 px-3 py-2 rounded-pill">📍 Cerca tuyo</span>
-        </div>
-      </section>
+        <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3" role="tablist" style="background-color: #eef3f9;">
+          <button type="button" id="tab-login" class="nav-link active rounded-pill fw-bold btn-sm text-white" role="tab" style="background-color: #4a80e8 !important;">Ingresar</button>
+          <button type="button" id="tab-registro" class="nav-link rounded-pill fw-bold btn-sm" role="tab" style="color: #7b93a7;">Crear cuenta</button>
+        </nav>
 
-      <section class="col-12 col-lg-5">
-        <div class="landing-form-panel">
-          <article class="panel" id="panel-cuenta">
-            
-            <div class="logo-panel text-center mb-3">
-              <img src="img/logo Oficios.jpeg" alt="OficiosYa" style="max-height: 60px;" class="rounded-circle">
-            </div>
+        <section id="mensaje-area" aria-live="polite"></section>
 
-            <div class="tabs-rol mb-3" role="tablist">
-              <button type="button" id="tab-login" class="tab-btn activo" role="tab">Ingresar</button>
-              <button type="button" id="tab-registro" class="tab-btn" role="tab">Crear cuenta</button>
-            </div>
+        <section class="panel-login" id="login">
+          <form id="form-login" class="form w-100" novalidate>
+            <h2 class="title h5 mb-3 text-center fw-bold" style="color: #4c6b8b;">Ingresar a tu cuenta</h2>
 
-            <div id="mensaje-area" aria-live="polite"></div>
+            <p class="mb-3">
+              <label for="login-email" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Email</label>
+              <input type="email" id="login-email" class="form-control border-0 rounded-3 py-2" placeholder="tu@email.com" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
+            </p>
 
-            <section class="panel-login" id="login">
-              <div class="form-container w-100">
-                <h2 class="title h5 mb-3 text-dark text-center fw-bold">Ingresar a tu cuenta</h2>
+            <p class="mb-2">
+              <label for="login-password" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Contraseña</label>
+              <span class="input-group">
+                <input type="password" id="login-password" class="form-control border-0 rounded-start-3 py-2" placeholder="••••••••" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
+                <button type="button" class="btn border-0 rounded-end-3 px-3" data-target="login-password" aria-label="Mostrar contraseña" style="background-color: #f5f8fc; color: #7b93a7;">👁</button>
+              </span>
+            </p>
 
-                <form id="form-login" class="form" novalidate>
-                  <div class="campo mb-3">
-                    <label for="login-email" class="form-label text-dark small fw-bold">Email</label>
-                    <input type="email" id="login-email" class="form-control" placeholder="tu@email.com" required>
-                  </div>
+            <p class="forgot text-end mb-3">
+              <a href="#" class="small text-decoration-none" style="color: #4a80e8;">¿Olvidaste tu contraseña?</a>
+            </p>
 
-                  <div class="campo mb-2">
-                    <label for="login-password" class="form-label text-dark small fw-bold">Contraseña</label>
-                    <div class="input-group">
-                      <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
-                      <button type="button" class="btn btn-outline-secondary toggle-password" data-target="login-password" aria-label="Mostrar contraseña">👁</button>
-                    </div>
-                  </div>
+            <button type="submit" class="btn w-100 py-2.5 rounded-pill fw-bold text-dark shadow-sm" style="background-color: #f5be47 !important; border: none;">
+              Ingresar
+            </button>
 
-                  <div class="forgot text-end mb-3">
-                    <a href="#" class="small text-muted text-decoration-none">¿Olvidaste tu contraseña?</a>
-                  </div>
+            <footer class="signup text-center mt-3 small border-top pt-2" style="border-color: #eef3f9 !important; color: #7b93a7;">
+              ¿No tenés cuenta? <a href="#" id="link-a-registro" class="fw-bold text-decoration-none" style="color: #4c6b8b;">Registrate</a>
+            </footer>
+          </form>
+        </section>
 
-                  <button type="submit" class="btn btn-primario w-100 py-2">Ingresar</button>
-                </form>
+        <section class="panel-login" id="registro" style="display:none;">
+          <form id="form-registro" class="form w-100" novalidate>
+            <h2 class="title h5 mb-3 text-center fw-bold" style="color: #4c6b8b;">Crear nueva cuenta</h2>
 
-                <footer class="signup text-center mt-3 small text-muted">
-                  ¿No tenés cuenta? <a href="#" id="link-a-registro" class="fw-bold text-dark text-decoration-none">Registrate</a>
-                </footer>
-              </div>
-            </section>
+            <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3" role="tablist" style="background-color: #eef3f9;">
+              <button type="button" id="rol-cliente" class="nav-link active rounded-pill fw-bold btn-sm text-white" role="tab" style="background-color: #4a80e8 !important;">Soy Cliente</button>
+              <button type="button" id="rol-trabajador" class="nav-link rounded-pill fw-bold btn-sm" role="tab" style="color: #7b93a7;">Soy Trabajador</button>
+            </nav>
 
-            <section class="panel-login" id="registro" style="display:none;">
-              <div class="form-container w-100">
-                <h2 class="title h5 mb-3 text-dark text-center fw-bold">Crear nueva cuenta</h2>
+            <p class="mb-2">
+              <label for="reg-nombre" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Nombre completo</label>
+              <input type="text" id="reg-nombre" class="form-control form-control-sm border-0 rounded-3 py-2" placeholder="Ej: Juana Torres" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
+            </p>
 
-                <form id="form-registro" class="form" novalidate>
+            <p class="mb-2">
+              <label for="reg-email" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Email</label>
+              <input type="email" id="reg-email" class="form-control form-control-sm border-0 rounded-3 py-2" placeholder="tu@email.com" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
+            </p>
 
-                  <div class="tabs-rol mb-3" role="tablist">
-                    <button type="button" id="rol-cliente" class="tab-btn activo" role="tab">Soy Cliente</button>
-                    <button type="button" id="rol-trabajador" class="tab-btn" role="tab">Soy Trabajador</button>
-                  </div>
+            <p class="mb-2">
+              <label for="reg-password" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Contraseña</label>
+              <span class="input-group input-group-sm">
+                <input type="password" id="reg-password" class="form-control border-0 rounded-start-3 py-2" placeholder="••••••••" required minlength="4" style="background-color: #f5f8fc !important; color: #4c6b8b;">
+                <button type="button" class="btn border-0 rounded-end-3 px-3" data-target="reg-password" aria-label="Mostrar contraseña" style="background-color: #f5f8fc; color: #7b93a7;">👁</button>
+              </span>
+            </p>
 
-                  <div class="campo mb-2">
-                    <label for="reg-nombre" class="form-label text-dark small fw-bold">Nombre completo</label>
-                    <input type="text" id="reg-nombre" class="form-control form-control-sm" placeholder="Ej: Juana Torres" required>
-                  </div>
+            <fieldset id="campos-trabajador" class="border-0 rounded-3 p-3 mb-3" style="display:none; background-color: #f5f8fc;">
+              <legend class="float-none w-auto px-2 fs-7 fw-bold mb-1" style="color: #4c6b8b;">Datos de profesional</legend>
+              
+              <p class="mb-2">
+                <label for="reg-oficio" class="form-label small mb-1 d-block" style="color: #6b8296;">Oficio</label>
+                <input type="text" id="reg-oficio" class="form-control form-control-sm border-0 rounded-2" placeholder="Ej: Electricista matriculado" style="background-color: #ffffff;">
+              </p>
 
-                  <div class="campo mb-2">
-                    <label for="reg-email" class="form-label text-dark small fw-bold">Email</label>
-                    <input type="email" id="reg-email" class="form-control form-control-sm" placeholder="tu@email.com" required>
-                  </div>
+              <p class="mb-2">
+                <label for="reg-categoria" class="form-label small mb-1 d-block" style="color: #6b8296;">Categoría</label>
+                <select id="reg-categoria" class="form-select form-select-sm border-0 rounded-2" style="background-color: #ffffff; color: #4c6b8b;">
+                  <option value="Electricidad">Electricidad</option>
+                  <option value="Plomería">Plomería</option>
+                  <option value="Pintura">Pintura</option>
+                  <option value="Albañilería">Albañilería</option>
+                  <option value="Aire acond.">Aire acondicionado</option>
+                  <option value="Carpintería">Carpintería</option>
+                  <option value="Cerrajería">Cerrajería</option>
+                  <option value="Jardinería">Jardinería</option>
+                </select>
+              </p>
 
-                  <div class="campo mb-2">
-                    <label for="reg-password" class="form-label text-dark small fw-bold">Contraseña</label>
-                    <div class="input-group input-group-sm">
-                      <input type="password" id="reg-password" class="form-control" placeholder="••••••••" required minlength="4">
-                      <button type="button" class="btn btn-outline-secondary toggle-password" data-target="reg-password" aria-label="Mostrar contraseña">👁</button>
-                    </div>
-                  </div>
+              <p class="mb-2">
+                <label for="reg-zona" class="form-label small mb-1 d-block" style="color: #6b8296;">Zona donde trabajás</label>
+                <input type="text" id="reg-zona" class="form-control form-control-sm border-0 rounded-2" placeholder="Ej: Tucumán Capital, Yerba Buena" style="background-color: #ffffff;">
+              </p>
 
-                  <fieldset id="campos-trabajador" class="border rounded p-2 mb-3 bg-light" style="display:none;">
-                    <legend class="float-none w-auto px-2 fs-7 fw-bold text-secondary mb-1">Datos de profesional</legend>
-                    
-                    <div class="campo mb-2">
-                      <label for="reg-oficio" class="form-label small text-dark mb-1">Oficio</label>
-                      <input type="text" id="reg-oficio" class="form-control form-control-sm" placeholder="Ej: Electricista matriculado">
-                    </div>
+              <p class="mb-2">
+                <label for="reg-precio" class="form-label small mb-1 d-block" style="color: #6b8296;">Precio por hora ($)</label>
+                <input type="number" id="reg-precio" class="form-control form-control-sm border-0 rounded-2" min="0" step="50" placeholder="Ej: 4500" style="background-color: #ffffff;">
+              </p>
 
-                    <div class="campo mb-2">
-                      <label for="reg-categoria" class="form-label small text-dark mb-1">Categoría</label>
-                      <select id="reg-categoria" class="form-select form-select-sm">
-                        <option value="Electricidad">Electricidad</option>
-                        <option value="Plomería">Plomería</option>
-                        <option value="Pintura">Pintura</option>
-                        <option value="Albañilería">Albañilería</option>
-                        <option value="Aire acond.">Aire acondicionado</option>
-                        <option value="Carpintería">Carpintería</option>
-                        <option value="Cerrajería">Cerrajería</option>
-                        <option value="Jardinería">Jardinería</option>
-                      </select>
-                    </div>
+              <p class="mb-2">
+                <label for="reg-descripcion" class="form-label small mb-1 d-block" style="color: #6b8296;">Descripción breve</label>
+                <textarea id="reg-descripcion" class="form-control form-control-sm border-0 rounded-2" maxlength="200" rows="2" placeholder="Experiencia y especialidades..." style="background-color: #ffffff;"></textarea>
+                <span class="text-end d-block">
+                  <small class="text-muted" id="contador-desc" style="font-size: 0.7rem;">0 / 200</small>
+                </span>
+              </p>
+            </fieldset>
 
-                    <div class="campo mb-2">
-                      <label for="reg-zona" class="form-label small text-dark mb-1">Zona donde trabajás</label>
-                      <input type="text" id="reg-zona" class="form-control form-control-sm" placeholder="Ej: Tucumán Capital, Yerba Buena">
-                    </div>
+            <button type="submit" class="btn w-100 py-2.5 mt-2 rounded-pill fw-bold text-dark shadow-sm" style="background-color: #f5be47 !important; border: none;">
+              Crear cuenta
+            </button>
 
-                    <div class="campo mb-2">
-                      <label for="reg-precio" class="form-label small text-dark mb-1">Precio por hora ($)</label>
-                      <input type="number" id="reg-precio" class="form-control form-control-sm" min="0" step="50" placeholder="Ej: 4500">
-                    </div>
+            <footer class="signup text-center mt-3 small border-top pt-2" id="texto-cambio" style="border-color: #eef3f9 !important; color: #7b93a7;">
+              ¿Ya tenés cuenta? <button type="button" id="link-a-login" class="btn btn-link p-0 text-decoration-none fw-bold align-baseline small" style="color: #4c6b8b;">Ingresá</button>
+            </footer>
+          </form>
+        </section>
 
-                    <div class="campo mb-2">
-                      <label for="reg-descripcion" class="form-label small text-dark mb-1">Descripción breve</label>
-                      <textarea id="reg-descripcion" class="form-control form-control-sm" maxlength="200" rows="2" placeholder="Experiencia y especialidades..."></textarea>
-                      <div class="text-end">
-                        <small class="text-muted" id="contador-desc" style="font-size: 0.7rem;">0 / 200</small>
-                      </div>
-                    </div>
-                  </fieldset>
+      </article>
+    </aside>
 
-                  <button type="submit" class="btn btn-primario w-100 py-2 mt-2">Crear cuenta</button>
-                </form>
-
-                <footer class="signup text-center mt-3 small text-muted" id="texto-cambio">
-                  ¿Ya tenés cuenta? <button type="button" id="link-a-login" class="btn btn-link p-0 text-decoration-none fw-bold text-dark align-baseline small">Ingresá</button>
-                </footer>
-              </div>
-            </section>
-
-          </article>
-        </div>
-      </section>
-
-    </div>
-  </div>
+  </section>
 </main>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
 </body>
