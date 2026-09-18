@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const rutaActual = window.location.pathname;
 
@@ -9,18 +7,31 @@ document.addEventListener("DOMContentLoaded", () => {
     rutaActual.endsWith("/")
   ) {
     initLanding();
+
   } else if (rutaActual.includes("menu.html")) {
     initMenu();
+
   } else if (rutaActual.includes("oficios.html")) {
     initOficios();
-  } else if (rutaActual.includes("perfil.html")) {
+
+  } else if (
+    rutaActual.includes("perfil.html") ||
+    rutaActual === "/perfil"
+  ) {
     initPerfil();
-  } else if (rutaActual.includes("perfiltrabajador.html")) {
+
+  } else if (
+    rutaActual.includes("perfiltrabajador.html") ||
+    rutaActual.startsWith("/perfiltrabajador")
+  ) {
     initPerfilTrabajador();
+
   } else if (rutaActual.includes("historialtrabajador.html")) {
     initHistorialTrabajador();
+
   } else if (rutaActual.includes("historial.html")) {
     initHistorial();
+
   } else if (
     rutaActual.includes("crearpedido.html") ||
     rutaActual.includes("solicitar-servicio.html")
