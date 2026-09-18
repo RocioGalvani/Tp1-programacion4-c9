@@ -383,15 +383,15 @@ function initMenu() {
     return;
   }
 
-  const btnCerrarSesion =
-    document.getElementById("btn-cerrar-sesion");
+const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
 
-  if (btnCerrarSesion) {
-    btnCerrarSesion.addEventListener("click", (e) => {
-      e.preventDefault();
-      cerrarSesion();
-    });
-  }
+if (btnCerrarSesion) {
+  btnCerrarSesion.onclick = function (e) {
+    e.preventDefault();
+    localStorage.removeItem("oficioya-sesion");
+    window.location.href = "index.html";
+  };
+}
 
   const vistaCliente =
     document.getElementById("vista-cliente");
