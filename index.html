@@ -4,167 +4,396 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OfiGO conecta personas con profesionales de distintos oficios y servicios en Tucumán.">
+  <meta name="description"
+    content="OfiGO conecta personas con profesionales de distintos oficios y servicios en Tucumán.">
   <meta name="author" content="Equipo OfiGO">
   <meta name="keywords" content="OfiGO, servicios, profesionales, trabajadores, reparaciones, Tucumán, OfiGO">
   <title>OfiGO — Ingresá o creá tu cuenta</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<link rel="icon"  href="./img/OfiGO.png">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="sin-bottom-nav landing-page">
 
 
 
-<header class="topbar landing-header shadow-sm" style="background-color: #2c4a63 !important;">
-  <nav class="landing-header-inner w-100 d-flex justify-content-between align-items-center px-4 py-2">
-    
-    <a href="#" class="marca-landing text-decoration-none d-flex align-items-center gap-2 fw-bold fs-3 text-white p-0 bg-transparent shadow-none border-0">
-  <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 80px; width: auto;">
-  <span>Ofi<span style="color: #f5be47;">GO</span></span>
-</a>
+  <header class="topbar landing-header shadow-sm" style="background-color: #2c4a63 !important;">
+    <nav class="landing-header-inner w-100 d-flex justify-content-between align-items-center px-4 py-2">
 
-    <section class="d-flex gap-2">
-      <a href="#registro" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-profesional" style="border: 1px solid rgba(255, 255, 255, 0.4); background: rgba(255,255,255,0.1);">Soy profesional</a>
-      <a href="#login" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-ingresar" style="background-color: #4a80e8;">Ingresar</a>
-    </section>
+      <a href="#"
+        class="marca-landing text-decoration-none d-flex align-items-center gap-2 fw-bold fs-3 text-white p-0 bg-transparent shadow-none border-0">
+        <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 80px; width: auto;">
+        <span>Ofi<span style="color: #f5be47;">GO</span></span>
+      </a>
 
-  </nav>
-</header>
+      <section class="d-flex gap-2">
+        <a href="#registro" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-profesional"
+          style="border: 1px solid rgba(255, 255, 255, 0.4); background: rgba(255,255,255,0.1);">Soy profesional</a>
+        <a href="#login" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-ingresar"
+          style="background-color: #4a80e8;">Ingresar</a>
+      </section>
 
-<main class="landing-shell container-fluid min-vh-100 d-flex align-items-center justify-content-center p-3" style="background: linear-gradient(180deg, #fff3e9 0%, #f8b187 100%) !important;">
-  <section class="row justify-content-center w-100 m-0">
+    </nav>
+  </header>
 
-    <aside class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 p-0">
-      <article class="card border-0 shadow-lg p-4 rounded-4 w-100" id="panel-cuenta" style="background-color: #ffffff !important; box-shadow: 0 15px 35px rgba(76, 107, 139, 0.15) !important;">
-        
-        <header class="logo-panel text-center mb-3">
-          <h2 class="h4 fw-bold mb-0" style="color: #4c6b8b;">Ofi<span style="color: #f5be47;">GO</span></h2>
-        </header>
+  <main class="landing-shell container-fluid min-vh-100 d-flex align-items-center justify-content-center p-3"
+    style="background: linear-gradient(180deg, #fff3e9 0%, #f8b187 100%) !important;">
+    <section class="row justify-content-center w-100 m-0">
 
-        <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3" role="tablist" style="background-color: #eef3f9;">
-          <button type="button" id="tab-login" class="nav-link active rounded-pill fw-bold btn-sm text-white" role="tab" style="background-color: #4a80e8 !important;">Ingresar</button>
-          <button type="button" id="tab-registro" class="nav-link rounded-pill fw-bold btn-sm" role="tab" style="color: #7b93a7;">Crear cuenta</button>
+      <aside class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 p-0">
+        <article class="card border-0 shadow-lg p-4 rounded-4 w-100" id="panel-cuenta"
+          style="background-color: #ffffff !important; box-shadow: 0 15px 35px rgba(76, 107, 139, 0.15) !important;">
+
+          <header class="logo-panel text-center mb-3">
+            <h2 class="h4 fw-bold mb-0" style="color: #4c6b8b;">Ofi<span style="color: #f5be47;">GO</span></h2>
+          </header>
+ 
+          <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3" role="tablist"
+            style="background-color: #eef3f9;">
+            <button type="button" id="tab-login" class="nav-link active rounded-pill fw-bold btn-sm text-white"
+              role="tab" style="background-color: #4a80e8 !important;">Ingresar</button>
+            <button type="button" id="tab-registro" class="nav-link rounded-pill fw-bold btn-sm" role="tab"
+              style="color: #7b93a7;">Crear cuenta</button>
+          </nav>
+
+          <section id="mensaje-area" aria-live="polite"></section>
+
+         
+<section class="panel-login" id="login">
+
+    <form id="form-login" class="form w-100" novalidate>
+
+        <h2 class="title h5 mb-3 text-center fw-bold" style="color: #4c6b8b;">
+            Ingresar a tu cuenta
+        </h2>
+
+        <p class="mb-3">
+            <label for="login-email" class="form-label small fw-bold mb-1 d-block"
+                style="color: #6b8296;">Email</label>
+
+            <input type="email" id="login-email"
+                class="form-control border-0 rounded-3 py-2"
+                placeholder="tu@email.com"
+                required
+                style="background-color: #f5f8fc !important; color: #4c6b8b;">
+        </p>
+
+        <p class="mb-2">
+            <label for="login-password" class="form-label small fw-bold mb-1 d-block"
+                style="color: #6b8296;">Contraseña</label>
+
+            <span class="input-group">
+
+                <input type="password" id="login-password"
+                    class="form-control border-0 rounded-start-3 py-2"
+                    placeholder="••••••••"
+                    required
+                    style="background-color: #f5f8fc !important; color: #4c6b8b;">
+
+                <button type="button"
+                    class="btn border-0 rounded-end-3 px-3"
+                    data-target="login-password"
+                    aria-label="Mostrar contraseña"
+                    style="background-color: #f5f8fc; color: #7b93a7;">
+                    👁
+                </button>
+
+            </span>
+        </p>
+
+        <p class="forgot text-end mb-3">
+            <a href="#" class="small text-decoration-none"
+                style="color: #4a80e8;">
+                ¿Olvidaste tu contraseña?
+            </a>
+        </p>
+
+        <button type="submit"
+            class="btn w-100 py-2.5 rounded-pill fw-bold text-dark shadow-sm"
+            style="background-color: #f5be47 !important; border: none;">
+            Ingresar
+        </button>
+
+        <footer class="signup text-center mt-3 small border-top pt-2"
+            style="border-color: #eef3f9 !important; color: #7b93a7;">
+
+            ¿No tenés cuenta?
+
+            <a href="#" id="link-a-registro"
+                class="fw-bold text-decoration-none"
+                style="color: #4c6b8b;">
+                Registrate
+            </a>
+
+        </footer>
+
+    </form>
+    <section class="acceso-rapido text-center mt-3 pt-3 border-top" style="border-color: #eef3f9 !important;">
+    <p class="small fw-bold mb-2" style="color: #6b8296;">Acceso directo</p>
+    <div class="d-flex gap-2">
+        <button type="button"
+            class="btn btn-sm flex-fill rounded-pill fw-bold text-white btn-acceso-rapido"
+            data-rol="cliente"
+            style="background-color: #4a80e8;">
+            <img src="img/people.png" alt="Cliente" class="icono-home"> Cliente
+        </button>
+        <button type="button"
+            class="btn btn-sm flex-fill rounded-pill fw-bold text-white btn-acceso-rapido"
+            data-rol="trabajador"
+            style="background-color: #4a80e8;">
+            <img src="img/engineer.png" alt="Trabajador" class="icono-home"> Trabajador
+        </button>
+    </div>
+</section>
+
+</section>
+
+
+<section class="panel-login" id="registro" style="display:none;">
+
+    <form id="form-registro" class="form w-100" novalidate>
+
+        <h2 class="title h5 mb-3 text-center fw-bold"
+            style="color: #4c6b8b;">
+            Crear nueva cuenta
+        </h2>
+
+        <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3"
+            role="tablist"
+            style="background-color: #eef3f9;">
+
+            <button type="button" id="rol-cliente"
+                class="nav-link active rounded-pill fw-bold btn-sm text-white"
+                role="tab"
+                style="background-color: #4a80e8 !important;">
+                Soy Cliente
+            </button>
+
+            <button type="button" id="rol-trabajador"
+                class="nav-link rounded-pill fw-bold btn-sm"
+                role="tab"
+                style="color: #7b93a7;">
+                Soy Trabajador
+            </button>
+
         </nav>
 
-        <section id="mensaje-area" aria-live="polite"></section>
+        <p class="mb-2">
+            <label for="reg-nombre"
+                class="form-label small fw-bold mb-1 d-block"
+                style="color: #6b8296;">
+                Nombre completo
+            </label>
 
-        <section class="panel-login" id="login">
-          <form id="form-login" class="form w-100" novalidate>
-            <h2 class="title h5 mb-3 text-center fw-bold" style="color: #4c6b8b;">Ingresar a tu cuenta</h2>
+            <input type="text" id="reg-nombre"
+                class="form-control form-control-sm border-0 rounded-3 py-2"
+                placeholder="Ej: Juana Torres"
+                required
+                style="background-color: #f5f8fc !important; color: #4c6b8b;">
+        </p>
 
-            <p class="mb-3">
-              <label for="login-email" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Email</label>
-              <input type="email" id="login-email" class="form-control border-0 rounded-3 py-2" placeholder="tu@email.com" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
+        <p class="mb-2">
+            <label for="reg-email"
+                class="form-label small fw-bold mb-1 d-block"
+                style="color: #6b8296;">
+                Email
+            </label>
+
+            <input type="email" id="reg-email"
+                class="form-control form-control-sm border-0 rounded-3 py-2"
+                placeholder="tu@email.com"
+                required
+                style="background-color: #f5f8fc !important; color: #4c6b8b;">
+        </p>
+
+        <p class="mb-2">
+            <label for="reg-password"
+                class="form-label small fw-bold mb-1 d-block"
+                style="color: #6b8296;">
+                Contraseña
+            </label>
+
+            <span class="input-group input-group-sm">
+
+                <input type="password" id="reg-password"
+                    class="form-control border-0 rounded-start-3 py-2"
+                    placeholder="••••••••"
+                    required
+                    minlength="4"
+                    style="background-color: #f5f8fc !important; color: #4c6b8b;">
+
+                <button type="button"
+                    class="btn border-0 rounded-end-3 px-3"
+                    data-target="reg-password"
+                    aria-label="Mostrar contraseña"
+                    style="background-color: #f5f8fc; color: #7b93a7;">
+                    👁
+                </button>
+
+            </span>
+        </p>
+
+        <fieldset id="campos-trabajador"
+            class="border-0 rounded-3 p-3 mb-3"
+            style="display:none; background-color: #f5f8fc;">
+
+            <legend class="float-none w-auto px-2 fs-7 fw-bold mb-1"
+                style="color: #4c6b8b;">
+                Datos de profesional
+            </legend>
+
+            <p class="mb-2">
+                <label for="reg-oficio"
+                    class="form-label small mb-1 d-block"
+                    style="color: #6b8296;">
+                    Oficio
+                </label>
+
+                <input type="text" id="reg-oficio"
+                    class="form-control form-control-sm border-0 rounded-2"
+                    placeholder="Ej: Electricista matriculado"
+                    style="background-color: #ffffff;">
             </p>
 
             <p class="mb-2">
-              <label for="login-password" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Contraseña</label>
-              <span class="input-group">
-                <input type="password" id="login-password" class="form-control border-0 rounded-start-3 py-2" placeholder="••••••••" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
-                <button type="button" class="btn border-0 rounded-end-3 px-3" data-target="login-password" aria-label="Mostrar contraseña" style="background-color: #f5f8fc; color: #7b93a7;">👁</button>
-              </span>
-            </p>
+                <label for="reg-categoria"
+                    class="form-label small mb-1 d-block"
+                    style="color: #6b8296;">
+                    Categoría
+                </label>
 
-            <p class="forgot text-end mb-3">
-              <a href="#" class="small text-decoration-none" style="color: #4a80e8;">¿Olvidaste tu contraseña?</a>
-            </p>
+                <select id="reg-categoria"
+                    class="form-select form-select-sm border-0 rounded-2"
+                    style="background-color: #ffffff; color: #4c6b8b;">
 
-            <button type="submit" class="btn w-100 py-2.5 rounded-pill fw-bold text-dark shadow-sm" style="background-color: #f5be47 !important; border: none;">
-              Ingresar
-            </button>
+                    <option value="Electricidad">Electricidad</option>
+                    <option value="Plomería">Plomería</option>
+                    <option value="Pintura">Pintura</option>
+                    <option value="Albañilería">Albañilería</option>
+                    <option value="Aire acond.">Aire acondicionado</option>
+                    <option value="Carpintería">Carpintería</option>
+                    <option value="Cerrajería">Cerrajería</option>
+                    <option value="Jardinería">Jardinería</option>
 
-            <footer class="signup text-center mt-3 small border-top pt-2" style="border-color: #eef3f9 !important; color: #7b93a7;">
-              ¿No tenés cuenta? <a href="#" id="link-a-registro" class="fw-bold text-decoration-none" style="color: #4c6b8b;">Registrate</a>
-            </footer>
-          </form>
-        </section>
-
-        <section class="panel-login" id="registro" style="display:none;">
-          <form id="form-registro" class="form w-100" novalidate>
-            <h2 class="title h5 mb-3 text-center fw-bold" style="color: #4c6b8b;">Crear nueva cuenta</h2>
-
-            <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3" role="tablist" style="background-color: #eef3f9;">
-              <button type="button" id="rol-cliente" class="nav-link active rounded-pill fw-bold btn-sm text-white" role="tab" style="background-color: #4a80e8 !important;">Soy Cliente</button>
-              <button type="button" id="rol-trabajador" class="nav-link rounded-pill fw-bold btn-sm" role="tab" style="color: #7b93a7;">Soy Trabajador</button>
-            </nav>
-
-            <p class="mb-2">
-              <label for="reg-nombre" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Nombre completo</label>
-              <input type="text" id="reg-nombre" class="form-control form-control-sm border-0 rounded-3 py-2" placeholder="Ej: Juana Torres" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
-            </p>
-
-            <p class="mb-2">
-              <label for="reg-email" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Email</label>
-              <input type="email" id="reg-email" class="form-control form-control-sm border-0 rounded-3 py-2" placeholder="tu@email.com" required style="background-color: #f5f8fc !important; color: #4c6b8b;">
-            </p>
-
-            <p class="mb-2">
-              <label for="reg-password" class="form-label small fw-bold mb-1 d-block" style="color: #6b8296;">Contraseña</label>
-              <span class="input-group input-group-sm">
-                <input type="password" id="reg-password" class="form-control border-0 rounded-start-3 py-2" placeholder="••••••••" required minlength="4" style="background-color: #f5f8fc !important; color: #4c6b8b;">
-                <button type="button" class="btn border-0 rounded-end-3 px-3" data-target="reg-password" aria-label="Mostrar contraseña" style="background-color: #f5f8fc; color: #7b93a7;">👁</button>
-              </span>
-            </p>
-
-            <fieldset id="campos-trabajador" class="border-0 rounded-3 p-3 mb-3" style="display:none; background-color: #f5f8fc;">
-              <legend class="float-none w-auto px-2 fs-7 fw-bold mb-1" style="color: #4c6b8b;">Datos de profesional</legend>
-              
-              <p class="mb-2">
-                <label for="reg-oficio" class="form-label small mb-1 d-block" style="color: #6b8296;">Oficio</label>
-                <input type="text" id="reg-oficio" class="form-control form-control-sm border-0 rounded-2" placeholder="Ej: Electricista matriculado" style="background-color: #ffffff;">
-              </p>
-
-              <p class="mb-2">
-                <label for="reg-categoria" class="form-label small mb-1 d-block" style="color: #6b8296;">Categoría</label>
-                <select id="reg-categoria" class="form-select form-select-sm border-0 rounded-2" style="background-color: #ffffff; color: #4c6b8b;">
-                  <option value="Electricidad">Electricidad</option>
-                  <option value="Plomería">Plomería</option>
-                  <option value="Pintura">Pintura</option>
-                  <option value="Albañilería">Albañilería</option>
-                  <option value="Aire acond.">Aire acondicionado</option>
-                  <option value="Carpintería">Carpintería</option>
-                  <option value="Cerrajería">Cerrajería</option>
-                  <option value="Jardinería">Jardinería</option>
                 </select>
-              </p>
+            </p>
 
-              <p class="mb-2">
-                <label for="reg-zona" class="form-label small mb-1 d-block" style="color: #6b8296;">Zona donde trabajás</label>
-                <input type="text" id="reg-zona" class="form-control form-control-sm border-0 rounded-2" placeholder="Ej: Tucumán Capital, Yerba Buena" style="background-color: #ffffff;">
-              </p>
+            <p class="mb-2">
+                <label for="reg-zona"
+                    class="form-label small mb-1 d-block"
+                    style="color: #6b8296;">
+                    Zona donde trabajás
+                </label>
 
-              <p class="mb-2">
-                <label for="reg-precio" class="form-label small mb-1 d-block" style="color: #6b8296;">Precio por hora ($)</label>
-                <input type="number" id="reg-precio" class="form-control form-control-sm border-0 rounded-2" min="0" step="50" placeholder="Ej: 4500" style="background-color: #ffffff;">
-              </p>
+                <input type="text" id="reg-zona"
+                    class="form-control form-control-sm border-0 rounded-2"
+                    placeholder="Ej: Tucumán Capital, Yerba Buena"
+                    style="background-color: #ffffff;">
+            </p>
 
-              <p class="mb-2">
-                <label for="reg-descripcion" class="form-label small mb-1 d-block" style="color: #6b8296;">Descripción breve</label>
-                <textarea id="reg-descripcion" class="form-control form-control-sm border-0 rounded-2" maxlength="200" rows="2" placeholder="Experiencia y especialidades..." style="background-color: #ffffff;"></textarea>
+            <p class="mb-2">
+                <label for="reg-precio"
+                    class="form-label small mb-1 d-block"
+                    style="color: #6b8296;">
+                    Precio por hora ($)
+                </label>
+
+                <input type="number" id="reg-precio"
+                    class="form-control form-control-sm border-0 rounded-2"
+                    min="0"
+                    step="50"
+                    placeholder="Ej: 4500"
+                    style="background-color: #ffffff;">
+            </p>
+
+            <p class="mb-2">
+                <label for="reg-descripcion"
+                    class="form-label small mb-1 d-block"
+                    style="color: #6b8296;">
+                    Descripción breve
+                </label>
+
+                <textarea id="reg-descripcion"
+                    class="form-control form-control-sm border-0 rounded-2"
+                    maxlength="200"
+                    rows="2"
+                    placeholder="Experiencia y especialidades..."
+                    style="background-color: #ffffff;"></textarea>
+
                 <span class="text-end d-block">
-                  <small class="text-muted" id="contador-desc" style="font-size: 0.7rem;">0 / 200</small>
+                    <small class="text-muted"
+                        id="contador-desc"
+                        style="font-size: 0.7rem;">
+                        0 / 200
+                    </small>
                 </span>
-              </p>
-            </fieldset>
 
-            <button type="submit" class="btn w-100 py-2.5 mt-2 rounded-pill fw-bold text-dark shadow-sm" style="background-color: #f5be47 !important; border: none;">
-              Crear cuenta
+            </p>
+
+        </fieldset>
+
+        <button type="submit"
+            class="btn w-100 py-2.5 mt-2 rounded-pill fw-bold text-dark shadow-sm"
+            style="background-color: #f5be47 !important; border: none;">
+            Crear cuenta
+        </button>
+
+        <footer class="signup text-center mt-3 small border-top pt-2"
+            id="texto-cambio"
+            style="border-color: #eef3f9 !important; color: #7b93a7;">
+
+            ¿Ya tenés cuenta?
+
+            <button type="button"
+                id="link-a-login"
+                class="btn btn-link p-0 text-decoration-none fw-bold align-baseline small"
+                style="color: #4c6b8b;">
+                Ingresá
             </button>
 
-            <footer class="signup text-center mt-3 small border-top pt-2" id="texto-cambio" style="border-color: #eef3f9 !important; color: #7b93a7;">
-              ¿Ya tenés cuenta? <button type="button" id="link-a-login" class="btn btn-link p-0 text-decoration-none fw-bold align-baseline small" style="color: #4c6b8b;">Ingresá</button>
-            </footer>
-          </form>
-        </section>
+        </footer>
 
-      </article>
-    </aside>
+    </form>
 
-  </section>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="app.js"></script>
+</section>
+
+        </article>
+      </aside>
+
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+<script>
+    const usuariosDemo = {
+        cliente: {
+            nombre: "Cliente Demo",
+            email: "cliente@demo.com",
+            rol: "cliente"
+        },
+        trabajador: {
+            nombre: "Ricardo Sosa",
+            email: "trabajador@demo.com",
+            rol: "trabajador",
+            oficio: "Electricista matriculado",
+            categoria: "Electricidad",
+            zona: "Tucumán Capital, Yerba Buena",
+            precioPorHora: 4500,
+            descripcion: "Usuario de prueba."
+        }
+    };
+
+    document.querySelectorAll('.btn-acceso-rapido').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const usuario = usuariosDemo[btn.dataset.rol];
+            localStorage.setItem('oficioya-sesion', JSON.stringify(usuario));
+            window.location.href = 'menu.html';
+        });
+    });
+</script>
 </body>
+
 </html>

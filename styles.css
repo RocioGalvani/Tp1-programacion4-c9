@@ -1216,7 +1216,6 @@ main:last-of-type,
       rgba(28, 50, 69, 0.48) 48%,
       rgba(28, 50, 69, 0.08)
     ),
-    url('/img/portada-oficio.jpeg') center right / cover no-repeat;
 }
 
 /*.landing-page .landing-header {
@@ -1256,7 +1255,6 @@ main:last-of-type,
       rgba(28, 50, 69, 0.75) 50%, 
       rgba(28, 50, 69, 0.5) 100%
     ),
-    url('img/portada\ oficios.jpeg') center / cover no-repeat ;
 }
 
 /*.landing-copy {
@@ -2084,7 +2082,7 @@ main:last-of-type,
 
 /* --- PANEL LATERAL DE AYUDA --- */
 
-.panel-ayuda {
+/*.panel-ayuda {
   position: fixed;
   top: 0;
   right: 0;
@@ -2191,4 +2189,4 @@ main:last-of-type,
     padding: 25px 20px;
   }
 
-}
+}/*

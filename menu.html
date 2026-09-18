@@ -4,256 +4,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Panel principal de OficiosYa: encontrá profesionales de oficios cerca tuyo en Tucumán.">
+  <meta name="description"
+    content="Panel principal de OficiosYa: encontrá profesionales de oficios cerca tuyo en Tucumán.">
   <title>OficiosYa — Inicio</title>
-
+  <link rel="icon"  href="./img/OfiGO.png">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header class="topbar">
-  <div class="marca d-flex align-items-center gap-2">
-    <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 60px; width: auto;">
-    <span>Ofi<span class="text-warning">GO</span></span>
-  </div>
-  <nav id="topbar-usuario">
-    <a href="perfil.html">Mi perfil</a>
-    <a href="#" id="btn-cerrar-sesion" class="text-danger fw-bold">Cerrar sesión</a>
-  </nav>
-</header>
+  <header class="topbar">
+    <div class="marca d-flex align-items-center gap-2">
+      <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 60px; width: auto;">
+      <span>Ofi<span class="text-warning">GO</span></span>
+    </div>
+    <nav id="topbar-usuario">
+      <a href="perfil.html">Mi perfil</a>
+      <a href="#" id="btn-cerrar-sesion" class="text-danger fw-bold">Cerrar sesión</a>
+    </nav>
+  </header>
 
-<section id="vista-cliente">
+  <section id="vista-cliente">
 
-  <section class="transparencia py-5 border-bottom">
-    <div class="container" style="max-width: 900px;">
-      <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">📍 Tucumán · Disponible ahora</span>
-      <h1 class="display-5 fw-bold text-dark mb-2">Hola, <span id="nombre-cliente" class="text-primary">Juana</span>.</h1>
-      <h2 class="h3 fw-semibold text-secondary mb-3">¿Qué oficio necesitás hoy?</h2>
-      <p class="text-muted">Encontrá plomeros, electricistas, pintores y más. Compará, elegí y contactá al instante.</p>
+    <section class="transparencia py-5 border-bottom">
+      <div class="container" style="max-width: 900px;">
+        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">📍 Tucumán · Disponible
+          ahora</span>
+        <h1 class="display-5 fw-bold text-dark mb-2">Hola, <span id="nombre-cliente" class="text-primary">Juana</span>.
+        </h1>
+        <h2 class="h3 fw-semibold text-secondary mb-3">¿Qué oficio necesitás hoy?</h2>
+        <p class="text-muted">Encontrá plomeros, electricistas, pintores y más. Compará, elegí y contactá al instante.
+        </p>
 
-      <form class="input-group search-transparent mt-4" action="oficios.html" method="get" style="max-width: 580px;">
-        <input type="text" id="texto-busqueda" name="buscar" class="form-control form-control-lg" placeholder="¿Qué servicio necesitás? (Ej: electricista)" aria-label="Servicio a buscar">
-        <button type="submit" class="btn btn-primary px-4">Buscar</button>
-      </form>
+        <form class="input-group search-transparent mt-4" action="oficios.html" method="get" style="max-width: 580px;">
+          <input type="text" id="texto-busqueda" name="buscar" class="form-control form-control-lg"
+            placeholder="¿Qué servicio necesitás? (Ej: electricista)" aria-label="Servicio a buscar">
+          <button type="submit" class="btn btn-primary px-4">Buscar</button>
+        </form>
+      </div>
+    </section>
+
+    <main class="container my-5" style="max-width: 900px;">
+
+      <article
+        class="alert alert-warning d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-5 shadow-sm"
+        role="note">
+        <div>
+          <strong class="d-block">🔧 Primera consulta sin cargo</strong>
+          <span>Contactá a cualquier profesional hoy y obtené una evaluación gratis de tu arreglo.</span>
+        </div>
+        <a href="oficios.html" class="btn btn-dark flex-shrink-0">Aprovechar</a>
+      </article>
+
+      <section class="mb-5">
+        <div class="fila-titulo mb-3">
+          <h2 class="h4 fw-bold">Categorías</h2>
+          <a href="oficios.html" class="text-decoration-none fw-bold small">Ver todas →</a>
+        </div>
+
+        <ul class="row row-cols-2 row-cols-md-4 g-3 list-unstyled mb-0" id="grid-categorias-menu">
+          <li class="col">
+            <a href="oficios.html?categoria=Electricidad"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-warning-subtle category-card">
+              <span class="icono-cat"> <img src="./img/innovation.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Electricidad</span>
+            </a>
+          </li>
+          <li class="col">
+            <a href="oficios.html?categoria=Plomer%C3%ADa"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-info-subtle category-card">
+              <span class="icono-cat"> <img src="./img/plumbing.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Plomería</span>
+            </a>
+          </li>
+          <li class="col">
+            <a href="oficios.html?categoria=Pintura"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-danger-subtle category-card">
+              <span class="icono-cat"> <img src="./img/house-painting.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Pintura</span>
+            </a>
+          </li>
+          <li class="col">
+            <a href="oficios.html?categoria=Alba%C3%B1iler%C3%ADa"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-secondary-subtle category-card">
+              <span class="icono-cat"> <img src="./img/building.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Albañilería</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <div class="fila-titulo mb-3">
+          <h2 class="h4 fw-bold">Cerca de vos</h2>
+          <a href="oficios.html" class="text-decoration-none fw-bold small">Ver más →</a>
+        </div>
+
+        <ul class="row g-3 list-unstyled mb-0" id="destacados-cliente">
+          <li class="col-12 col-md-6">
+            <a href="perfiltrabajador.html?id=1"
+              class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-primary-subtle">
+              <div class="card-body fila-cabecera">
+                <div class="avatar-profesional">
+                  CM
+                  <span class="punto-estado disponible"></span>
+                </div>
+                <div class="info-principal">
+                  <span class="nombre-prof">Carlos Medina</span>
+                  <p class="oficio-prof">Electricista Matriculado</p>
+                  <div class="fila-meta">
+                    <span class="rating">★ 4.8</span>
+                    <span>(23)</span>
+                    <span> <img src="img/location.png" class="icono-img" alt="Ubicación"> 2.1 km</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="col-12 col-md-6">
+            <a href="perfiltrabajador.html?id=2"
+              class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-info-subtle">
+              <div class="card-body fila-cabecera">
+                <div class="avatar-profesional">
+                  MP
+                  <span class="punto-estado disponible"></span>
+                </div>
+                <div class="info-principal">
+                  <span class="nombre-prof">Mónica Paz</span>
+                  <p class="oficio-prof">Plomera Specialist</p>
+                  <div class="fila-meta">
+                    <span class="rating">★ 4.9</span>
+                    <span>(31)</span>
+                    <span> <img src="img/location.png" class="icono-img" alt="Ubicación"> 3.2 km</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </section>
+
+  <section id="vista-trabajador" class="container my-5" style="max-width: 800px; display: none;">
+    <div class="panel card p-4 shadow-sm mb-4">
+      <span class="badge bg-warning text-dark mb-2 w-fit">📥 Panel de trabajador</span>
+      <h1 class="h3 fw-bold mb-1">Hola, <span id="nombre-trabajador">Ricardo Sosa</span></h1>
+      <p class="text-secondary small">Así está la actividad de tus servicios en la plataforma hoy.</p>
+
+      <div class="row text-center my-3 py-3 border-top border-bottom g-2">
+        <div class="col-6 border-end">
+          <span class="fs-4 fw-bold text-dark d-block">★ 4.9</span>
+          <span class="text-secondary small">Calificación promedio</span>
+        </div>
+        <div class="col-6">
+          <span class="fs-4 fw-bold text-dark d-block">3</span>
+          <span class="text-secondary small">Pedidos pendientes</span>
+        </div>
+      </div>
+
+      <div class="list-unstyled mt-3">
+        <a href="historialtrabajador.html"
+          class="card tarjeta-pedido text-decoration-none d-block p-3 bg-light border-0 shadow-sm">
+          <span class="fs-3">📥</span>
+          <h3 class="h6 fw-bold text-dark mt-1 mb-1">Pedidos recibidos</h3>
+          <p class="text-secondary small mb-0">Mirá las solicitudes de nuevos clientes y actualizá el estado de los
+            trabajos.</p>
+        </a>
+      </div>
     </div>
   </section>
 
-  <main class="container my-5" style="max-width: 900px;">
+  <nav class="bottom-nav" id="bottom-nav">
+    <a href="menu.html" class="activo">
+      <span class="icono-nav"><img src="img/house.png" class="icono-home"></span>
+      <span>Inicio</span>
+    </a>
+    <a href="oficios.html">
+      <span class="icono-nav"><img src="img/magnifying-glass.png" class="icono-home"></span>
+      <span>Buscar</span>
+    </a>
+    <a href="historial.html">
+      <span class="icono-nav"><img src="img/completed-task.png" class="icono-home"></span>
+      <span>Pedidos</span>
+    </a>
+    <a href="perfil.html">
+      <span class="icono-nav"><img src="img/user.png" class="icono-home"></span>
+      <span>Perfil</span>
+    </a>
 
-    <article class="alert alert-warning d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-5 shadow-sm" role="note">
-      <div>
-        <strong class="d-block">🔧 Primera consulta sin cargo</strong>
-        <span>Contactá a cualquier profesional hoy y obtené una evaluación gratis de tu arreglo.</span>
-      </div>
-      <a href="oficios.html" class="btn btn-dark flex-shrink-0">Aprovechar</a>
-    </article>
+   <a href="#" data-bs-toggle="offcanvas" data-bs-target="#panel-ayuda" aria-controls="panel-ayuda">
+  <span class="icono-nav"><img src="img/help-web-button.png" alt="Ayuda" class="icono-home"></span>
+  <span>Ayuda</span>
+</a>
+  </nav>
 
-    <section class="mb-5">
-      <div class="fila-titulo mb-3">
-        <h2 class="h4 fw-bold">Categorías</h2>
-        <a href="oficios.html" class="text-decoration-none fw-bold small">Ver todas →</a>
-      </div>
+  <aside class="offcanvas offcanvas-end" tabindex="-1" id="panel-ayuda" aria-labelledby="panel-ayuda-titulo">
 
-      <ul class="row row-cols-2 row-cols-md-4 g-3 list-unstyled mb-0" id="grid-categorias-menu">
-        <li class="col">
-          <a href="oficios.html?categoria=Electricidad" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-warning-subtle category-card">
-            <span class="icono-cat"> <img src="./img/innovation.png" class="icono-img" alt=""></span>
-            <span class="label-cat mt-2">Electricidad</span>
-          </a>
-        </li>
-        <li class="col">
-          <a href="oficios.html?categoria=Plomer%C3%ADa" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-info-subtle category-card">
-            <span class="icono-cat"> <img src="./img/plumbing.png" class="icono-img" alt=""></span>
-            <span class="label-cat mt-2">Plomería</span>
-          </a>
-        </li>
-        <li class="col">
-          <a href="oficios.html?categoria=Pintura" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-danger-subtle category-card">
-            <span class="icono-cat"> <img src="./img/house-painting.png" class="icono-img" alt=""></span>
-            <span class="label-cat mt-2">Pintura</span>
-          </a>
-        </li>
-        <li class="col">
-          <a href="oficios.html?categoria=Alba%C3%B1iler%C3%ADa" class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-secondary-subtle category-card">
-            <span class="icono-cat"> <img src="./img/building.png" class="icono-img" alt=""></span>
-            <span class="label-cat mt-2">Albañilería</span>
-          </a>
-        </li>
-      </ul>
-    </section>
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title h4 fw-bold" id="panel-ayuda-titulo">Centro de Ayuda</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
 
-    <section class="mb-5">
-      <div class="fila-titulo mb-3">
-        <h2 class="h4 fw-bold">Cerca de vos</h2>
-        <a href="oficios.html" class="text-decoration-none fw-bold small">Ver más →</a>
-      </div>
+  <div class="offcanvas-body">
 
-      <ul class="row g-3 list-unstyled mb-0" id="destacados-cliente">
-        <li class="col-12 col-md-6">
-          <a href="perfiltrabajador.html?id=1" class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-primary-subtle">
-            <div class="card-body fila-cabecera">
-              <div class="avatar-profesional">
-                CM
-                <span class="punto-estado disponible"></span>
-              </div>
-              <div class="info-principal">
-                <span class="nombre-prof">Carlos Medina</span>
-                <p class="oficio-prof">Electricista Matriculado</p>
-                <div class="fila-meta">
-                  <span class="rating">★ 4.8</span>
-                  <span>(23)</span>
-                  <span> <img src="img/location.png" class="icono-img" alt="Ubicación">  2.1 km</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </li>
+    <p class="text-secondary">
+      Encontrá respuestas rápidas, resolvé dudas frecuentes y aprendé a usar OficiosYa.
+    </p>
 
-        <li class="col-12 col-md-6">
-          <a href="perfiltrabajador.html?id=2" class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-info-subtle">
-            <div class="card-body fila-cabecera">
-              <div class="avatar-profesional">
-                MP
-                <span class="punto-estado disponible"></span>
-              </div>
-              <div class="info-principal">
-                <span class="nombre-prof">Mónica Paz</span>
-                <p class="oficio-prof">Plomera Specialist</p>
-                <div class="fila-meta">
-                  <span class="rating">★ 4.9</span>
-                  <span>(31)</span>
-                  <span> <img src="img/location.png" class="icono-img" alt="Ubicación"> 3.2 km</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-  </main>
-</section>
-
-<section id="vista-trabajador" class="container my-5" style="max-width: 800px; display: none;">
-  <div class="panel card p-4 shadow-sm mb-4">
-    <span class="badge bg-warning text-dark mb-2 w-fit">📥 Panel de trabajador</span>
-    <h1 class="h3 fw-bold mb-1">Hola, <span id="nombre-trabajador">Ricardo Sosa</span></h1>
-    <p class="text-secondary small">Así está la actividad de tus servicios en la plataforma hoy.</p>
-
-    <div class="row text-center my-3 py-3 border-top border-bottom g-2">
-      <div class="col-6 border-end">
-        <span class="fs-4 fw-bold text-dark d-block">★ 4.9</span>
-        <span class="text-secondary small">Calificación promedio</span>
-      </div>
-      <div class="col-6">
-        <span class="fs-4 fw-bold text-dark d-block">3</span>
-        <span class="text-secondary small">Pedidos pendientes</span>
-      </div>
+    <div class="py-3 border-bottom">
+      <h3 class="h6 fw-bold">¿Cómo contratar un profesional?</h3>
+      <p class="small text-secondary mb-0">
+        Encontrá profesionales según el servicio que necesitás. Elegí una categoría, revisá los perfiles y
+        seleccioná el profesional que más te convenga.
+      </p>
     </div>
 
-    <div class="list-unstyled mt-3">
-      <a href="historialtrabajador.html" class="card tarjeta-pedido text-decoration-none d-block p-3 bg-light border-0 shadow-sm">
-        <span class="fs-3">📥</span>
-        <h3 class="h6 fw-bold text-dark mt-1 mb-1">Pedidos recibidos</h3>
-        <p class="text-secondary small mb-0">Mirá las solicitudes de nuevos clientes y actualizá el estado de los trabajos.</p>
-      </a>
+    <div class="py-3 border-bottom">
+      <h3 class="h6 fw-bold"><img src="img/star.png" alt="Estrella" class="icono-home"> ¿Cómo califico un trabajo?</h3>
+      <p class="small text-secondary mb-0">Desde Mis pedidos cuando el servicio esté finalizado.</p>
     </div>
+
+    <div class="py-3 border-bottom">
+      <h3 class="h6 fw-bold"><img src="img/pin.png" alt="Cancelar" class="icono-home"> ¿Puedo cancelar un pedido?</h3>
+      <p class="small text-secondary mb-0">Sí, mientras todavía no haya sido finalizado.</p>
+    </div>
+
+    <div class="py-3">
+      <h3 class="h6 fw-bold"><img src="img/completed-task.png" alt="Lista" class="icono-home"> ¿Cómo veo el estado de mi pedido?</h3>
+      <p class="small text-secondary mb-0">Desde la sección Mis pedidos.</p>
+    </div>
+
+    <div class="bg-primary-subtle rounded-4 p-3 mt-3">
+      <strong>¿Necesitás más ayuda?</strong>
+      <p class="small text-secondary mt-2 mb-1"><img src="img/email.png" alt="Correo" class="icono-home"> soporte@oficiosya.com</p>
+      <p class="small text-secondary mb-0"><img src="img/phone.png" alt="Teléfono" class="icono-home"> 0800-123-456</p>
+    </div>
+
   </div>
-</section>
-
-<nav class="bottom-nav" id="bottom-nav">
-  <a href="menu.html" class="activo">
-    <span class="icono-nav"><img src="img/house.png" class="icono-home"></span>
-    <span>Inicio</span>
-  </a>
-  <a href="oficios.html">
-    <span class="icono-nav"><img src="img/magnifying-glass.png" class="icono-home"></span>
-    <span>Buscar</span>
-  </a>
-  <a href="historial.html">
-    <span class="icono-nav"><img src="img/completed-task.png" class="icono-home"></span>
-    <span>Pedidos</span>
-  </a>
-  <a href="perfil.html">
-    <span class="icono-nav"><img src="img/user.png" class="icono-home"></span>
-    <span>Perfil</span>
-  </a>
-
-  <a href="#" id="btn-ayuda">
-    <span class="icono-nav"><img src="img/help-web-button.png" alt="Ayuda" class="icono-home"></span>
-    <span>Ayuda</span>
-  </a>
-</nav>
-
-<!-- PANEL LATERAL DE AYUDA -->
-
-<aside id="panel-ayuda" class="panel-ayuda">
-
-  <button type="button" id="cerrar-ayuda" class="cerrar-ayuda">
-    ×
-  </button>
-
-  <h2>Centro de Ayuda</h2>
-
-  <p>
-    Encontrá respuestas rápidas, resolvé dudas frecuentes y aprendé a usar OficiosYa.
-  </p>
-
-  <div class="ayuda-opcion">
-    <h3>¿Cómo contratar un profesional?</h3>
-    <p>
-      Encontrá profesionales según el servicio que necesitás. Elegí una categoría, revisá los perfiles y seleccioná el profesional que más te convenga.
-    </p>
-  </div>
-
-  <div class="ayuda-opcion">
-    <h3> <img src="img/star.png" alt="Estrella" class="icono-home"> ¿Cómo califico un trabajo?</h3>
-    <p>
-      Desde Mis pedidos cuando el servicio esté finalizado.
-    </p>
-  </div>
-
-  <div class="ayuda-opcion">
-    <h3> <img src="img/pin.png" alt="Cancelar" class="icono-home"> ¿Puedo cancelar un pedido?</h3>
-    <p>
-      Sí, mientras todavía no haya sido finalizado.
-    </p>
-  </div>
-
-  <div class="ayuda-opcion">
-    <h3> <img src="img/completed-task.png" alt="Lista" class="icono-home"> ¿Cómo veo el estado de mi pedido?</h3>
-    <p>
-      Desde la sección Mis pedidos.
-    </p>
-  </div>
-
-  <div class="ayuda-contacto">
-    <strong>¿Necesitás más ayuda?</strong>
-    <p> <img src="img/email.png" alt="Correo" class="icono-home"> soporte@oficiosya.com</p>
-    <p><img src="img/phone.png" alt="Telefono" class="icono-home"> 0800-123-456</p>
-  </div>
-
 </aside>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
 
-<script>
-  const btnAyuda = document.getElementById("btn-ayuda");
-  const panelAyuda = document.getElementById("panel-ayuda");
-  const cerrarAyuda = document.getElementById("cerrar-ayuda");
-
-  btnAyuda.addEventListener("click", function (e) {
-    e.preventDefault();
-    panelAyuda.classList.add("abierto");
-  });
-
-  cerrarAyuda.addEventListener("click", function () {
-    panelAyuda.classList.remove("abierto");
-  });
-</script>
 
 </body>
+
 </html>
