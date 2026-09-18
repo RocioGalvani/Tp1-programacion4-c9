@@ -268,8 +268,12 @@ function initMenu() {
 
 
 /* ======BÚSQUEDA============================ */
+/* ====== BÚSQUEDA ============================ */
+
 function initOficios() {
+
   const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
+
   if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", (e) => {
       e.preventDefault();
@@ -277,65 +281,154 @@ function initOficios() {
     });
   }
 
-  const inputBusqueda = document.getElementById("texto-busqueda");
-  const btnBuscar = document.getElementById("btn-buscar");
+
+  /* ---------- Elementos de la página ---------- */
+
+  const inputBusqueda = document.getElementById("input-busqueda");
   const chipsCategoria = document.querySelectorAll(".chip-categoria");
   const listaProf = document.getElementById("lista-profesionales");
-  const tarjetas = listaProf ? listaProf.querySelectorAll("li") : [];
+
+  /* Las tarjetas son ARTICLE en tu HTML */
+  const tarjetas = listaProf
+    ? listaProf.querySelectorAll("article[data-categoria]")
+    : [];
+
   const sinResultados = document.getElementById("sin-resultados");
+
+
+  /* ---------- Categoría seleccionada ---------- */
 
   let categoriaFiltro = "todos";
 
+
+  /* ---------- Categoría recibida por URL ---------- */
+
   const urlParams = new URLSearchParams(window.location.search);
   const catURL = urlParams.get("categoria");
+
   if (catURL) {
+
     categoriaFiltro = catURL;
+
     chipsCategoria.forEach((chip) => {
-      chip.classList.toggle("activo", chip.dataset.categoria === catURL);
+
+      chip.classList.toggle(
+        "activo",
+        chip.dataset.categoria === catURL
+      );
+
     });
   }
+
+
+  /* ---------- Función para filtrar ---------- */
 
   function filtrar() {
-    const texto = inputBusqueda ? inputBusqueda.value.trim().toLowerCase() : "";
-    let visibiles = 0;
+
+    const texto = inputBusqueda
+      ? inputBusqueda.value.trim().toLowerCase()
+      : "";
+
+    let visibles = 0;
+
 
     tarjetas.forEach((tarjeta) => {
-      const catTarjeta = tarjeta.dataset.categoria;
-      const nombreTarjeta = tarjeta.dataset.nombre ? tarjeta.dataset.nombre.toLowerCase() : "";
 
-      const coincideCat = categoriaFiltro === "todos" || catTarjeta === categoriaFiltro;
-      const coincideTexto = !texto || nombreTarjeta.includes(texto);
+      const catTarjeta = tarjeta.dataset.categoria;
+
+      const nombreTarjeta = tarjeta.dataset.nombre
+        ? tarjeta.dataset.nombre.toLowerCase()
+        : "";
+
+
+      /* Comprobar categoría */
+
+      const coincideCat =
+        categoriaFiltro === "todos" ||
+        catTarjeta === categoriaFiltro;
+
+
+      /* Comprobar texto */
+
+      const coincideTexto =
+        !texto ||
+        nombreTarjeta.includes(texto);
+
+
+      /* Mostrar u ocultar */
 
       if (coincideCat && coincideTexto) {
-        tarjeta.style.display = "block";
-        visibiles++;
+
+        tarjeta.style.display = "";
+
+        visibles++;
+
       } else {
+
         tarjeta.style.display = "none";
+
       }
+
     });
+
+
+    /* ---------- Mensaje sin resultados ---------- */
 
     if (sinResultados) {
-      sinResultados.style.display = visibiles === 0 ? "block" : "none";
+
+      sinResultados.style.display =
+        visibles === 0 ? "block" : "none";
+
     }
+
   }
+
+
+  /* ---------- Botones de categorías ---------- */
 
   chipsCategoria.forEach((chip) => {
+
     chip.addEventListener("click", () => {
-      chipsCategoria.forEach((c) => c.classList.remove("activo"));
+
+      /* Quitar activo de todos */
+
+      chipsCategoria.forEach((c) => {
+        c.classList.remove("activo");
+      });
+
+
+      /* Activar el seleccionado */
+
       chip.classList.add("activo");
+
+
+      /* Guardar categoría */
+
       categoriaFiltro = chip.dataset.categoria;
+
+
+      /* Aplicar filtro */
+
       filtrar();
+
     });
+
   });
 
+
+  /* ---------- Buscador ---------- */
+
   if (inputBusqueda) {
+
     inputBusqueda.addEventListener("input", filtrar);
-  }
-  if (btnBuscar) {
-    btnBuscar.addEventListener("click", filtrar);
+
   }
 
+
+  /* ---------- Filtrar al cargar ---------- */
+
   filtrar();
+
 }
 
 
