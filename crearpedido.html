@@ -2,75 +2,106 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OficiosYa — Solicitar servicio</title>
-    <link rel="stylesheet" href="/css/styles.css?v=5">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Solicitá un servicio a un profesional en OficiosYa, completando los datos de tu pedido.">
+  <title>OficiosYa — Solicitar servicio</title>
+  <link rel="icon"  href="./img/OfiGO.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header class="topbar">
-        <div class="marca">
-            <span class="punto">•</span> OficiosYa
-        </div>
-        <nav id="topbar-usuario"></nav>
-    </header>
 
-    <main class="contenedor-angosto">
+  <header class="topbar">
+    <div class="marca d-flex align-items-center gap-2">
+      <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 60px; width: auto;">
+      <span>Ofi<span class="text-warning">GO</span></span>
+    </div>
+    <nav id="topbar-usuario">
+      <a href="#" id="btn-cerrar-sesion" class="text-danger fw-bold">Cerrar sesión</a>
+    </nav>
+  </header>
 
-        <a href="/perfiltrabajador.html" 
-        style="font-size:0.85rem; color:var( --texto-suave);">
-            ← Volver al perfil
-        </a>
+  <main class="container" style="max-width: 620px;">
 
-        <section class="encabezado-pagina mt-24">
-            <span class="eyebrow"> Nueva Solicitud </span>
-            <h1>Pedir servicio</h1>
-            <p>Completá los datos para enviar tu pedido.</p>
-        </section>
 
-        <form class="panel" action="/api/pedidos" method="POST">
-           <p id="mensaje-area"></p>
-           <label for="direccion">
-            Dirección donde se realizará el trabajo
-           </label>
+    <a href="perfiltrabajador.html"
+      class="d-inline-flex align-items-center mt-4 text-decoration-none text-secondary small fw-bold">
+      ← Volver al perfil
+    </a>
 
-             <input 
-                type="text"
-                id="direccion"
-                name="direccion"
-                placeholder="Ej: Av. Siempre Viva 742, Capital Federal"
-                required
-            >
 
-            <label for="fecha">
-                Fecha y hora deseada
-            </label>
+    <section class="encabezado-pagina mt-3">
+      <span class="eyebrow">Nueva Solicitud</span>
+      <h1>Pedir servicio</h1>
+      <p>Completá los datos para enviar tu pedido al profesional.</p>
+    </section>
 
-            <input 
-                type="datetime-local"
-                id="fecha"
-                name="fechaSolicitada"
-                required
-            >
-            <label for="descripcion">
-                Describí el problema o trabajo a realizar
-            </label>
 
-            <textarea 
-                id="descripcion"
-                name="descripcion"
-                placeholder="Ej: Se rompió una canilla en la cocina y pierde agua constantemente."
-                required
-            ></textarea>
+    <section class="my-3 mb-5">
+      <article class="panel card p-4 shadow-sm">
 
-            <button type="submit" class="btn btn-primario btn-bloque">
-                Enviar pedido
-            </button>
+        <div id="mensaje-area" aria-live="polite" class="mb-3"></div>
+
+        <form id="form-pedido" novalidate>
+
+          <div class="campo mb-3">
+            <label for="direccion" class="form-label text-dark small fw-bold">Dirección donde se realizará el
+              trabajo</label>
+            <input type="text" id="direccion" name="direccion" class="form-control"
+              placeholder="Ej: Av. Siempre Viva 742, Capital Federal" required>
+          </div>
+
+          <div class="campo mb-3">
+            <label for="fecha" class="form-label text-dark small fw-bold">Fecha y hora deseada</label>
+            <input type="datetime-local" id="fecha" name="fechaSolicitada" class="form-control" required>
+          </div>
+
+          <div class="campo mb-4">
+            <label for="descripcion" class="form-label text-dark small fw-bold">Describí el problema o trabajo a
+              realizar</label>
+            <textarea id="descripcion" name="descripcion" class="form-control" rows="4" maxlength="200"
+              placeholder="Ej: Se rompió una canilla en la cocina y pierde agua constantemente." required></textarea>
+            <div class="text-end mt-1">
+              <small class="text-muted" id="contador-desc" style="font-size: 0.75rem;">0 / 200</small>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primario w-100 py-2">
+            Enviar pedido
+          </button>
 
         </form>
-        </main>
 
-        <nav id="bottom-nav" class="bottom-nav"></nav>
+      </article>
+    </section>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="menu.html">
+      <span class="icono-nav"><img src="img/house.png" class="icono-home"></span>
+      <span>Inicio</span>
+    </a>
+    <a href="oficios.html" class="activo">
+      <span class="icono-nav"><img src="img/magnifying-glass.png" class="icono-home"></span>
+      <span>Buscar</span>
+    </a>
+    <a href="historial.html">
+      <span class="icono-nav"><img src="img/completed-task.png" class="icono-home"></span>
+      <span>Pedidos</span>
+    </a>
+    <a href="perfil.html">
+      <span class="icono-nav"><img src="img/user.png" class="icono-home"></span>
+      <span>Perfil</span>
+    </a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
