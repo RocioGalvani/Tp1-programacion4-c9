@@ -1,53 +1,26 @@
-// =========================================================
-// OFIGO — JAVASCRIPT GENERAL
-// =========================================================
-
 document.addEventListener("DOMContentLoaded", () => {
-    const rutaActual = window.location.pathname;
+    const segmentos = window.location.pathname.split("/").filter(Boolean);
+    const pagina = (segmentos[segmentos.length - 1] || "index").replace(".html", "");
 
-    if (
-        rutaActual.includes("index.html") ||
-        rutaActual === "/" ||
-        rutaActual.endsWith("/")
-    ) {
+    if (pagina === "login") {
         initLanding();
-
-    } else if (rutaActual.includes("index.html")) {
+    } else if (pagina === "" || pagina === "index") {
         initMenu();
-
-    } else if (rutaActual.includes("oficios.html")) {
+    } else if (pagina === "oficios") {
         initOficios();
-
-    } else if (
-        rutaActual.includes("perfil.html") ||
-        rutaActual === "/perfil"
-    ) {
-        initPerfil();
-
-    } else if (
-        rutaActual.includes("perfiltrabajador.html") ||
-        rutaActual.startsWith("/perfiltrabajador")
-    ) {
+    } else if (pagina === "perfiltrabajador") {
         initPerfilTrabajador();
-
-    } else if (rutaActual.includes("historialtrabajador.html")) {
+    } else if (pagina === "perfil") {
+        initPerfil();
+    } else if (pagina === "historialtrabajador") {
         initHistorialTrabajador();
-
-    } else if (rutaActual.includes("historial.html")) {
+    } else if (pagina === "historial") {
         initHistorial();
-
-    } else if (
-        rutaActual.includes("crearpedido.html") ||
-        rutaActual.includes("solicitar-servicio.html")
-    ) {
+    } else if (pagina === "crearpedido" || pagina === "solicitar-servicio") {
         initCrearPedido();
     }
 });
 
-
-// =========================================================
-// SESIÓN
-// =========================================================
 
 function obtenerSesion() {
     const sesion = localStorage.getItem("oficioya-sesion");
@@ -71,9 +44,6 @@ function cerrarSesion() {
 }
 
 
-// =========================================================
-// LANDING / LOGIN
-// =========================================================
 
 function initLanding() {
 
@@ -94,21 +64,17 @@ function initLanding() {
 }
 
 
-// =========================================================
-// MENÚ PRINCIPAL
-// =========================================================
-
 function initMenu() {
 
     const usuario = obtenerSesion();
 
-    // Si no hay sesión, vuelve al inicio
-    if (!usuario) {
-        window.location.href = "index.html";
-        return;
-    }
+ 
+    //
+    // if (!usuario) {
+    //     window.location.href = "login.html";
+    //     return;
+    // }
 
-    // ---------- CERRAR SESIÓN ----------
 
     const btnCerrarSesion =
         document.getElementById("btn-cerrar-sesion");
@@ -121,7 +87,6 @@ function initMenu() {
     }
 
 
-    // ---------- VISTAS ----------
 
     const vistaCliente =
         document.getElementById("vista-cliente");
@@ -130,9 +95,8 @@ function initMenu() {
         document.getElementById("vista-trabajador");
 
 
-    // ---------- TRABAJADOR ----------
 
-    if (usuario.rol === "trabajador") {
+    if (usuario && usuario.rol === "trabajador") {
 
         if (vistaCliente) {
             vistaCliente.style.display = "none";
@@ -150,7 +114,6 @@ function initMenu() {
         }
 
 
-        // Barra inferior del trabajador
 
         const bottomNav =
             document.getElementById("bottom-nav");
@@ -193,7 +156,6 @@ function initMenu() {
 
     } else {
 
-        // ---------- CLIENTE ----------
 
         if (vistaCliente) {
             vistaCliente.style.display = "block";
@@ -207,19 +169,17 @@ function initMenu() {
             document.getElementById("nombre-cliente");
 
         if (nombreCliente) {
-            nombreCliente.textContent = usuario.nombre;
+            nombreCliente.textContent = usuario ? usuario.nombre : "Invitado";
         }
     }
 }
 
 
-// =========================================================
-// OFICIOS / BÚSQUEDA Y FILTROS
-// =========================================================
+
+
 
 function initOficios() {
 
-    // ---------- CERRAR SESIÓN ----------
 
     const btnCerrarSesion =
         document.getElementById("btn-cerrar-sesion");
@@ -232,7 +192,6 @@ function initOficios() {
     }
 
 
-    // ---------- ELEMENTOS ----------
 
     const inputBusqueda =
         document.getElementById("input-busqueda");
@@ -251,12 +210,10 @@ function initOficios() {
         document.getElementById("sin-resultados");
 
 
-    // Categoría seleccionada
 
     let categoriaFiltro = "todos";
 
 
-    // ---------- CATEGORÍA DESDE LA URL ----------
 
     const urlParams =
         new URLSearchParams(window.location.search);
@@ -279,7 +236,6 @@ function initOficios() {
     }
 
 
-    // ---------- FUNCIÓN FILTRAR ----------
 
     function filtrar() {
 
@@ -325,7 +281,6 @@ function initOficios() {
         });
 
 
-        // Mostrar / ocultar mensaje
 
         if (sinResultados) {
 
@@ -335,31 +290,26 @@ function initOficios() {
     }
 
 
-    // ---------- BOTONES DE CATEGORÍA ----------
 
     chipsCategoria.forEach((chip) => {
 
         chip.addEventListener("click", () => {
 
-            // Quitar activo de todos
 
             chipsCategoria.forEach((c) => {
                 c.classList.remove("activo");
             });
 
 
-            // Activar el seleccionado
 
             chip.classList.add("activo");
 
 
-            // Guardar categoría
 
             categoriaFiltro =
                 chip.dataset.categoria;
 
 
-            // Aplicar filtro
 
             filtrar();
         });
@@ -367,7 +317,6 @@ function initOficios() {
     });
 
 
-    // ---------- BUSCADOR ----------
 
     if (inputBusqueda) {
 
@@ -377,16 +326,10 @@ function initOficios() {
         );
     }
 
-
-    // Filtrar al cargar la página
-
     filtrar();
 }
 
 
-// =========================================================
-// PERFIL
-// =========================================================
 
 function initPerfil() {
 
@@ -421,8 +364,6 @@ function initPerfil() {
     }
 
 
-    // Cerrar sesión
-
     const btnCerrarSesion =
         document.getElementById("btn-cerrar-sesion");
 
@@ -437,9 +378,6 @@ function initPerfil() {
 }
 
 
-// =========================================================
-// PERFIL DEL TRABAJADOR
-// =========================================================
 
 function initPerfilTrabajador() {
 
@@ -478,10 +416,6 @@ function initPerfilTrabajador() {
 }
 
 
-// =========================================================
-// HISTORIAL DEL TRABAJADOR
-// =========================================================
-
 function initHistorialTrabajador() {
 
     const usuario = obtenerSesion();
@@ -506,9 +440,6 @@ function initHistorialTrabajador() {
 }
 
 
-// =========================================================
-// HISTORIAL DEL CLIENTE
-// =========================================================
 
 function initHistorial() {
 
@@ -534,9 +465,6 @@ function initHistorial() {
 }
 
 
-// =========================================================
-// CREAR PEDIDO
-// =========================================================
 
 function initCrearPedido() {
 
