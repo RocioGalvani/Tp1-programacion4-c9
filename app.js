@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
         initLanding();
 
-    } else if (rutaActual.includes("menu.html")) {
+    } else if (rutaActual.includes("index.html")) {
         initMenu();
 
     } else if (rutaActual.includes("oficios.html")) {
@@ -82,13 +82,13 @@ function initLanding() {
 
     if (btnLogin) {
         btnLogin.addEventListener("click", () => {
-            window.location.href = "menu.html";
+            window.location.href = "index.html";
         });
     }
 
     if (btnRegistro) {
         btnRegistro.addEventListener("click", () => {
-            window.location.href = "menu.html";
+            window.location.href = "index.html";
         });
     }
 }
@@ -161,7 +161,7 @@ function initMenu() {
                 <ul class="d-flex w-100 justify-content-around list-unstyled mb-0">
 
                     <li>
-                        <a href="menu.html" class="nav-link fw-bold text-primary">
+                        <a href="index.html" class="nav-link fw-bold text-primary">
                             <img src="img/house.png"
                                  alt="Inicio"
                                  class="icono-home">

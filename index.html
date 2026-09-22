@@ -5,395 +5,253 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="OfiGO conecta personas con profesionales de distintos oficios y servicios en Tucumán.">
-  <meta name="author" content="Equipo OfiGO">
-  <meta name="keywords" content="OfiGO, servicios, profesionales, trabajadores, reparaciones, Tucumán, OfiGO">
-  <title>OfiGO — Ingresá o creá tu cuenta</title>
-
-<link rel="icon"  href="./img/OfiGO.png">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    content="Panel principal de OficiosYa: encontrá profesionales de oficios cerca tuyo en Tucumán.">
+  <title>OficiosYa — Inicio</title>
+  <link rel="icon"  href="./img/OfiGO.png">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="sin-bottom-nav landing-page">
+<body>
 
-
-
-  <header class="topbar landing-header shadow-sm" style="background-color: #2c4a63 !important;">
-    <nav class="landing-header-inner w-100 d-flex justify-content-between align-items-center px-4 py-2">
-
-      <a href="#"
-        class="marca-landing text-decoration-none d-flex align-items-center gap-2 fw-bold fs-3 text-white p-0 bg-transparent shadow-none border-0">
-        <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 80px; width: auto;">
-        <span>Ofi<span style="color: #f5be47;">GO</span></span>
-      </a>
-
-      <section class="d-flex gap-2">
-        <a href="#registro" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-profesional"
-          style="border: 1px solid rgba(255, 255, 255, 0.4); background: rgba(255,255,255,0.1);">Soy profesional</a>
-        <a href="#login" class="btn btn-sm rounded-pill px-3 fw-bold text-white" id="link-ingresar"
-          style="background-color: #4a80e8;">Ingresar</a>
-      </section>
-
+  <header class="topbar">
+    <div class="marca d-flex align-items-center gap-2">
+      <img src="./img/hombrelogo.png" class="hombre-logo" alt="OfiGO" style="height: 60px; width: auto;">
+      <span>Ofi<span class="text-warning">GO</span></span>
+    </div>
+    <nav id="topbar-usuario">
+      <a href="perfil.html">Mi perfil</a>
+      <a href="#" id="btn-cerrar-sesion" class="text-danger fw-bold">Cerrar sesión</a>
     </nav>
   </header>
 
-  <main class="landing-shell container-fluid min-vh-100 d-flex align-items-center justify-content-center p-3"
-    style="background: linear-gradient(180deg, #fff3e9 0%, #f8b187 100%) !important;">
-    <section class="row justify-content-center w-100 m-0">
+  <section id="vista-cliente">
 
-      <aside class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 p-0">
-        <article class="card border-0 shadow-lg p-4 rounded-4 w-100" id="panel-cuenta"
-          style="background-color: #ffffff !important; box-shadow: 0 15px 35px rgba(76, 107, 139, 0.15) !important;">
-
-          <header class="logo-panel text-center mb-3">
-            <h2 class="h4 fw-bold mb-0" style="color: #4c6b8b;">Ofi<span style="color: #f5be47;">GO</span></h2>
-          </header>
- 
-          <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3" role="tablist"
-            style="background-color: #eef3f9;">
-            <button type="button" id="tab-login" class="nav-link active rounded-pill fw-bold btn-sm text-white"
-              role="tab" style="background-color: #4a80e8 !important;">Ingresar</button>
-            <button type="button" id="tab-registro" class="nav-link rounded-pill fw-bold btn-sm" role="tab"
-              style="color: #7b93a7;">Crear cuenta</button>
-          </nav>
-
-          <section id="mensaje-area" aria-live="polite"></section>
-
-         
-<section class="panel-login" id="login">
-
-    <form id="form-login" class="form w-100" novalidate>
-
-        <h2 class="title h5 mb-3 text-center fw-bold" style="color: #4c6b8b;">
-            Ingresar a tu cuenta
-        </h2>
-
-        <p class="mb-3">
-            <label for="login-email" class="form-label small fw-bold mb-1 d-block"
-                style="color: #6b8296;">Email</label>
-
-            <input type="email" id="login-email"
-                class="form-control border-0 rounded-3 py-2"
-                placeholder="tu@email.com"
-                required
-                style="background-color: #f5f8fc !important; color: #4c6b8b;">
+    <section class="transparencia py-5 border-bottom">
+      <div class="container" style="max-width: 900px;">
+        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">📍 Tucumán · Disponible
+          ahora</span>
+        <h1 class="display-5 fw-bold text-dark mb-2">Hola, <span id="nombre-cliente" class="text-primary">Juana</span>.
+        </h1>
+        <h2 class="h3 fw-semibold text-secondary mb-3">¿Qué oficio necesitás hoy?</h2>
+        <p class="text-muted">Encontrá plomeros, electricistas, pintores y más. Compará, elegí y contactá al instante.
         </p>
 
-        <p class="mb-2">
-            <label for="login-password" class="form-label small fw-bold mb-1 d-block"
-                style="color: #6b8296;">Contraseña</label>
-
-            <span class="input-group">
-
-                <input type="password" id="login-password"
-                    class="form-control border-0 rounded-start-3 py-2"
-                    placeholder="••••••••"
-                    required
-                    style="background-color: #f5f8fc !important; color: #4c6b8b;">
-
-                <button type="button"
-                    class="btn border-0 rounded-end-3 px-3"
-                    data-target="login-password"
-                    aria-label="Mostrar contraseña"
-                    style="background-color: #f5f8fc; color: #7b93a7;">
-                    👁
-                </button>
-
-            </span>
-        </p>
-
-        <p class="forgot text-end mb-3">
-            <a href="#" class="small text-decoration-none"
-                style="color: #4a80e8;">
-                ¿Olvidaste tu contraseña?
-            </a>
-        </p>
-
-        <button type="submit"
-            class="btn w-100 py-2.5 rounded-pill fw-bold text-dark shadow-sm"
-            style="background-color: #f5be47 !important; border: none;">
-            Ingresar
-        </button>
-
-        <footer class="signup text-center mt-3 small border-top pt-2"
-            style="border-color: #eef3f9 !important; color: #7b93a7;">
-
-            ¿No tenés cuenta?
-
-            <a href="#" id="link-a-registro"
-                class="fw-bold text-decoration-none"
-                style="color: #4c6b8b;">
-                Registrate
-            </a>
-
-        </footer>
-
-    </form>
-    <section class="acceso-rapido text-center mt-3 pt-3 border-top" style="border-color: #eef3f9 !important;">
-    <p class="small fw-bold mb-2" style="color: #6b8296;">Acceso directo</p>
-    <div class="d-flex gap-2">
-        <button type="button"
-            class="btn btn-sm flex-fill rounded-pill fw-bold text-white btn-acceso-rapido"
-            data-rol="cliente"
-            style="background-color: #4a80e8;">
-            <img src="img/people.png" alt="Cliente" class="icono-home"> Cliente
-        </button>
-        <button type="button"
-            class="btn btn-sm flex-fill rounded-pill fw-bold text-white btn-acceso-rapido"
-            data-rol="trabajador"
-            style="background-color: #4a80e8;">
-            <img src="img/engineer.png" alt="Trabajador" class="icono-home"> Trabajador
-        </button>
-    </div>
-</section>
-
-</section>
-
-
-<section class="panel-login" id="registro" style="display:none;">
-
-    <form id="form-registro" class="form w-100" novalidate>
-
-        <h2 class="title h5 mb-3 text-center fw-bold"
-            style="color: #4c6b8b;">
-            Crear nueva cuenta
-        </h2>
-
-        <nav class="nav nav-pills nav-justified p-1 rounded-pill mb-3"
-            role="tablist"
-            style="background-color: #eef3f9;">
-
-            <button type="button" id="rol-cliente"
-                class="nav-link active rounded-pill fw-bold btn-sm text-white"
-                role="tab"
-                style="background-color: #4a80e8 !important;">
-                Soy Cliente
-            </button>
-
-            <button type="button" id="rol-trabajador"
-                class="nav-link rounded-pill fw-bold btn-sm"
-                role="tab"
-                style="color: #7b93a7;">
-                Soy Trabajador
-            </button>
-
-        </nav>
-
-        <p class="mb-2">
-            <label for="reg-nombre"
-                class="form-label small fw-bold mb-1 d-block"
-                style="color: #6b8296;">
-                Nombre completo
-            </label>
-
-            <input type="text" id="reg-nombre"
-                class="form-control form-control-sm border-0 rounded-3 py-2"
-                placeholder="Ej: Juana Torres"
-                required
-                style="background-color: #f5f8fc !important; color: #4c6b8b;">
-        </p>
-
-        <p class="mb-2">
-            <label for="reg-email"
-                class="form-label small fw-bold mb-1 d-block"
-                style="color: #6b8296;">
-                Email
-            </label>
-
-            <input type="email" id="reg-email"
-                class="form-control form-control-sm border-0 rounded-3 py-2"
-                placeholder="tu@email.com"
-                required
-                style="background-color: #f5f8fc !important; color: #4c6b8b;">
-        </p>
-
-        <p class="mb-2">
-            <label for="reg-password"
-                class="form-label small fw-bold mb-1 d-block"
-                style="color: #6b8296;">
-                Contraseña
-            </label>
-
-            <span class="input-group input-group-sm">
-
-                <input type="password" id="reg-password"
-                    class="form-control border-0 rounded-start-3 py-2"
-                    placeholder="••••••••"
-                    required
-                    minlength="4"
-                    style="background-color: #f5f8fc !important; color: #4c6b8b;">
-
-                <button type="button"
-                    class="btn border-0 rounded-end-3 px-3"
-                    data-target="reg-password"
-                    aria-label="Mostrar contraseña"
-                    style="background-color: #f5f8fc; color: #7b93a7;">
-                    👁
-                </button>
-
-            </span>
-        </p>
-
-        <fieldset id="campos-trabajador"
-            class="border-0 rounded-3 p-3 mb-3"
-            style="display:none; background-color: #f5f8fc;">
-
-            <legend class="float-none w-auto px-2 fs-7 fw-bold mb-1"
-                style="color: #4c6b8b;">
-                Datos de profesional
-            </legend>
-
-            <p class="mb-2">
-                <label for="reg-oficio"
-                    class="form-label small mb-1 d-block"
-                    style="color: #6b8296;">
-                    Oficio
-                </label>
-
-                <input type="text" id="reg-oficio"
-                    class="form-control form-control-sm border-0 rounded-2"
-                    placeholder="Ej: Electricista matriculado"
-                    style="background-color: #ffffff;">
-            </p>
-
-            <p class="mb-2">
-                <label for="reg-categoria"
-                    class="form-label small mb-1 d-block"
-                    style="color: #6b8296;">
-                    Categoría
-                </label>
-
-                <select id="reg-categoria"
-                    class="form-select form-select-sm border-0 rounded-2"
-                    style="background-color: #ffffff; color: #4c6b8b;">
-
-                    <option value="Electricidad">Electricidad</option>
-                    <option value="Plomería">Plomería</option>
-                    <option value="Pintura">Pintura</option>
-                    <option value="Albañilería">Albañilería</option>
-                    <option value="Aire acond.">Aire acondicionado</option>
-                    <option value="Carpintería">Carpintería</option>
-                    <option value="Cerrajería">Cerrajería</option>
-                    <option value="Jardinería">Jardinería</option>
-
-                </select>
-            </p>
-
-            <p class="mb-2">
-                <label for="reg-zona"
-                    class="form-label small mb-1 d-block"
-                    style="color: #6b8296;">
-                    Zona donde trabajás
-                </label>
-
-                <input type="text" id="reg-zona"
-                    class="form-control form-control-sm border-0 rounded-2"
-                    placeholder="Ej: Tucumán Capital, Yerba Buena"
-                    style="background-color: #ffffff;">
-            </p>
-
-            <p class="mb-2">
-                <label for="reg-precio"
-                    class="form-label small mb-1 d-block"
-                    style="color: #6b8296;">
-                    Precio por hora ($)
-                </label>
-
-                <input type="number" id="reg-precio"
-                    class="form-control form-control-sm border-0 rounded-2"
-                    min="0"
-                    step="50"
-                    placeholder="Ej: 4500"
-                    style="background-color: #ffffff;">
-            </p>
-
-            <p class="mb-2">
-                <label for="reg-descripcion"
-                    class="form-label small mb-1 d-block"
-                    style="color: #6b8296;">
-                    Descripción breve
-                </label>
-
-                <textarea id="reg-descripcion"
-                    class="form-control form-control-sm border-0 rounded-2"
-                    maxlength="200"
-                    rows="2"
-                    placeholder="Experiencia y especialidades..."
-                    style="background-color: #ffffff;"></textarea>
-
-                <span class="text-end d-block">
-                    <small class="text-muted"
-                        id="contador-desc"
-                        style="font-size: 0.7rem;">
-                        0 / 200
-                    </small>
-                </span>
-
-            </p>
-
-        </fieldset>
-
-        <button type="submit"
-            class="btn w-100 py-2.5 mt-2 rounded-pill fw-bold text-dark shadow-sm"
-            style="background-color: #f5be47 !important; border: none;">
-            Crear cuenta
-        </button>
-
-        <footer class="signup text-center mt-3 small border-top pt-2"
-            id="texto-cambio"
-            style="border-color: #eef3f9 !important; color: #7b93a7;">
-
-            ¿Ya tenés cuenta?
-
-            <button type="button"
-                id="link-a-login"
-                class="btn btn-link p-0 text-decoration-none fw-bold align-baseline small"
-                style="color: #4c6b8b;">
-                Ingresá
-            </button>
-
-        </footer>
-
-    </form>
-
-</section>
-
-        </article>
-      </aside>
-
+        <form class="input-group search-transparent mt-4" action="oficios.html" method="get" style="max-width: 580px;">
+          <input type="text" id="texto-busqueda" name="buscar" class="form-control form-control-lg"
+            placeholder="¿Qué servicio necesitás? (Ej: electricista)" aria-label="Servicio a buscar">
+          <button type="submit" class="btn btn-primary px-4">Buscar</button>
+        </form>
+      </div>
     </section>
-  </main>
+
+    <main class="container my-5" style="max-width: 900px;">
+
+      <article
+        class="alert alert-warning d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-5 shadow-sm"
+        role="note">
+        <div>
+          <strong class="d-block">🔧 Primera consulta sin cargo</strong>
+          <span>Contactá a cualquier profesional hoy y obtené una evaluación gratis de tu arreglo.</span>
+        </div>
+        <a href="oficios.html" class="btn btn-dark flex-shrink-0">Aprovechar</a>
+      </article>
+
+      <section class="mb-5">
+        <div class="fila-titulo mb-3">
+          <h2 class="h4 fw-bold">Categorías</h2>
+          <a href="oficios.html" class="text-decoration-none fw-bold small">Ver todas →</a>
+        </div>
+
+        <ul class="row row-cols-2 row-cols-md-4 g-3 list-unstyled mb-0" id="grid-categorias-menu">
+          <li class="col">
+            <a href="oficios.html?categoria=Electricidad"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-warning-subtle category-card">
+              <span class="icono-cat"> <img src="./img/innovation.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Electricidad</span>
+            </a>
+          </li>
+          <li class="col">
+            <a href="oficios.html?categoria=Plomer%C3%ADa"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-info-subtle category-card">
+              <span class="icono-cat"> <img src="./img/plumbing.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Plomería</span>
+            </a>
+          </li>
+          <li class="col">
+            <a href="oficios.html?categoria=Pintura"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-danger-subtle category-card">
+              <span class="icono-cat"> <img src="./img/house-painting.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Pintura</span>
+            </a>
+          </li>
+          <li class="col">
+            <a href="oficios.html?categoria=Alba%C3%B1iler%C3%ADa"
+              class="card card-body h-100 text-center text-decoration-none border-0 shadow-sm bg-secondary-subtle category-card">
+              <span class="icono-cat"> <img src="./img/building.png" class="icono-img" alt=""></span>
+              <span class="label-cat mt-2">Albañilería</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <div class="fila-titulo mb-3">
+          <h2 class="h4 fw-bold">Cerca de vos</h2>
+          <a href="oficios.html" class="text-decoration-none fw-bold small">Ver más →</a>
+        </div>
+
+        <ul class="row g-3 list-unstyled mb-0" id="destacados-cliente">
+          <li class="col-12 col-md-6">
+            <a href="perfiltrabajador.html?id=1"
+              class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-primary-subtle">
+              <div class="card-body fila-cabecera">
+                <div class="avatar-profesional">
+                  CM
+                  <span class="punto-estado disponible"></span>
+                </div>
+                <div class="info-principal">
+                  <span class="nombre-prof">Carlos Medina</span>
+                  <p class="oficio-prof">Electricista Matriculado</p>
+                  <div class="fila-meta">
+                    <span class="rating">★ 4.8</span>
+                    <span>(23)</span>
+                    <span> <img src="img/location.png" class="icono-img" alt="Ubicación"> 2.1 km</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="col-12 col-md-6">
+            <a href="perfiltrabajador.html?id=2"
+              class="card tarjeta-profesional text-decoration-none d-block h-100 border-0 shadow-sm bg-info-subtle">
+              <div class="card-body fila-cabecera">
+                <div class="avatar-profesional">
+                  MP
+                  <span class="punto-estado disponible"></span>
+                </div>
+                <div class="info-principal">
+                  <span class="nombre-prof">Mónica Paz</span>
+                  <p class="oficio-prof">Plomera Specialist</p>
+                  <div class="fila-meta">
+                    <span class="rating">★ 4.9</span>
+                    <span>(31)</span>
+                    <span> <img src="img/location.png" class="icono-img" alt="Ubicación"> 3.2 km</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </section>
+
+  <section id="vista-trabajador" class="container my-5" style="max-width: 800px; display: none;">
+    <div class="panel card p-4 shadow-sm mb-4">
+      <span class="badge bg-warning text-dark mb-2 w-fit">📥 Panel de trabajador</span>
+      <h1 class="h3 fw-bold mb-1">Hola, <span id="nombre-trabajador">Ricardo Sosa</span></h1>
+      <p class="text-secondary small">Así está la actividad de tus servicios en la plataforma hoy.</p>
+
+      <div class="row text-center my-3 py-3 border-top border-bottom g-2">
+        <div class="col-6 border-end">
+          <span class="fs-4 fw-bold text-dark d-block">★ 4.9</span>
+          <span class="text-secondary small">Calificación promedio</span>
+        </div>
+        <div class="col-6">
+          <span class="fs-4 fw-bold text-dark d-block">3</span>
+          <span class="text-secondary small">Pedidos pendientes</span>
+        </div>
+      </div>
+
+      <div class="list-unstyled mt-3">
+        <a href="historialtrabajador.html"
+          class="card tarjeta-pedido text-decoration-none d-block p-3 bg-light border-0 shadow-sm">
+          <span class="fs-3">📥</span>
+          <h3 class="h6 fw-bold text-dark mt-1 mb-1">Pedidos recibidos</h3>
+          <p class="text-secondary small mb-0">Mirá las solicitudes de nuevos clientes y actualizá el estado de los
+            trabajos.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bottom-nav" id="bottom-nav">
+    <a href="menu.html" class="activo">
+      <span class="icono-nav"><img src="img/house.png" class="icono-home"></span>
+      <span>Inicio</span>
+    </a>
+    <a href="oficios.html">
+      <span class="icono-nav"><img src="img/magnifying-glass.png" class="icono-home"></span>
+      <span>Buscar</span>
+    </a>
+    <a href="historial.html">
+      <span class="icono-nav"><img src="img/completed-task.png" class="icono-home"></span>
+      <span>Pedidos</span>
+    </a>
+    <a href="perfil.html">
+      <span class="icono-nav"><img src="img/user.png" class="icono-home"></span>
+      <span>Perfil</span>
+    </a>
+
+   <a href="#" data-bs-toggle="offcanvas" data-bs-target="#panel-ayuda" aria-controls="panel-ayuda">
+  <span class="icono-nav"><img src="img/help-web-button.png" alt="Ayuda" class="icono-home"></span>
+  <span>Ayuda</span>
+</a>
+  </nav>
+
+  <aside class="offcanvas offcanvas-end" tabindex="-1" id="panel-ayuda" aria-labelledby="panel-ayuda-titulo">
+
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title h4 fw-bold" id="panel-ayuda-titulo">Centro de Ayuda</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <p class="text-secondary">
+      Encontrá respuestas rápidas, resolvé dudas frecuentes y aprendé a usar OficiosYa.
+    </p>
+
+    <div class="py-3 border-bottom">
+      <h3 class="h6 fw-bold">¿Cómo contratar un profesional?</h3>
+      <p class="small text-secondary mb-0">
+        Encontrá profesionales según el servicio que necesitás. Elegí una categoría, revisá los perfiles y
+        seleccioná el profesional que más te convenga.
+      </p>
+    </div>
+
+    <div class="py-3 border-bottom">
+      <h3 class="h6 fw-bold"><img src="img/star.png" alt="Estrella" class="icono-home"> ¿Cómo califico un trabajo?</h3>
+      <p class="small text-secondary mb-0">Desde Mis pedidos cuando el servicio esté finalizado.</p>
+    </div>
+
+    <div class="py-3 border-bottom">
+      <h3 class="h6 fw-bold"><img src="img/pin.png" alt="Cancelar" class="icono-home"> ¿Puedo cancelar un pedido?</h3>
+      <p class="small text-secondary mb-0">Sí, mientras todavía no haya sido finalizado.</p>
+    </div>
+
+    <div class="py-3">
+      <h3 class="h6 fw-bold"><img src="img/completed-task.png" alt="Lista" class="icono-home"> ¿Cómo veo el estado de mi pedido?</h3>
+      <p class="small text-secondary mb-0">Desde la sección Mis pedidos.</p>
+    </div>
+
+    <div class="bg-primary-subtle rounded-4 p-3 mt-3">
+      <strong>¿Necesitás más ayuda?</strong>
+      <p class="small text-secondary mt-2 mb-1"><img src="img/email.png" alt="Correo" class="icono-home"> soporte@oficiosya.com</p>
+      <p class="small text-secondary mb-0"><img src="img/phone.png" alt="Teléfono" class="icono-home"> 0800-123-456</p>
+    </div>
+
+  </div>
+</aside>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
-<script>
-    const usuariosDemo = {
-        cliente: {
-            nombre: "Cliente Demo",
-            email: "cliente@demo.com",
-            rol: "cliente"
-        },
-        trabajador: {
-            nombre: "Ricardo Sosa",
-            email: "trabajador@demo.com",
-            rol: "trabajador",
-            oficio: "Electricista matriculado",
-            categoria: "Electricidad",
-            zona: "Tucumán Capital, Yerba Buena",
-            precioPorHora: 4500,
-            descripcion: "Usuario de prueba."
-        }
-    };
 
-    document.querySelectorAll('.btn-acceso-rapido').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const usuario = usuariosDemo[btn.dataset.rol];
-            localStorage.setItem('oficioya-sesion', JSON.stringify(usuario));
-            window.location.href = 'menu.html';
-        });
-    });
-</script>
+
 </body>
 
 </html>
