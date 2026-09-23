@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="pagina-explorar">
 
     <header class="topbar">
         <div class="marca d-flex align-items-center gap-2">
@@ -40,421 +40,117 @@
     </header>
 
 
-    <main>
-        <section class="text-center mb-4">
+    <main class="container py-3" style="max-width: 1200px;">
 
-            <h1 class="display-6 fw-bold">
-                Explorar profesionales
-            </h1>
+        <section class="row g-4 explorar-layout">
 
-            <p class="text-muted">
-                Elegí una categoría o buscá directamente lo que necesitás.
-            </p>
+            <!-- Columna izquierda: buscador y categorías -->
+            <aside class="col-12 col-md-4 col-lg-3">
 
-            <div class="d-flex justify-content-center gap-2 mx-auto"
-                style="max-width: 500px;">
+                <section class="panel-filtros">
 
-                <input
-                    type="text"
-                    id="input-busqueda"
-                    class="form-control form-control-lg rounded-pill"
-                    placeholder="¿Qué servicio necesitás? (Ej: Plomero, Carlos...)">
+                    <label for="input-busqueda" class="form-label small fw-bold">
+                        Buscar
+                    </label>
 
-            </div>
+                    <input
+                        type="search"
+                        id="input-busqueda"
+                        class="form-control rounded-pill mb-3"
+                        placeholder="Oficio, nombre o especialidad">
 
-        </section>
+                    <h2 class="h6 fw-bold mb-3">
+                        Categorías
+                    </h2>
 
-        <section class="container my-5" style="max-width: 900px;">
+                    <nav class="lista-categorias" id="grid-categorias" aria-label="Categorías">
 
-            <section class="mb-5">
-
-                <h2 class="h5 fw-bold mb-3">
-                    Categorías
-                </h2>
-
-                <section
-                    class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-2"
-                    id="grid-categorias">
-
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria activo w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="todos">
-
-                            <i class="bi bi-grid-fill fs-3 text-primary"></i>
-
-                            <span class="fw-semibold small">
-                                Todas
-                            </span>
-
+                        <button type="button" class="chip-categoria activo" data-categoria="todos">
+                            <img src="img/people.png" class="boton-img" alt="">
+                            <span>Todas</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Electricidad">
-
-                            <img
-                                src="img/innovation.png"
-                                class="boton-img"
-                                alt="Electricidad">
-
-                            <span class="fw-semibold small">
-                                Electricidad
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Electricidad">
+                            <img src="img/innovation.png" class="boton-img" alt="">
+                            <span>Electricidad</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Plomería">
-
-                            <img
-                                src="img/plumbing.png"
-                                class="boton-img"
-                                alt="Plomería">
-
-                            <span class="fw-semibold small">
-                                Plomería
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Plomería">
+                            <img src="img/plumbing.png" class="boton-img" alt="">
+                            <span>Plomería</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Pintura">
-
-                            <img
-                                src="img/house-painting.png"
-                                class="boton-img"
-                                alt="Pintura">
-
-                            <span class="fw-semibold small">
-                                Pintura
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Pintura">
+                            <img src="img/house-painting.png" class="boton-img" alt="">
+                            <span>Pintura</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Albañilería">
-
-                            <img
-                                src="img/building.png"
-                                class="boton-img"
-                                alt="Albañilería">
-
-                            <span class="fw-semibold small">
-                                Albañilería
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Albañilería">
+                            <img src="img/building.png" class="boton-img" alt="">
+                            <span>Albañilería</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Climatizacion y Refrigeración">
-
-                            <img
-                                src="img/chiller.png"
-                                class="boton-img"
-                                alt="Climatización y Refrigeración">
-
-                            <span class="fw-semibold small text-center">
-                                Climatización y Refrigeración
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Climatizacion y Refrigeración">
+                            <img src="img/chiller.png" class="boton-img" alt="">
+                            <span>Climatización y Refrigeración</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Carpintería">
-
-                            <img
-                                src="img/crossed-hammers.png"
-                                class="boton-img"
-                                alt="Carpintería">
-
-                            <span class="fw-semibold small">
-                                Carpintería
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Carpintería">
+                            <img src="img/crossed-hammers.png" class="boton-img" alt="">
+                            <span>Carpintería</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Cerrajería">
-
-                            <img
-                                src="img/key.png"
-                                class="boton-img"
-                                alt="Cerrajería">
-
-                            <span class="fw-semibold small">
-                                Cerrajería
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Cerrajería">
+                            <img src="img/key.png" class="boton-img" alt="">
+                            <span>Cerrajería</span>
                         </button>
-                    </article>
 
-                    <article class="col">
-                        <button
-                            type="button"
-                            class="nav-link chip-categoria w-100 h-100 p-3 rounded-4 border bg-white shadow-sm d-flex flex-column align-items-center justify-content-center gap-2"
-                            data-categoria="Jardinería">
-
-                            <img
-                                src="img/gardening.png"
-                                class="boton-img"
-                                alt="Jardinería">
-
-                            <span class="fw-semibold small">
-                                Jardinería
-                            </span>
-
+                        <button type="button" class="chip-categoria" data-categoria="Jardinería">
+                            <img src="img/gardening.png" class="boton-img" alt="">
+                            <span>Jardinería</span>
                         </button>
-                    </article>
+
+                    </nav>
 
                 </section>
 
-            </section>
+            </aside>
 
+            <!-- Columna derecha: resultados -->
+            <section class="col-12 col-md-8 col-lg-9 explorar-resultados">
 
-            <section class="mb-4">
+                <h1 class="h3 fw-bold mb-1">
+                    Explorar profesionales
+                </h1>
 
-                <h2 class="h5 fw-bold mb-3">
+                <p class="text-muted small mb-3">
+                    Elegí una categoría o buscá directamente lo que necesitás.
+                </p>
+
+                <h2 class="h5 fw-bold mb-1">
                     Profesionales disponibles
                 </h2>
+
+                <p class="text-secondary small mb-3" id="resumen-resultados" aria-live="polite"></p>
 
                 <section
                     class="row g-3"
                     id="lista-profesionales">
 
-                    <article
-                        class="col-12 col-md-6"
-                        data-categoria="Electricidad"
-                        data-nombre="carlos medina electricista">
-
-                        <section
-                            class="card tarjeta-profesional h-100 border-0 shadow-sm bg-primary-subtle rounded-4">
-
-                            <header class="card-body fila-cabecera d-flex gap-3">
-
-                                <section class="avatar-profesional position-relative">
-                                    CM
-                                    <span class="punto-estado disponible"></span>
-                                </section>
-
-                                <section class="info-principal">
-
-                                    <h3 class="nombre-prof h6 mb-0 fw-bold">
-                                        Carlos Medina
-                                    </h3>
-
-                                    <p class="oficio-prof text-secondary small mb-1">
-                                        Electricista Matriculado
-                                    </p>
-
-                                    <p class="fila-meta small mb-1">
-
-                                        <span class="rating">
-                                            <img
-                                                src="img/star.png"
-                                                alt="Estrella"
-                                                class="icono-img">
-                                            4.8
-                                        </span>
-
-                                        <span>(23)</span>
-
-                                        <span>
-                                            ·
-                                            <img
-                                                src="img/location.png"
-                                                class="icono-img"
-                                                alt="Ubicación">
-                                            2.1 km
-                                        </span>
-
-                                        <span>
-                                            ·
-                                            <img
-                                                src="img/clock.png"
-                                                class="icono-img"
-                                                alt="Reloj">
-                                            ~15 min
-                                        </span>
-
-                                    </p>
-
-                                    <footer class="tags-especialidad d-flex gap-1 flex-wrap">
-
-                                        <span class="tag-especialidad badge bg-white text-dark border fw-normal">
-                                            Instalaciones
-                                        </span>
-
-                                        <span class="tag-especialidad badge bg-white text-dark border fw-normal">
-                                            Tableros
-                                        </span>
-
-                                    </footer>
-
-                                </section>
-
-                            </header>
-
-
-                            <footer
-                                class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
-
-                                <p class="precio-hora mb-0 text-dark fw-bold">
-                                    $4.500
-                                    <span class="text-muted fw-normal small">
-                                        / hora
-                                    </span>
-                                </p>
-
-                                <a
-                                    class="btn btn-primary btn-sm rounded-pill px-3"
-                                    href="perfiltrabajador.html?id=1">
-                                    Contratar
-                                </a>
-
-                            </footer>
-
-                        </section>
-
-                    </article>
-
-
-                    <article
-                        class="col-12 col-md-6"
-                        data-categoria="Plomería"
-                        data-nombre="mónica paz plomera">
-
-                        <section
-                            class="card tarjeta-profesional h-100 border-0 shadow-sm bg-info-subtle rounded-4">
-
-                            <header class="card-body fila-cabecera d-flex gap-3">
-
-                                <section class="avatar-profesional position-relative">
-                                    MP
-                                    <span class="punto-estado disponible"></span>
-                                </section>
-
-                                <section class="info-principal">
-
-                                    <h3 class="nombre-prof h6 mb-0 fw-bold">
-                                        Mónica Paz
-                                    </h3>
-
-                                    <p class="oficio-prof text-secondary small mb-1">
-                                        Plomera Specialist
-                                    </p>
-
-                                    <p class="fila-meta small mb-1">
-
-                                        <span class="rating">
-                                            <img
-                                                src="img/star.png"
-                                                alt="Estrella"
-                                                class="icono-img">
-                                            4.9
-                                        </span>
-
-                                        <span>(31)</span>
-
-                                        <span>
-                                            ·
-                                            <img
-                                                src="img/location.png"
-                                                class="icono-img"
-                                                alt="Ubicación">
-                                            2.1 km
-                                        </span>
-
-                                        <span>
-                                            ·
-                                            <img
-                                                src="img/clock.png"
-                                                class="icono-img"
-                                                alt="Reloj">
-                                            ~15 min
-                                        </span>
-
-                                    </p>
-
-                                    <footer class="tags-especialidad d-flex gap-1 flex-wrap">
-
-                                        <span class="tag-especialidad badge bg-white text-dark border fw-normal">
-                                            Pérdidas
-                                        </span>
-
-                                        <span class="tag-especialidad badge bg-white text-dark border fw-normal">
-                                            Destapes
-                                        </span>
-
-                                    </footer>
-
-                                </section>
-
-                            </header>
-
-
-                            <footer
-                                class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3 border-top">
-
-                                <p class="precio-hora mb-0 text-dark fw-bold">
-                                    $5.000
-                                    <span class="text-muted fw-normal small">
-                                        / hora
-                                    </span>
-                                </p>
-
-                                <a
-                                    class="btn btn-primary btn-sm rounded-pill px-3"
-                                    href="perfiltrabajador.html?id=2">
-                                    Contratar
-                                </a>
-
-                            </footer>
-
-                        </section>
-
-                    </article>
+                    <!-- Las tarjetas se generan desde app.js (PROFESIONALES) -->
 
                 </section>
 
+                <p
+                    class="text-center text-secondary py-5"
+                    id="sin-resultados"
+                    style="display: none;">
+
+                    🔍 No encontramos profesionales que coincidan con tu búsqueda.
+
+                </p>
+
             </section>
-
-            <p
-                class="text-center text-secondary py-5"
-                id="sin-resultados"
-                style="display: none;">
-
-                🔍 No encontramos profesionales que coincidan con tu búsqueda.
-
-            </p>
 
         </section>
 

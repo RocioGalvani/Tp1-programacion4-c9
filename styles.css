@@ -2057,6 +2057,8 @@ main:last-of-type,
   flex: 1;
 }*/
 
+} /* cierre de @media (max-width: 700px): antes quedaba dentro de un comentario */
+
 .chip-categoria {
   background: #ffffff;
   border: 1px solid var(--borde);
@@ -2077,7 +2079,6 @@ main:last-of-type,
   border-color: var(--terracota);
   color: var(--terracota-oscuro);
   transform: translateY(-2px);
-}
 }
 
 /* --- PANEL LATERAL DE AYUDA --- */
@@ -2189,4 +2190,191 @@ main:last-of-type,
     padding: 25px 20px;
   }
 
-}/*
+}
+
+
+/* --- EXPLORAR: filtros a la izquierda, resultados a la derecha --- */
+
+.panel-filtros {
+  background: #ffffff;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 20px;
+}
+
+.lista-categorias {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lista-categorias .chip-categoria {
+  width: 100%;
+  padding: 6px 12px;
+  text-align: left;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.lista-categorias .chip-categoria.activo {
+  box-shadow: inset 4px 0 0 var(--terracota);
+}
+
+.lista-categorias .chip-categoria:hover,
+.lista-categorias .chip-categoria.activo {
+  transform: none;
+}
+
+.lista-categorias .boton-img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/*
+  En pantallas grandes la página no se desplaza: el panel de categorías queda fijo
+  y solo se desplaza la columna de resultados.
+*/
+@media (min-width: 768px) {
+  body.pagina-explorar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+  body.pagina-explorar > main {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .explorar-layout {
+    height: 100%;
+  }
+
+  /* entre 768 y 1200px la barra de abajo pasa por encima del panel: le dejamos lugar */
+  .explorar-layout > aside {
+    padding-bottom: 110px;
+  }
+
+  .explorar-resultados {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* espacio para que la última tarjeta no quede tapada por la barra de abajo */
+    padding-bottom: 130px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .explorar-layout > aside {
+    padding-bottom: 0;
+  }
+}
+
+/* Pantallas bajas (notebooks): categorías más compactas para que entren sin scroll */
+@media (min-width: 768px) and (max-height: 820px) {
+  .panel-filtros {
+    padding: 16px;
+  }
+
+  .lista-categorias {
+    gap: 4px;
+  }
+
+  .lista-categorias .chip-categoria {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  .lista-categorias .boton-img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* En celular las categorías pasan a una fila que se desliza de costado */
+@media (max-width: 767.98px) {
+  .lista-categorias {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .lista-categorias .chip-categoria {
+    width: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* Explorar: sin el margen general de main, así los resultados llegan hasta abajo */
+body.pagina-explorar > main {
+  margin-bottom: 0;
+}
+
+
+/* --- MIS PEDIDOS (las reglas originales de más arriba están comentadas) --- */
+
+#lista-pedidos .tarjeta-pedido {
+  padding: 18px;
+}
+
+#lista-pedidos .fila-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+#lista-pedidos .meta {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+#lista-pedidos .meta .icono-img {
+  width: 22px;
+  height: 22px;
+}
+
+#lista-pedidos .desc-pedido {
+  margin: 12px 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.estado {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.estado-pendiente {
+  color: #9a6b00;
+  background: rgba(245, 185, 66, 0.22);
+}
+
+.estado-aceptado,
+.estado-en-curso {
+  color: var(--azul-claro);
+  background: rgba(44, 74, 99, 0.12);
+}
+
+.estado-finalizado {
+  color: var(--verde);
+  background: rgba(22, 135, 93, 0.12);
+}
+
+.estado-cancelado {
+  color: var(--rojo);
+  background: rgba(217, 70, 70, 0.12);
+}
