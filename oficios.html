@@ -20,7 +20,7 @@
 <body class="pagina-explorar">
 
     <header class="topbar">
-        <div class="marca d-flex align-items-center gap-2">
+        <a href="index.html" class="marca d-flex align-items-center gap-2 text-white text-decoration-none" title="Ir a la página principal">
             <img src="./img/hombrelogo.png"
                 class="hombre-logo"
                 alt="OfiGO"
@@ -29,11 +29,11 @@
             <span>
                 Ofi<span class="text-warning">GO</span>
             </span>
-        </div>
+        </a>
 
         <nav id="topbar-usuario">
-            <a href="perfil.html">Mi perfil</a>
-            <a href="#" id="btn-cerrar-sesion" class="text-danger fw-bold">
+            <a href="index.html" class="text-decoration-none">Página principal</a>
+            <a href="#" id="btn-cerrar-sesion" class="text-warning fw-bold text-decoration-none">
                 Cerrar sesión
             </a>
         </nav>
@@ -44,7 +44,6 @@
 
         <section class="row g-4 explorar-layout">
 
-            <!-- Columna izquierda: buscador y categorías -->
             <aside class="col-12 col-md-4 col-lg-3">
 
                 <section class="panel-filtros">
@@ -116,7 +115,6 @@
 
             </aside>
 
-            <!-- Columna derecha: resultados -->
             <section class="col-12 col-md-8 col-lg-9 explorar-resultados">
 
                 <h1 class="h3 fw-bold mb-1">
@@ -137,7 +135,6 @@
                     class="row g-3"
                     id="lista-profesionales">
 
-                    <!-- Las tarjetas se generan desde app.js (PROFESIONALES) -->
 
                 </section>
 
@@ -156,9 +153,9 @@
 
     </main>
 
-    <nav class="bottom-nav">
+    <nav class="bottom-nav shadow-sm p-1 p-md-2">
 
-        <a href="index.html">
+        <a href="menu.html" class="fw-semibold text-decoration-none py-1 py-md-2">
             <span class="icono-nav">
                 <img
                     src="img/house.png"
@@ -169,7 +166,7 @@
         </a>
 
 
-        <a href="oficios.html" class="activo">
+        <a href="oficios.html" class="activo fw-bold text-decoration-none py-1 py-md-2">
             <span class="icono-nav">
                 <img
                     src="img/magnifying-glass.png"
@@ -180,7 +177,7 @@
         </a>
 
 
-        <a href="historial.html">
+        <a href="historial.html" class="fw-semibold text-decoration-none py-1 py-md-2">
             <span class="icono-nav">
                 <img
                     src="img/completed-task.png"
@@ -191,7 +188,7 @@
         </a>
 
 
-        <a href="perfil.html">
+        <a href="perfil.html" class="fw-semibold text-decoration-none py-1 py-md-2">
             <span class="icono-nav">
                 <img
                     src="img/user.png"

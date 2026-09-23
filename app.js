@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (pagina === "login") {
         initLanding();
     } else if (pagina === "" || pagina === "index") {
+        initPortada();
+    } else if (pagina === "menu") {
         initMenu();
     } else if (pagina === "oficios") {
         initOficios();
@@ -20,13 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
         initCrearPedido();
     }
 
-    if (pagina !== "login") {
+    if (pagina !== "login" && pagina !== "" && pagina !== "index") {
         initAyuda();
+    }
+
+    const usuario = obtenerSesion();
+
+    if (usuario && usuario.rol === "trabajador") {
+        document.querySelectorAll('.bottom-nav a[href="historial.html"]').forEach((link) => {
+            link.href = "historialtrabajador.html";
+        });
     }
 });
 
 
-// Profesionales cargados (datos de prueba para la búsqueda y el perfil)
 const PROFESIONALES = [
     { id: 1, nombre: "Carlos Medina", oficio: "Electricista Matriculado", categoria: "Electricidad", rating: 4.8, resenas: 23, distancia: "2.1 km", llegada: "~15 min", precio: 4500, disponible: true, tags: ["Instalaciones", "Tableros"], zona: "San Miguel de Tucumán", descripcion: "Más de 10 años haciendo instalaciones eléctricas domiciliarias y comerciales. Trabajo con materiales certificados." },
     { id: 2, nombre: "Mónica Paz", oficio: "Plomera Especialista", categoria: "Plomería", rating: 4.9, resenas: 31, distancia: "3.2 km", llegada: "~20 min", precio: 5000, disponible: true, tags: ["Pérdidas", "Destapes"], zona: "Yerba Buena", descripcion: "Reparación de pérdidas, destapes y cambio de griferías. Atención de urgencias en el día." },
@@ -49,7 +58,6 @@ const PROFESIONALES = [
 const COLORES_TARJETA = ["bg-primary-subtle", "bg-info-subtle", "bg-warning-subtle", "bg-success-subtle"];
 
 
-// Pasa a minúsculas y quita tildes para que "plomeria" encuentre "Plomería"
 function normalizar(texto) {
     return (texto || "")
         .toLowerCase()
@@ -120,7 +128,6 @@ function initMenu() {
     const usuario = obtenerSesion();
 
  
-    // Login desactivado para la entrega: se entra directo al menú.
     // if (!usuario) {
     //     window.location.href = "login.html";
     //     return;
@@ -164,6 +171,15 @@ function initMenu() {
             nombreTrabajador.textContent = usuario.nombre;
         }
 
+        const pendientes =
+            document.getElementById("pendientes-trabajador");
+
+        if (pendientes) {
+            pendientes.textContent = obtenerPedidos()
+                .filter((p) => p.profesionalId === usuario.profesionalId && p.estado === "Pendiente")
+                .length;
+        }
+
 
 
         const bottomNav =
@@ -175,7 +191,7 @@ function initMenu() {
                 <ul class="d-flex w-100 justify-content-around list-unstyled mb-0">
 
                     <li>
-                        <a href="index.html" class="nav-link fw-bold text-primary">
+                        <a href="menu.html" class="nav-link fw-bold text-primary">
                             <img src="img/house.png"
                                  alt="Inicio"
                                  class="icono-home">
@@ -294,11 +310,9 @@ function initOficios() {
 
         });
 
-        // En celular las categorías son una fila horizontal: la corremos hasta la elegida
         const chipActivo = document.querySelector(".chip-categoria.activo");
 
         if (chipActivo) {
-            // se espera a que cargue la fuente, porque cambia el ancho de los botones
             document.fonts.ready.then(() => {
                 const fila = chipActivo.parentElement;
                 fila.scrollLeft += chipActivo.getBoundingClientRect().left - fila.getBoundingClientRect().left;
@@ -307,7 +321,6 @@ function initOficios() {
     }
 
 
-    // Texto que viene del buscador de la página principal (?buscar=...)
     const busquedaURL =
         urlParams.get("buscar");
 
@@ -331,7 +344,6 @@ function initOficios() {
             const categoria =
                 tarjeta.dataset.categoria || "";
 
-            // data-nombre incluye nombre, oficio, categoría y especialidades
             const nombre =
                 normalizar(tarjeta.dataset.nombre);
 
@@ -368,7 +380,6 @@ function initOficios() {
         }
 
 
-        // Resumen arriba de los resultados, así se ve qué filtro está aplicado
         if (resumen) {
 
             let textoResumen =
@@ -419,8 +430,6 @@ function initOficios() {
 
     if (inputBusqueda) {
 
-        // Al escribir se busca en todas las categorías,
-        // así no queda un filtro viejo escondiendo resultados
         inputBusqueda.addEventListener("input", () => {
 
             if (categoriaFiltro !== "todos") {
@@ -435,7 +444,7 @@ function initOficios() {
 }
 
 
-function crearTarjetaProfesional(prof, color) {
+function crearTarjetaProfesional(prof, color, columnas = "col-12 col-xl-6") {
 
     const textoBusqueda =
         [prof.nombre, prof.oficio, prof.categoria, ...prof.tags].join(" ");
@@ -445,7 +454,7 @@ function crearTarjetaProfesional(prof, color) {
         .join("");
 
     return `
-        <article class="col-12 col-xl-6" data-categoria="${prof.categoria}" data-nombre="${textoBusqueda}">
+        <article class="${columnas}" data-categoria="${prof.categoria}" data-nombre="${textoBusqueda}">
             <section class="card tarjeta-profesional h-100 border-0 shadow-sm ${color} rounded-4">
                 <header class="card-body fila-cabecera d-flex gap-3">
                     <section class="avatar-profesional position-relative">
@@ -482,7 +491,6 @@ function initPerfil() {
 
     const usuario = obtenerSesion() || {};
 
-    // Login desactivado para la entrega: se permite entrar sin sesión.
     // if (!usuario) {
     //     window.location.href = "index.html";
     //     return;
@@ -508,8 +516,24 @@ function initPerfil() {
     }
 
     if (rol) {
-        rol.textContent = usuario.rol || "—";
+        rol.textContent = usuario.rol || "cliente";
     }
+
+
+    const prof = profesionalDeSesion();
+    const datosTrabajador = document.getElementById("datos-trabajador");
+
+    if (prof && datosTrabajador) {
+
+        datosTrabajador.style.display = "block";
+
+        document.getElementById("perfil-oficio").textContent = prof.oficio;
+        document.getElementById("perfil-categoria").textContent = prof.categoria;
+        document.getElementById("perfil-zona").textContent = prof.zona;
+        document.getElementById("perfil-precio").textContent = prof.precio.toLocaleString("es-AR");
+        document.getElementById("perfil-descripcion").textContent = prof.descripcion;
+    }
+
 
 
     const btnCerrarSesion =
@@ -526,10 +550,85 @@ function initPerfil() {
 }
 
 
+function profesionalDeSesion() {
+
+    const usuario = obtenerSesion();
+
+    if (!usuario || usuario.rol !== "trabajador") {
+        return null;
+    }
+
+    return PROFESIONALES.find((p) => p.id === usuario.profesionalId) || null;
+}
+
+
+function initPortada() {
+
+    const select = document.getElementById("select-profesional");
+
+    if (select) {
+        select.innerHTML = PROFESIONALES
+            .map((p) => `<option value="${p.id}">${p.nombre} — ${p.oficio}</option>`)
+            .join("");
+    }
+
+
+    const ranking = PROFESIONALES
+        .slice()
+        .sort((a, b) => b.rating - a.rating || b.resenas - a.resenas);
+
+    const muestra = document.getElementById("profesional-muestra");
+
+    if (muestra) {
+        muestra.innerHTML = crearTarjetaProfesional(ranking[0], COLORES_TARJETA[0], "col-12");
+    }
+
+    const destacados = document.getElementById("profesionales-destacados");
+
+    if (destacados) {
+        destacados.innerHTML = ranking
+            .slice(1, 4)
+            .map((prof, i) => crearTarjetaProfesional(prof, COLORES_TARJETA[(i + 1) % COLORES_TARJETA.length], "col-12 col-md-6 col-lg-4"))
+            .join("");
+    }
+
+
+    const entrarComoCliente = () => localStorage.removeItem("oficioya-sesion");
+
+    document.querySelectorAll("main a, [data-entrar-cliente]").forEach((link) => {
+        link.addEventListener("click", entrarComoCliente);
+    });
+
+    const formBuscar = document.getElementById("form-buscar-portada");
+
+    if (formBuscar) {
+        formBuscar.addEventListener("submit", entrarComoCliente);
+    }
+
+
+    const btnTrabajador = document.getElementById("btn-entrar-trabajador");
+
+    if (btnTrabajador && select) {
+        btnTrabajador.addEventListener("click", () => {
+
+            const prof = PROFESIONALES.find((p) => p.id === Number(select.value));
+
+            localStorage.setItem("oficioya-sesion", JSON.stringify({
+                nombre: prof.nombre,
+                email: normalizar(prof.nombre).replace(/\s+/g, ".") + "@oficiosya.com",
+                rol: "trabajador",
+                profesionalId: prof.id
+            }));
+
+            window.location.href = "menu.html";
+        });
+    }
+}
+
+
 
 function initPerfilTrabajador() {
 
-    // Login desactivado para la entrega: se permite entrar sin sesión.
     // const usuario = obtenerSesion();
     // if (!usuario) {
     //     window.location.href = "index.html";
@@ -609,7 +708,6 @@ function initHistorialTrabajador() {
 
     const usuario = obtenerSesion() || {};
 
-    // Login desactivado para la entrega: se permite entrar sin sesión.
     // if (!usuario) {
     //     window.location.href = "index.html";
     //     return;
@@ -627,6 +725,73 @@ function initHistorialTrabajador() {
         });
 
     }
+
+
+    const lista =
+        document.getElementById("lista-pedidos");
+
+    const sinPedidos =
+        document.getElementById("sin-pedidos");
+
+    const prof = profesionalDeSesion();
+
+
+    if (!prof) {
+
+        if (sinPedidos) {
+            sinPedidos.style.display = "block";
+            sinPedidos.innerHTML = `
+                <p class="icono-vacio fs-1">👷</p>
+                <p>Para ver los pedidos recibidos, entrá como trabajador desde la página de inicio.</p>
+                <a href="index.html" class="btn btn-primario mt-2">Ir al inicio</a>
+            `;
+        }
+
+        return;
+    }
+
+
+    function mostrarPedidos() {
+
+        const pedidos = obtenerPedidos()
+            .filter((p) => p.profesionalId === prof.id);
+
+        if (sinPedidos) {
+            sinPedidos.style.display = pedidos.length === 0 ? "block" : "none";
+        }
+
+        if (lista) {
+            lista.innerHTML = pedidos
+                .slice()
+                .reverse()
+                .map((p) => crearTarjetaPedido(p, "trabajador"))
+                .join("");
+        }
+    }
+
+
+    if (lista) {
+
+        lista.addEventListener("click", (e) => {
+
+            const boton = e.target.closest("[data-estado]");
+
+            if (!boton) {
+                return;
+            }
+
+            const pedidos = obtenerPedidos();
+            const pedido = pedidos.find((p) => p.id === Number(boton.dataset.pedido));
+
+            if (pedido) {
+                pedido.estado = boton.dataset.estado;
+                guardarPedidos(pedidos);
+                mostrarPedidos();
+            }
+        });
+    }
+
+    mostrarPedidos();
 }
 
 
@@ -635,7 +800,6 @@ function initHistorial() {
 
     const usuario = obtenerSesion() || {};
 
-    // Login desactivado para la entrega: se permite entrar sin sesión.
     // if (!usuario) {
     //     window.location.href = "index.html";
     //     return;
@@ -674,7 +838,6 @@ function initHistorial() {
             return;
         }
 
-        // Los más nuevos primero
         lista.innerHTML = pedidos
             .slice()
             .reverse()
@@ -713,7 +876,6 @@ function initCrearPedido() {
 
     const usuario = obtenerSesion() || {};
 
-    // Login desactivado para la entrega: se permite entrar sin sesión.
     // if (!usuario) {
     //     window.location.href = "index.html";
     //     return;
@@ -740,7 +902,6 @@ function initCrearPedido() {
         PROFESIONALES.find((p) => p.id === id) || PROFESIONALES[0];
 
 
-    // "Volver al perfil" vuelve al profesional que se estaba viendo
     const linkVolver =
         document.querySelector('a[href="perfiltrabajador.html"]');
 
@@ -805,6 +966,7 @@ function initCrearPedido() {
             profesionalId: prof.id,
             profesional: prof.nombre,
             oficio: prof.oficio,
+            cliente: usuario.nombre || "Invitado",
             direccion: direccion,
             fecha: fecha,
             descripcion: texto,
@@ -825,7 +987,6 @@ function initCrearPedido() {
 
 
 
-// --- Pedidos: se guardan en el navegador (localStorage) ---
 
 function obtenerPedidos() {
 
@@ -842,7 +1003,6 @@ function guardarPedidos(pedidos) {
 }
 
 
-// Evita que el texto que escribe el usuario se interprete como HTML
 function escaparHTML(texto) {
     const div = document.createElement("div");
     div.textContent = texto;
@@ -850,27 +1010,57 @@ function escaparHTML(texto) {
 }
 
 
-function crearTarjetaPedido(pedido) {
+function crearTarjetaPedido(pedido, modo = "cliente") {
 
-    const claseEstado =
-        "estado-" + normalizar(pedido.estado).replace(/\s+/g, "-");
+    const claseEstado = pedido.estado === "Rechazado"
+        ? "estado-cancelado"
+        : "estado-" + normalizar(pedido.estado).replace(/\s+/g, "-");
 
     const fecha = new Date(pedido.fecha).toLocaleString("es-AR", {
         dateStyle: "short",
         timeStyle: "short"
     });
 
-    const botonCancelar = pedido.estado === "Pendiente"
-        ? `<button type="button" class="btn btn-outline-danger btn-sm rounded-pill" data-cancelar="${pedido.id}">Cancelar pedido</button>`
-        : "";
+    const botonEstado = (estado, texto, clase) =>
+        `<button type="button" class="btn ${clase} btn-sm rounded-pill" data-pedido="${pedido.id}" data-estado="${estado}">${texto}</button>`;
+
+    let titulo;
+    let subtitulo;
+    let acciones;
+
+    if (modo === "trabajador") {
+
+        titulo = `Cliente: ${escaparHTML(pedido.cliente || "Invitado")}`;
+        subtitulo = pedido.oficio;
+
+        if (pedido.estado === "Pendiente") {
+            acciones = botonEstado("Aceptado", "Aceptar", "btn-success") +
+                botonEstado("Rechazado", "Rechazar", "btn-outline-danger");
+        } else if (pedido.estado === "Aceptado") {
+            acciones = botonEstado("Finalizado", "Marcar como finalizado", "btn-primary");
+        } else {
+            acciones = "";
+        }
+
+    } else {
+
+        titulo = pedido.profesional;
+        subtitulo = pedido.oficio;
+
+        acciones = `<a href="perfiltrabajador.html?id=${pedido.profesionalId}" class="btn btn-outline-secondary btn-sm rounded-pill">Ver profesional</a>`;
+
+        if (pedido.estado === "Pendiente") {
+            acciones += `<button type="button" class="btn btn-outline-danger btn-sm rounded-pill" data-cancelar="${pedido.id}">Cancelar pedido</button>`;
+        }
+    }
 
     return `
         <li class="col-12 col-md-6">
             <article class="card tarjeta-pedido h-100 border-0 shadow-sm rounded-4">
                 <div class="fila-top">
                     <div>
-                        <h3 class="h6 fw-bold mb-0">${pedido.profesional}</h3>
-                        <p class="meta mb-0">${pedido.oficio}</p>
+                        <h3 class="h6 fw-bold mb-0">${titulo}</h3>
+                        <p class="meta mb-0">${subtitulo}</p>
                     </div>
                     <span class="estado ${claseEstado}">${pedido.estado}</span>
                 </div>
@@ -878,8 +1068,7 @@ function crearTarjetaPedido(pedido) {
                 <p class="meta mb-1"><img src="img/location.png" class="icono-img" alt="Dirección"> ${escaparHTML(pedido.direccion)}</p>
                 <p class="meta mb-3"><img src="img/clock.png" class="icono-img" alt="Fecha"> ${fecha}</p>
                 <div class="d-flex gap-2 flex-wrap">
-                    <a href="perfiltrabajador.html?id=${pedido.profesionalId}" class="btn btn-outline-secondary btn-sm rounded-pill">Ver profesional</a>
-                    ${botonCancelar}
+                    ${acciones}
                 </div>
             </article>
         </li>
@@ -887,7 +1076,6 @@ function crearTarjetaPedido(pedido) {
 }
 
 
-// Cartel de "Solicitud enviada" (modal de Bootstrap)
 function mostrarSolicitudEnviada(prof) {
 
     let modal = document.getElementById("modal-pedido-enviado");
@@ -923,7 +1111,6 @@ function mostrarSolicitudEnviada(prof) {
 
 
 
-// Agrega el botón "Ayuda" y su panel en todas las páginas (antes solo estaba en el inicio)
 function initAyuda() {
 
     if (!document.getElementById("panel-ayuda")) {
@@ -973,12 +1160,11 @@ function initAyuda() {
 
     if (bottomNav && !bottomNav.querySelector('[data-bs-target="#panel-ayuda"]')) {
 
-        // En el menú del trabajador los links están dentro de un <ul>
         const contenedor = bottomNav.querySelector("ul") || bottomNav;
         const esLista = contenedor.tagName === "UL";
 
         const link = `
-            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#panel-ayuda" aria-controls="panel-ayuda"${esLista ? ' class="nav-link"' : ""}>
+            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#panel-ayuda" aria-controls="panel-ayuda" class="${esLista ? "nav-link" : "fw-semibold text-decoration-none py-1 py-md-2"}">
                 <span class="icono-nav"><img src="img/help-web-button.png" alt="Ayuda" class="icono-home"></span>
                 <span>Ayuda</span>
             </a>
