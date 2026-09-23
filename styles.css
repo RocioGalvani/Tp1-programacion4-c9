@@ -2190,10 +2190,9 @@ main:last-of-type,
     padding: 25px 20px;
   }
 
-}
+}*/
 
 
-/* --- EXPLORAR: filtros a la izquierda, resultados a la derecha --- */
 
 .panel-filtros {
   background: #ffffff;
@@ -2232,10 +2231,6 @@ main:last-of-type,
   flex-shrink: 0;
 }
 
-/*
-  En pantallas grandes la página no se desplaza: el panel de categorías queda fijo
-  y solo se desplaza la columna de resultados.
-*/
 @media (min-width: 768px) {
   body.pagina-explorar {
     display: flex;
@@ -2254,7 +2249,6 @@ main:last-of-type,
     height: 100%;
   }
 
-  /* entre 768 y 1200px la barra de abajo pasa por encima del panel: le dejamos lugar */
   .explorar-layout > aside {
     padding-bottom: 110px;
   }
@@ -2263,7 +2257,6 @@ main:last-of-type,
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    /* espacio para que la última tarjeta no quede tapada por la barra de abajo */
     padding-bottom: 130px;
   }
 }
@@ -2274,7 +2267,6 @@ main:last-of-type,
   }
 }
 
-/* Pantallas bajas (notebooks): categorías más compactas para que entren sin scroll */
 @media (min-width: 768px) and (max-height: 820px) {
   .panel-filtros {
     padding: 16px;
@@ -2295,7 +2287,6 @@ main:last-of-type,
   }
 }
 
-/* En celular las categorías pasan a una fila que se desliza de costado */
 @media (max-width: 767.98px) {
   .lista-categorias {
     flex-direction: row;
@@ -2310,13 +2301,11 @@ main:last-of-type,
   }
 }
 
-/* Explorar: sin el margen general de main, así los resultados llegan hasta abajo */
 body.pagina-explorar > main {
   margin-bottom: 0;
 }
 
 
-/* --- MIS PEDIDOS (las reglas originales de más arriba están comentadas) --- */
 
 #lista-pedidos .tarjeta-pedido {
   padding: 18px;
@@ -2378,3 +2367,60 @@ body.pagina-explorar > main {
   color: var(--rojo);
   background: rgba(217, 70, 70, 0.12);
 }
+
+
+.bottom-nav .icono-home {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.bottom-nav a.activo .icono-home,
+.bottom-nav a.text-primary .icono-home, 
+.bottom-nav a:hover .icono-home {
+  filter: none;
+  opacity: 1;
+}
+
+
+@media (max-width: 767.98px) {
+
+  .bottom-nav {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: none;
+    border-width: 1px 0 0;
+    border-radius: 0;
+  }
+
+  .bottom-nav .icono-home {
+    width: 24px;
+    height: 24px;
+  }
+
+  body {
+    padding-bottom: 76px;
+  }
+
+  .fila-meta .icono-img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+#profesional-muestra .fila-meta .icono-img,
+#profesionales-destacados .fila-meta .icono-img {
+  width: 18px;
+  height: 18px;
+}
+
+body.portada {
+  background-image: url("img/fondo5.jpeg");
+  background-repeat: repeat;     
+  background-size: 400px auto;    
+  background-attachment: fixed;   
+}
+
